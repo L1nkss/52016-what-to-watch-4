@@ -4,9 +4,9 @@
   "private": true,
   "description": "Личный проект «Что посмотреть» от HTML Academy",
   "scripts": {
-    "eslint": "eslint --ext .jsx --ext .js sc/",
+    "eslint": "eslint --ext .jsx --ext .js src/",
     "test": "npm run eslint",
-    "build":"webpack --mode production",
+    "build": "webpack --mode production",
     "start": "webpack-dev-server"
   },
   "devDependencies": {
@@ -23,5 +23,9 @@
   },
   "engines": {
     "node": "10"
+  },
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   }
 }
