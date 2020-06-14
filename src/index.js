@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
 
-const filmInformation = {
-  date: 2014,
-  genre: `Drama`
-};
+const films = [
+  `Fantastic Beasts`,
+  `Bohemian Rhapsody`,
+  `Macbeth`
+];
 
-ReactDOM.render(<App data={filmInformation} />, document.querySelector(`#root`));
+ReactDOM.render(<App data={films} />, document.querySelector(`#root`));
