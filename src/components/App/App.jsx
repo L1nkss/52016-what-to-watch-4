@@ -1,5 +1,6 @@
 import Main from 'main';
 const App = (props) => {
+
   return (
     <Main filmData={props.data} />
   );
@@ -7,9 +8,9 @@ const App = (props) => {
 
 
 App.propTypes = {
-  data: PropTypes.arrayOf(
-      PropTypes.string
-  )
+  data: propTypes.arrayOf(
+      propTypes.string
+  ).isRequired
 };
 
 export default App;

@@ -1,3 +1,6 @@
+import React from 'react';
+import propTypes from 'prop-types';
+
 const renderCardArticle = (name, index) => {
   return (
     <article className="small-movie-card catalog__movies-card" key={index}>
@@ -138,8 +141,8 @@ const Main = (props) => {
 
 // Подключение PropTypes
 Main.propTypes = {
-  filmData: PropTypes.arrayOf(
-      PropTypes.string
+  filmData: propTypes.arrayOf(
+      propTypes.string
   ).isRequired
 };
 
