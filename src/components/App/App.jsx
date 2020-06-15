@@ -1,4 +1,6 @@
-import Main from 'main';
+import React from 'react';
+import propTypes from 'prop-types';
+import Main from '../Main/Main';
 const App = (props) => {
 
   return (
