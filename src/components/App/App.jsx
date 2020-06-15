@@ -1,10 +1,15 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import Main from '../Main/Main';
+
+const onCardClick = () => {
+  // console.log(`Кликнули по фильму ${name}`);
+};
+
 const App = (props) => {
 
   return (
-    <Main filmData={props.data} />
+    <Main filmData={props.data} onCardClick={onCardClick} />
   );
 };
 
