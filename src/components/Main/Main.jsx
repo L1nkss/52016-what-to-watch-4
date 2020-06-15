@@ -1,6 +1,3 @@
-import React from 'react';
-import propTypes from 'prop-types';
-
 const renderCardArticle = (name, index) => {
   return (
     <article className="small-movie-card catalog__movies-card" key={index}>
@@ -16,7 +13,6 @@ const renderCardArticle = (name, index) => {
 
 
 const Main = (props) => {
-  // eslint-disable-next-line react/prop-types
   const {filmData: films} = props;
 
   return (
@@ -142,8 +138,8 @@ const Main = (props) => {
 
 // Подключение PropTypes
 Main.propTypes = {
-  filmData: propTypes.arrayOf(
-      propTypes.string
+  filmData: PropTypes.arrayOf(
+      PropTypes.string
   ).isRequired
 };
 
