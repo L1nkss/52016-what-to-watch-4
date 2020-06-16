@@ -1,5 +1,4 @@
 import React from 'react';
-import rendered from 'react-test-renderer';
 import App from './app';
 
 // Моки
@@ -12,7 +11,7 @@ const mocks = [
 
 describe(`Should Render App Components`, () => {
   it(`Component should successfully rendered`, () => {
-    const tree = rendered
+    const tree = renderer
       .create(<App data={mocks} />)
       .toJSON();
 

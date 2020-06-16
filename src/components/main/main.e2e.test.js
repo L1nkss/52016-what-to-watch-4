@@ -1,6 +1,6 @@
 import React from 'react';
-import Enzyme, {shallow} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+// import Enzyme, {shallow} from 'enzyme';
+// import Adapter from 'enzyme-adapter-react-16';
 import Main from './main';
 
 // Моки
@@ -10,9 +10,9 @@ const mocks = [
   `1917`
 ];
 
-Enzyme.configure({
-  adapter: new Adapter(),
-});
+// Enzyme.configure({
+//   adapter: new Adapter(),
+// });
 
 describe(`Main Component`, () => {
   it(`Article should be clicked`, () => {

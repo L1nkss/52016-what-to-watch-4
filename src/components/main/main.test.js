@@ -1,5 +1,4 @@
 import React from 'react';
-import rendered from 'react-test-renderer';
 import Main from './main';
 
 // Моки
@@ -14,7 +13,7 @@ const cb = () => {};
 
 describe(`Should Render Main Components`, () => {
   it(`<Main /> Should render Component`, () => {
-    const tree = rendered
+    const tree = renderer
       .create(<Main filmData={mocks} onCardClick={cb} />)
       .toJSON();
 

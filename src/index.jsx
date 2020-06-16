@@ -1,10 +1,5 @@
 import ReactDOM from 'react-dom';
-import App from './components/App/app';
-
-const films = [
-  `Fantastic Beasts`,
-  `Bohemian Rhapsody`,
-  `Macbeth`
-];
+import App from '@components/app/App';
+import films from './mocks/mocks';
 
 ReactDOM.render(<App data={films} />, document.querySelector(`#root`));

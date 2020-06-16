@@ -1,6 +1,3 @@
-import React from 'react';
-import propTypes from 'prop-types';
-
 const renderCards = (films, cb) => {
   return films.map((name, index) => {
     return (

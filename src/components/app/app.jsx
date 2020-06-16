@@ -1,6 +1,4 @@
-import React from 'react';
-import propTypes from 'prop-types';
-import Main from '../Main/main';
+import Main from "../main/main";
 
 const onCardClick = () => {
   // console.log(`Кликнули по фильму ${name}`);
