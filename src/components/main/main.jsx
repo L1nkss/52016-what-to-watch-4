@@ -1,23 +1,7 @@
-const renderCards = (films, cb) => {
-  return films.map((film, index) => {
-    return (
-      <article className="small-movie-card catalog__movies-card" key={index} onClick={() => cb(film.name)}>
-        <div className="small-movie-card__image">
-          <img src={`img/${film.image}.jpg`} alt={film.name} width="280" height="175" />
-        </div>
-        <h3 className="small-movie-card__title">
-          <a className="small-movie-card__link" href="movie-page.html">{film.name}</a>
-        </h3>
-      </article>
-    );
-  });
-};
-
+import FilmsList from "@components/films-list/films-list";
 
 const Main = (props) => {
-  const {filmData: films, onCardClick} = props;
-
-  const filmCards = renderCards(films, onCardClick);
+  const {filmData: films} = props;
 
   return (
     <>
@@ -114,7 +98,7 @@ const Main = (props) => {
           </ul>
 
           <div className="catalog__movies-list">
-            {filmCards}
+            <FilmsList films={films} />
           </div>
 
           <div className="catalog__more">
@@ -145,8 +129,7 @@ Main.propTypes = {
   filmData: propTypes.arrayOf(propTypes.shape({
     name: propTypes.string,
     image: propTypes.string
-  })),
-  onCardClick: propTypes.func
+  }))
 };
 
 export default Main;

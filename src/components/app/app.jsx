@@ -1,13 +1,9 @@
 import Main from "../main/main";
 
-const onCardClick = () => {
-  // console.log(`Кликнули по фильму ${name}`);
-};
-
 const App = (props) => {
 
   return (
-    <Main filmData={props.data} onCardClick={onCardClick} />
+    <Main filmData={props.data}/>
   );
 };
 
