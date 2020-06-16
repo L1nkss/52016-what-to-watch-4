@@ -2,14 +2,14 @@ const path = require(`path`);
 const webpack = require(`webpack`);
 
 module.exports = {
-  entry: `./src/Index.jsx`,
+  entry: `./src/index.jsx`,
   output: {
     filename: `bundle.js`,
     path: path.join(__dirname, `public`)
   },
   resolve: {
     alias: {
-      main: path.resolve(__dirname, `src/components/Main/Main.jsx`)
+      main: path.resolve(__dirname, `src/components/Main/main.jsx`)
     },
     extensions: [`.js`, `.jsx`, `ts`, `tsx`],
   },

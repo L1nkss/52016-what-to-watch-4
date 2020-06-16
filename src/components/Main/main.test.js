@@ -1,6 +1,6 @@
 import React from 'react';
 import rendered from 'react-test-renderer';
-import Main from './Main';
+import Main from './main';
 
 // Моки
 const mocks = [
