@@ -1,12 +1,12 @@
 const renderCards = (films, cb) => {
-  return films.map((name, index) => {
+  return films.map((film, index) => {
     return (
-      <article className="small-movie-card catalog__movies-card" key={index} onClick={() => cb(name)}>
+      <article className="small-movie-card catalog__movies-card" key={index} onClick={() => cb(film.name)}>
         <div className="small-movie-card__image">
-          <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175" />
+          <img src={`img/${film.image}.jpg`} alt={film.name} width="280" height="175" />
         </div>
         <h3 className="small-movie-card__title">
-          <a className="small-movie-card__link" href="movie-page.html">{name}</a>
+          <a className="small-movie-card__link" href="movie-page.html">{film.name}</a>
         </h3>
       </article>
     );
@@ -142,10 +142,11 @@ const Main = (props) => {
 
 // Подключение PropTypes
 Main.propTypes = {
-  filmData: propTypes.arrayOf(
-      propTypes.string
-  ).isRequired,
-  onCardClick: propTypes.func.isRequired
+  filmData: propTypes.arrayOf(propTypes.shape({
+    name: propTypes.string,
+    image: propTypes.string
+  })),
+  onCardClick: propTypes.func
 };
 
 export default Main;

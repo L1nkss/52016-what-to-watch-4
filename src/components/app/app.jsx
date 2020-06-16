@@ -13,9 +13,10 @@ const App = (props) => {
 
 
 App.propTypes = {
-  data: propTypes.arrayOf(
-      propTypes.string
-  ).isRequired
+  data: propTypes.arrayOf(propTypes.shape({
+    name: propTypes.string,
+    image: propTypes.string
+  }))
 };
 
 export default App;
