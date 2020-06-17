@@ -1,4 +1,4 @@
-import FilmsList from "@components/films-list/films-list";
+import FilmsList from "../films-list/films-list";
 
 const Main = (props) => {
   const {filmData: films} = props;
@@ -96,10 +96,8 @@ const Main = (props) => {
               <a href="#" className="catalog__genres-link">Thrillers</a>
             </li>
           </ul>
-
-          <div className="catalog__movies-list">
-            <FilmsList films={films} />
-          </div>
+          {/* Отрисовка списка фильмов */}
+          <FilmsList films={films} />
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>

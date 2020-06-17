@@ -38,7 +38,7 @@ const films = [
 ];
 
 
-describe(`Should Render App Components`, () => {
+describe(`Testing App component`, () => {
   it(`Component should successfully rendered`, () => {
     const tree = renderer
       .create(<App data={films} />)

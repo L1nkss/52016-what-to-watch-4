@@ -40,7 +40,7 @@ const films = [
 const cb = () => {};
 
 
-describe(`Should Render Main Components`, () => {
+describe(`Testing Main component`, () => {
   it(`<Main /> Should render Component`, () => {
     const tree = renderer
       .create(<Main filmData={films} onCardClick={cb} />)

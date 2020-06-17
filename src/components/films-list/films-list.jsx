@@ -1,4 +1,4 @@
-import FilmCard from "@components/film-card/film-card";
+import FilmCard from "../film-card/film-card";
 
 export default class FilmsList extends React.PureComponent {
   constructor(props) {
@@ -7,12 +7,13 @@ export default class FilmsList extends React.PureComponent {
       activeFilm: 0
     };
     this.renderCards = this.renderCards.bind(this);
+    this.onHoverCardHandler = this.onHoverCardHandler.bind(this);
   }
   // Функция обработчик для показа активной карточки фильма(при наведении)
-  onHoverCardHandler(cardIndex) {
+  onHoverCardHandler(name) {
     this.setState(() => {
       return {
-        activeFilm: cardIndex
+        activeFilm: name
       };
     });
   }
@@ -23,11 +24,13 @@ export default class FilmsList extends React.PureComponent {
       key={keyIndex}
       name={name}
       image={image}
-      onHoverCardHandler={() => this.onHoverCardHandler(keyIndex)}/>;
+      onHoverCardHandler={this.onHoverCardHandler}/>;
   }
   render() {
     return (
-      this.props.films.map(this.renderCards)
+      <div className="catalog__movies-list">
+        {this.props.films.map(this.renderCards)}
+      </div>
     );
   }
 }

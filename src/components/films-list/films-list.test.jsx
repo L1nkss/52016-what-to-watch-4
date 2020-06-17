@@ -1,6 +1,5 @@
-import Main from './main';
+import FilmsList from "./films-list";
 
-// Моки
 const films = [
   {
     name: `Bohemian Rhapsody`,
@@ -36,16 +35,10 @@ const films = [
   },
 ];
 
-
-describe(`Main Component`, () => {
-  it(`Article should be clicked`, () => {
-    const onArticleClick = jest.fn();
-    const MainComponent = shallow(
-        <Main filmData={films} onCardClick={onArticleClick}/>
-    );
-
-    const Articles = MainComponent.find(`.small-movie-card`);
-    Articles.forEach((article) => article.simulate(`click`));
-    expect(onArticleClick.mock.calls.length).toBe(films.length);
+describe(`Testing FilmList component`, () => {
+  it(`Should render FilmList component`, () => {
+    const component = renderer.create(<FilmsList films={films} />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

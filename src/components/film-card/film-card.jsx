@@ -1,7 +1,7 @@
 const FilmCard = (props) => {
   const {name, image, onHoverCardHandler} = props;
   return (
-    <article className="small-movie-card catalog__movies-card" onMouseEnter={() => onHoverCardHandler()}>
+    <article className="small-movie-card catalog__movies-card" onMouseEnter={() => onHoverCardHandler(name)}>
       <div className="small-movie-card__image">
         <img src={`img/${image}.jpg`} alt={name} width="280" height="175" />
       </div>
