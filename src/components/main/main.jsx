@@ -1,26 +1,7 @@
-import React from 'react';
-import propTypes from 'prop-types';
-
-const renderCards = (films, cb) => {
-  return films.map((name, index) => {
-    return (
-      <article className="small-movie-card catalog__movies-card" key={index} onClick={() => cb(name)}>
-        <div className="small-movie-card__image">
-          <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175" />
-        </div>
-        <h3 className="small-movie-card__title">
-          <a className="small-movie-card__link" href="movie-page.html">{name}</a>
-        </h3>
-      </article>
-    );
-  });
-};
-
+import FilmList from "../film-list/film-list";
 
 const Main = (props) => {
-  const {filmData: films, onCardClick} = props;
-
-  const filmCards = renderCards(films, onCardClick);
+  const {filmData: films} = props;
 
   return (
     <>
@@ -115,10 +96,8 @@ const Main = (props) => {
               <a href="#" className="catalog__genres-link">Thrillers</a>
             </li>
           </ul>
-
-          <div className="catalog__movies-list">
-            {filmCards}
-          </div>
+          {/* Отрисовка списка фильмов */}
+          <FilmList films={films} />
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
@@ -145,10 +124,10 @@ const Main = (props) => {
 
 // Подключение PropTypes
 Main.propTypes = {
-  filmData: propTypes.arrayOf(
-      propTypes.string
-  ).isRequired,
-  onCardClick: propTypes.func.isRequired
+  filmData: propTypes.arrayOf(propTypes.shape({
+    name: propTypes.string,
+    image: propTypes.string
+  }))
 };
 
 export default Main;
