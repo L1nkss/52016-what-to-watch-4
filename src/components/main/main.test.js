@@ -41,7 +41,7 @@ const cb = () => {};
 
 
 describe(`Testing Main component`, () => {
-  it(`<Main /> Should render Component`, () => {
+  it(`Component should successfully rendered`, () => {
     const tree = renderer
       .create(<Main filmData={films} onCardClick={cb} />)
       .toJSON();

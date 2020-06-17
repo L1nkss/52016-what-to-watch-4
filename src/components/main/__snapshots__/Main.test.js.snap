@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing Main component <Main /> Should render Component 1`] = `
+exports[`Testing Main component Component should successfully rendered 1`] = `
 Array [
   <section
     className="movie-card"

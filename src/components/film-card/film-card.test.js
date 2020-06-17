@@ -8,8 +8,8 @@ const film = {
 
 const cb = () => {};
 
-describe(`Testing Film Card component`, () => {
-  it(`Should render Film Card component`, () => {
+describe(`Testing FilmCard component`, () => {
+  it(`Component should successfully rendered`, () => {
     const component = renderer.create(<FilmCard name={film.name} image={film.image} onHoverCardHandler = {cb}/>);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

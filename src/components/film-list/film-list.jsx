@@ -1,6 +1,6 @@
 import FilmCard from "../film-card/film-card";
 
-export default class FilmsList extends React.PureComponent {
+export default class FilmList extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,7 +35,7 @@ export default class FilmsList extends React.PureComponent {
   }
 }
 
-FilmsList.propTypes = {
+FilmList.propTypes = {
   films: propTypes.arrayOf(propTypes.shape({
     name: propTypes.string,
     image: propTypes.string

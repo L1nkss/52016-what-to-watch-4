@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing FilmList component Should render FilmList component 1`] = `
+exports[`Testing FilmList component Component should successfully rendered 1`] = `
 <div
   className="catalog__movies-list"
 >

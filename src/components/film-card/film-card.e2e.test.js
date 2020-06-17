@@ -6,7 +6,7 @@ const film = {
   image: `fantastic-beasts-the-crimes-of-grindelwald`
 };
 
-describe(`Testing e2e film card component`, () => {
+describe(`Testing e2e FilmCard component`, () => {
   it(`Should transfer information about article to callback`, () => {
     const onArticleHoverHandler = jest.fn();
     const Component = shallow(

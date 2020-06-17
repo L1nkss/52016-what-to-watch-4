@@ -1,4 +1,4 @@
-import FilmsList from "./films-list";
+import FilmList from "./film-list";
 
 const films = [
   {
@@ -36,8 +36,8 @@ const films = [
 ];
 
 describe(`Testing FilmList component`, () => {
-  it(`Should render FilmList component`, () => {
-    const component = renderer.create(<FilmsList films={films} />);
+  it(`Component should successfully rendered`, () => {
+    const component = renderer.create(<FilmList films={films} />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

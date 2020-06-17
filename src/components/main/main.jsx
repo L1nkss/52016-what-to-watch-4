@@ -1,4 +1,4 @@
-import FilmsList from "../films-list/films-list";
+import FilmList from "../film-list/film-list";
 
 const Main = (props) => {
   const {filmData: films} = props;
@@ -97,7 +97,7 @@ const Main = (props) => {
             </li>
           </ul>
           {/* Отрисовка списка фильмов */}
-          <FilmsList films={films} />
+          <FilmList films={films} />
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
