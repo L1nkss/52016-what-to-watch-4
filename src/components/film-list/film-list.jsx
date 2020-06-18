@@ -25,7 +25,7 @@ export default class FilmList extends React.PureComponent {
       name={name}
       image={image}
       onHoverCardHandler={this.onHoverCardHandler}
-      onClickCardHander={this.props.changePath}/>;
+      onClickCardHandler={this.props.changePath}/>;
   }
   render() {
     return (

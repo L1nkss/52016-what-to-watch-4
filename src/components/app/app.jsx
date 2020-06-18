@@ -15,7 +15,7 @@ export default class App extends React.PureComponent {
   changeRoutePathToDev(evt) {
     evt.preventDefault();
     // Меняет url, возможно вариант не самый лучший
-    window.location.href = `/dev-component`
+    window.location.href = `/dev-component`;
     this.setState(() => {
       return {
         currentPage: `/dev-component`
