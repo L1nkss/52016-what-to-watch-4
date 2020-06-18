@@ -1,4 +1,5 @@
 import Main from "../main/main";
+import FilmDetails from "../film-details/film-details";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 const App = (props) => {
@@ -10,6 +11,7 @@ const App = (props) => {
           <Main filmData={props.data}/>
         </Route>
         <Route exact path="/dev-component">
+          <FilmDetails />
         </Route>
       </Switch>
     </BrowserRouter>
