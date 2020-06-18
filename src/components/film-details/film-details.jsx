@@ -1,10 +1,14 @@
-const FilmDetails = () => {
+const FilmDetails = (props) => {
+  const {
+    Overview: {rating, score, director, starring},
+    Header: {poster, background, genre, year, name}
+  } = props.data;
   return (
     <>
       <section className="movie-card movie-card--full">
         <div className="movie-card__hero">
           <div className="movie-card__bg">
-            <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel"/>
+            <img src={`img/${background}.jpg`} alt={name}/>
           </div>
 
           <h1 className="visually-hidden">WTW</h1>
@@ -27,10 +31,10 @@ const FilmDetails = () => {
 
           <div className="movie-card__wrap">
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">The Grand Budapest Hotel</h2>
+              <h2 className="movie-card__title">{name}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">Drama</span>
-                <span className="movie-card__year">2014</span>
+                <span className="movie-card__genre">{genre}</span>
+                <span className="movie-card__year">{year}</span>
               </p>
 
               <div className="movie-card__buttons">
@@ -55,7 +59,7 @@ const FilmDetails = () => {
         <div className="movie-card__wrap movie-card__translate-top">
           <div className="movie-card__info">
             <div className="movie-card__poster movie-card__poster--big">
-              <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218" height="327"/>
+              <img src={`img/${poster}.jpg`} alt={`${name} poster`} width="218" height="327"/>
             </div>
 
             <div className="movie-card__desc">
@@ -74,10 +78,10 @@ const FilmDetails = () => {
               </nav>
 
               <div className="movie-rating">
-                <div className="movie-rating__score">8,9</div>
+                <div className="movie-rating__score">{score}</div>
                 <p className="movie-rating__meta">
                   <span className="movie-rating__level">Very good</span>
-                  <span className="movie-rating__count">240 ratings</span>
+                  <span className="movie-rating__count">{rating} ratings</span>
                 </p>
               </div>
 
@@ -90,10 +94,9 @@ const FilmDetails = () => {
                   mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her
                   murder.</p>
 
-                <p className="movie-card__director"><strong>Director: Wes Andreson</strong></p>
+                <p className="movie-card__director"><strong>Director: {director}</strong></p>
 
-                <p className="movie-card__starring"><strong>Starring: Bill Murray, Edward Norton, Jude Law, Willem Dafoe
-                  and other</strong></p>
+                <p className="movie-card__starring"><strong>Starring: {starring}</strong></p>
               </div>
             </div>
           </div>
@@ -163,5 +166,23 @@ const FilmDetails = () => {
   );
 };
 
+
+FilmDetails.propTypes = {
+  data: propTypes.shape({
+    Overview: propTypes.shape({
+      rating: propTypes.number,
+      score: propTypes.number,
+      director: propTypes.string,
+      starring: propTypes.string
+    }),
+    Header: propTypes.shape({
+      poster: propTypes.string,
+      background: propTypes.string,
+      genre: propTypes.string,
+      year: propTypes.number,
+      name: propTypes.string,
+    })
+  })
+};
 
 export default FilmDetails;

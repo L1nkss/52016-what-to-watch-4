@@ -1,3 +1,4 @@
+// Список фильмов
 const films = [
   {
     name: `Bohemian Rhapsody`,
@@ -33,4 +34,21 @@ const films = [
   },
 ];
 
-export default films;
+// Полная информация о фильме
+const detailFilmInformation = {
+  Overview: {
+    rating: 240,
+    score: 8.9,
+    director: `Wes Andreson`,
+    starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other`
+  },
+  Header: {
+    poster: `the-grand-budapest-hotel-poster`,
+    background: `bg-the-grand-budapest-hotel`,
+    genre: `Drama`,
+    year: 2014,
+    name: `The Grand Budapest Hotel`
+  }
+}
+
+export {films, detailFilmInformation};

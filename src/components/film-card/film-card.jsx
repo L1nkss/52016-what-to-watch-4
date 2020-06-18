@@ -1,12 +1,12 @@
 const FilmCard = (props) => {
-  const {name, image, onHoverCardHandler} = props;
+  const {name, image, onHoverCardHandler, onClickCardHander} = props;
   return (
     <article className="small-movie-card catalog__movies-card" onMouseEnter={() => onHoverCardHandler(name)}>
-      <div className="small-movie-card__image">
+      <div className="small-movie-card__image" onClick={onClickCardHander}>
         <img src={`img/${image}.jpg`} alt={name} width="280" height="175" />
       </div>
       <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href="movie-page.html">{name}</a>
+        <a className="small-movie-card__link" href="movie-page.html" onClick={onClickCardHander}>{name}</a>
       </h3>
     </article>
   );
@@ -15,7 +15,8 @@ const FilmCard = (props) => {
 FilmCard.propTypes = {
   name: propTypes.string,
   image: propTypes.string,
-  onHoverCardHandler: propTypes.func
+  onHoverCardHandler: propTypes.func,
+  onClickCardHander: propTypes.func
 };
 
 export default FilmCard;
