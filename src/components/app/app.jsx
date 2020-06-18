@@ -1,6 +1,6 @@
 import Main from "../main/main";
 import FilmDetails from "../film-details/film-details";
-import {BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 import {detailFilmInformation} from '../../mocks/mocks';
 
 export default class App extends React.PureComponent {

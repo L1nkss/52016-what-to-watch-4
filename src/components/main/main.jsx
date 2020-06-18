@@ -127,7 +127,8 @@ Main.propTypes = {
   filmData: propTypes.arrayOf(propTypes.shape({
     name: propTypes.string,
     image: propTypes.string
-  }))
+  })),
+  changePath: propTypes.func
 };
 
 export default Main;

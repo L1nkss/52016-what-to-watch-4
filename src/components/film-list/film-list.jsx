@@ -40,5 +40,6 @@ FilmList.propTypes = {
   films: propTypes.arrayOf(propTypes.shape({
     name: propTypes.string,
     image: propTypes.string
-  }))
+  })),
+  changePath: propTypes.func
 };
