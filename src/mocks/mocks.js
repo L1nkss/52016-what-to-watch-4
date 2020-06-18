@@ -49,6 +49,6 @@ const detailFilmInformation = {
     year: 2014,
     name: `The Grand Budapest Hotel`
   }
-}
+};
 
 export {films, detailFilmInformation};
