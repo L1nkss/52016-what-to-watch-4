@@ -1,7 +1,7 @@
 import FilmList from "../film-list/film-list";
 
 const Main = (props) => {
-  const {filmData: films} = props;
+  const {filmData: films, changePath} = props;
 
   return (
     <>
@@ -97,7 +97,7 @@ const Main = (props) => {
             </li>
           </ul>
           {/* Отрисовка списка фильмов */}
-          <FilmList films={films} />
+          <FilmList films={films} changePath={changePath} />
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
@@ -127,7 +127,8 @@ Main.propTypes = {
   filmData: propTypes.arrayOf(propTypes.shape({
     name: propTypes.string,
     image: propTypes.string
-  }))
+  })),
+  changePath: propTypes.func
 };
 
 export default Main;

@@ -24,7 +24,8 @@ export default class FilmList extends React.PureComponent {
       key={keyIndex}
       name={name}
       image={image}
-      onHoverCardHandler={this.onHoverCardHandler}/>;
+      onHoverCardHandler={this.onHoverCardHandler}
+      onClickCardHandler={this.props.changePath}/>;
   }
   render() {
     return (
@@ -39,5 +40,6 @@ FilmList.propTypes = {
   films: propTypes.arrayOf(propTypes.shape({
     name: propTypes.string,
     image: propTypes.string
-  }))
+  })),
+  changePath: propTypes.func
 };
