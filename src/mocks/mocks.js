@@ -2,35 +2,43 @@
 const films = [
   {
     name: `Bohemian Rhapsody`,
-    image: `bohemian-rhapsody`
+    image: `img/bohemian-rhapsody.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   },
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
-    image: `fantastic-beasts-the-crimes-of-grindelwald`
+    image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   },
   {
     name: `Macbeth`,
-    image: `macbeth`
+    image: `img/macbeth.jpg`,
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     name: `Aviator`,
-    image: `aviator`
+    image: `img/aviator.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   },
   {
     name: `We need to talk about Kevin`,
-    image: `we-need-to-talk-about-kevin`
+    image: `img/we-need-to-talk-about-kevin.jpg`,
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     name: `What We Do in the Shadows`,
-    image: `what-we-do-in-the-shadows`
+    image: `img/what-we-do-in-the-shadows.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   },
   {
     name: `Johnny English`,
-    image: `johnny-english`
+    image: `img/johnny-english.jpg`,
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     name: `Shutter Island`,
-    image: `shutter-island`
+    image: `img/shutter-island.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   },
 ];
 

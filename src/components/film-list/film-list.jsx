@@ -1,4 +1,5 @@
 import FilmCard from "../film-card/film-card";
+import withVideoPlayer from "../../hocs/with-video-player/with-video-player";
 
 export default class FilmList extends React.PureComponent {
   constructor(props) {
@@ -18,12 +19,12 @@ export default class FilmList extends React.PureComponent {
     });
   }
   renderCards(data, index) {
-    const {name, image} = data;
+    const {name} = data;
     const keyIndex = `${index}-${name}`;
-    return <FilmCard
+    const FilmCardWrapper = withVideoPlayer(FilmCard);
+    return <FilmCardWrapper
       key={keyIndex}
-      name={name}
-      image={image}
+      filmInfo={data}
       onHoverCardHandler={this.onHoverCardHandler}
       onClickCardHandler={this.props.changePath}/>;
   }
@@ -38,8 +39,8 @@ export default class FilmList extends React.PureComponent {
 
 FilmList.propTypes = {
   films: propTypes.arrayOf(propTypes.shape({
-    name: propTypes.string,
-    image: propTypes.string
-  })),
-  changePath: propTypes.func
+    name: propTypes.string.isRequired,
+    image: propTypes.string.isRequired
+  }).isRequired),
+  changePath: propTypes.func.isRequired
 };

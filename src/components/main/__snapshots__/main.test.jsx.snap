@@ -259,16 +259,16 @@ Array [
       >
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Bohemian Rhapsody"
-              height="175"
-              src="img/bohemian-rhapsody.jpg"
-              width="280"
+            <video
+              className="player__video"
+              muted={true}
+              poster="bohemian-rhapsody"
             />
           </div>
           <h3
@@ -284,16 +284,16 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Fantastic Beasts: The Crimes of Grindelwald"
-              height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-              width="280"
+            <video
+              className="player__video"
+              muted={true}
+              poster="fantastic-beasts-the-crimes-of-grindelwald"
             />
           </div>
           <h3
@@ -309,16 +309,16 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Macbeth"
-              height="175"
-              src="img/macbeth.jpg"
-              width="280"
+            <video
+              className="player__video"
+              muted={true}
+              poster="macbeth"
             />
           </div>
           <h3
@@ -334,16 +334,16 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Aviator"
-              height="175"
-              src="img/aviator.jpg"
-              width="280"
+            <video
+              className="player__video"
+              muted={true}
+              poster="aviator"
             />
           </div>
           <h3
@@ -359,16 +359,16 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="We need to talk about Kevin"
-              height="175"
-              src="img/we-need-to-talk-about-kevin.jpg"
-              width="280"
+            <video
+              className="player__video"
+              muted={true}
+              poster="we-need-to-talk-about-kevin"
             />
           </div>
           <h3
@@ -384,16 +384,16 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="What We Do in the Shadows"
-              height="175"
-              src="img/what-we-do-in-the-shadows.jpg"
-              width="280"
+            <video
+              className="player__video"
+              muted={true}
+              poster="what-we-do-in-the-shadows"
             />
           </div>
           <h3
@@ -409,16 +409,16 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Johnny English"
-              height="175"
-              src="img/johnny-english.jpg"
-              width="280"
+            <video
+              className="player__video"
+              muted={true}
+              poster="johnny-english"
             />
           </div>
           <h3
@@ -434,16 +434,16 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Shutter Island"
-              height="175"
-              src="img/shutter-island.jpg"
-              width="280"
+            <video
+              className="player__video"
+              muted={true}
+              poster="shutter-island"
             />
           </div>
           <h3
