@@ -125,10 +125,10 @@ const Main = (props) => {
 // Подключение PropTypes
 Main.propTypes = {
   filmData: propTypes.arrayOf(propTypes.shape({
-    name: propTypes.string,
-    image: propTypes.string
-  })),
-  changePath: propTypes.func
+    name: propTypes.string.isRequired,
+    image: propTypes.string.isRequired
+  })).isRequired,
+  changePath: propTypes.func.isRequired
 };
 
 export default Main;
