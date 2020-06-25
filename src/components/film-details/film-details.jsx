@@ -151,18 +151,18 @@ const FilmDetails = (props) => {
 FilmDetails.propTypes = {
   data: propTypes.shape({
     Overview: propTypes.shape({
-      rating: propTypes.number,
-      score: propTypes.number,
-      director: propTypes.string,
-      starring: propTypes.string
-    }),
+      rating: propTypes.number.isRequired,
+      score: propTypes.number.isRequired,
+      director: propTypes.string.isRequired,
+      starring: propTypes.string.isRequired
+    }).isRequired,
     Header: propTypes.shape({
-      poster: propTypes.string,
-      background: propTypes.string,
-      genre: propTypes.string,
-      year: propTypes.number,
-      name: propTypes.string,
-    })
+      poster: propTypes.string.isRequired,
+      background: propTypes.string.isRequired,
+      genre: propTypes.string.isRequired,
+      year: propTypes.number.isRequired,
+      name: propTypes.string.isRequired,
+    }).isRequired
   })
 };
 

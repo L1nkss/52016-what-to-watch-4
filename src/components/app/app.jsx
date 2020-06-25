@@ -40,7 +40,7 @@ export default class App extends React.PureComponent {
 
 App.propTypes = {
   data: propTypes.arrayOf(propTypes.shape({
-    name: propTypes.string,
-    image: propTypes.string
-  }))
+    name: propTypes.string.isRequired,
+    image: propTypes.string.isRequired
+  })).isRequired
 };
