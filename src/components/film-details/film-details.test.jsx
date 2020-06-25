@@ -17,9 +17,11 @@ const detailFilmInformation = {
   }
 };
 
+const tabs = [`Overview`, `Details`, `Reviews`];
+
 describe(`Testing FilmDetails component`, () => {
   it(`Component should successfully rendered`, () => {
-    const component = renderer.create(<FilmDetails data={detailFilmInformation} />);
+    const component = renderer.create(<FilmDetails data={detailFilmInformation} tabs={tabs} />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

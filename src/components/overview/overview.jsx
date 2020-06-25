@@ -35,6 +35,6 @@ Overview.propTypes = {
     starring: propTypes.string,
     texts: propTypes.arrayOf(propTypes.string)
   }),
-}
+};
 
 export default Overview;

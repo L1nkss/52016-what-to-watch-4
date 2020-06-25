@@ -1,19 +1,11 @@
 import Tabs from "../tabs/tabs";
 import Overview from "../overview/overview";
-
-const pageTabs = [
-  {
-    name: `Overview`, isActive: true
-  },
-  {
-    name: `Details`, isActive: false
-  },
-  {
-    name: `Reviews`, isActive: false
-  }
-]
+import Details from "../details/details";
+import Reviews from "../reviews/reviews";
 
 const FilmDetails = (props) => {
+  const {activeTab} = props;
+
   const {
     Header: {poster, background, genre, year, name}
   } = props.data;
@@ -77,8 +69,10 @@ const FilmDetails = (props) => {
             </div>
 
             <div className="movie-card__desc">
-              <Tabs tabs={pageTabs} />
-              <Overview data={props.data.Overview}/>
+              <Tabs tabs={props.tabs} handleTabClick={props.handleTabClick} activeTab={activeTab}/>
+              {activeTab === `Overview` && <Overview data={props.data.Overview}/>}
+              {activeTab === `Details` && <Details data={props.data.Details} />}
+              {activeTab === `Reviews` && <Reviews data={props.data.Reviews} />}
             </div>
           </div>
         </div>
@@ -149,6 +143,9 @@ const FilmDetails = (props) => {
 
 
 FilmDetails.propTypes = {
+  activeTab: propTypes.string.isRequired,
+  tabs: propTypes.array.isRequired,
+  handleTabClick: propTypes.func.isRequired,
   data: propTypes.shape({
     Overview: propTypes.shape({
       rating: propTypes.number.isRequired,
@@ -156,6 +153,14 @@ FilmDetails.propTypes = {
       director: propTypes.string.isRequired,
       starring: propTypes.string.isRequired
     }).isRequired,
+    Details: propTypes.shape({
+      director: propTypes.string.isRequired,
+      starring: propTypes.arrayOf(propTypes.string).isRequired,
+      runTime: propTypes.string.isRequired,
+      genre: propTypes.string.isRequired,
+      date: propTypes.number.isRequired
+    }).isRequired,
+    Reviews: propTypes.arrayOf(propTypes.object).isRequired,
     Header: propTypes.shape({
       poster: propTypes.string.isRequired,
       background: propTypes.string.isRequired,
