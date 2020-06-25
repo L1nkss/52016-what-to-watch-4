@@ -2,6 +2,7 @@ import Main from "../main/main";
 import FilmDetails from "../film-details/film-details";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import {detailFilmInformation} from '../../mocks/mocks';
+import withTabs from "../../hocs/with-tabs/with-tabs";
 
 export default class App extends React.PureComponent {
   constructor(props) {
@@ -23,6 +24,7 @@ export default class App extends React.PureComponent {
     });
   }
   render() {
+    const FilmDetailsWrapper = withTabs(FilmDetails);
     return (
       <BrowserRouter>
         <Switch>
@@ -30,7 +32,7 @@ export default class App extends React.PureComponent {
             <Main filmData={this.props.data} changePath={this.changeRoutePathToDev}/>
           </Route>
           <Route exact path="/dev-component">
-            <FilmDetails data={detailFilmInformation} />
+            <FilmDetailsWrapper data={detailFilmInformation} />
           </Route>
         </Switch>
       </BrowserRouter>
