@@ -40,7 +40,7 @@ const films = [
     name: `Johnny English`,
     image: `img/johnny-english.jpg`,
     preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
-    genre: `Thriller`
+    genre: `Crime`
   },
   {
     name: `Shutter Island`,

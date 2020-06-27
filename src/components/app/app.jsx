@@ -25,7 +25,6 @@ class App extends React.PureComponent {
     });
   }
   render() {
-    console.log(this.props)
     const FilmDetailsWrapper = withTabs(FilmDetails);
     return (
       <BrowserRouter>
