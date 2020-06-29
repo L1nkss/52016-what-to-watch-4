@@ -1,47 +1,36 @@
 import React from 'react';
-import App from './app';
+import {App} from './app';
+import configureStore from "redux-mock-store";
+import {Provider} from "react-redux";
+
+const mockStore = configureStore([]);
 
 // Моки
 const films = [
   {
     name: `Bohemian Rhapsody`,
-    image: `bohemian-rhapsody`
+    image: `img/bohemian-rhapsody.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    genre: `Comedy`
   },
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
-    image: `fantastic-beasts-the-crimes-of-grindelwald`
-  },
-  {
-    name: `Macbeth`,
-    image: `macbeth`
-  },
-  {
-    name: `Aviator`,
-    image: `aviator`
-  },
-  {
-    name: `We need to talk about Kevin`,
-    image: `we-need-to-talk-about-kevin`
-  },
-  {
-    name: `What We Do in the Shadows`,
-    image: `what-we-do-in-the-shadows`
-  },
-  {
-    name: `Johnny English`,
-    image: `johnny-english`
-  },
-  {
-    name: `Shutter Island`,
-    image: `shutter-island`
+    image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    genre: `Drama`
   },
 ];
 
 
 describe(`Testing App component`, () => {
   it(`Component should successfully rendered`, () => {
+    const store = mockStore({
+      genre: `All genres`,
+      allFilms: films,
+      filteredFilms: films
+    })
     const tree = renderer
-      .create(<App data={films} />)
+      .create(<Provider store={store}><App /></Provider>)
       .toJSON();
 
     expect(tree).toMatchSnapshot();

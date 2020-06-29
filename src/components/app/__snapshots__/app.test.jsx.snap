@@ -145,16 +145,12 @@ Array [
     <section
       className="catalog"
     >
-      <h2
-        className="catalog__title visually-hidden"
-      >
-        CatalogNav
-      </h2>
       <ul
         className="catalog__genres-list"
       >
         <li
           className="catalog__genres-item catalog__genres-item--active"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
@@ -165,6 +161,7 @@ Array [
         </li>
         <li
           className="catalog__genres-item"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
@@ -175,6 +172,7 @@ Array [
         </li>
         <li
           className="catalog__genres-item"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
@@ -185,6 +183,7 @@ Array [
         </li>
         <li
           className="catalog__genres-item"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
@@ -195,6 +194,7 @@ Array [
         </li>
         <li
           className="catalog__genres-item"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
@@ -205,6 +205,7 @@ Array [
         </li>
         <li
           className="catalog__genres-item"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
@@ -215,6 +216,7 @@ Array [
         </li>
         <li
           className="catalog__genres-item"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
@@ -225,6 +227,7 @@ Array [
         </li>
         <li
           className="catalog__genres-item"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
@@ -235,6 +238,7 @@ Array [
         </li>
         <li
           className="catalog__genres-item"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
@@ -245,6 +249,7 @@ Array [
         </li>
         <li
           className="catalog__genres-item"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
@@ -254,6 +259,11 @@ Array [
           </a>
         </li>
       </ul>
+      <h2
+        className="catalog__title visually-hidden"
+      >
+        Catalog
+      </h2>
       <div
         className="catalog__movies-list"
       >
@@ -269,7 +279,7 @@ Array [
             <video
               className="player__video"
               muted={true}
-              poster="bohemian-rhapsody"
+              poster="img/bohemian-rhapsody.jpg"
             />
           </div>
           <h3
@@ -296,7 +306,7 @@ Array [
             <video
               className="player__video"
               muted={true}
-              poster="fantastic-beasts-the-crimes-of-grindelwald"
+              poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
             />
           </div>
           <h3
@@ -308,168 +318,6 @@ Array [
               onClick={[Function]}
             >
               Fantastic Beasts: The Crimes of Grindelwald
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-            onClick={[Function]}
-          >
-            <video
-              className="player__video"
-              muted={true}
-              poster="macbeth"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              Macbeth
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-            onClick={[Function]}
-          >
-            <video
-              className="player__video"
-              muted={true}
-              poster="aviator"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              Aviator
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-            onClick={[Function]}
-          >
-            <video
-              className="player__video"
-              muted={true}
-              poster="we-need-to-talk-about-kevin"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              We need to talk about Kevin
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-            onClick={[Function]}
-          >
-            <video
-              className="player__video"
-              muted={true}
-              poster="what-we-do-in-the-shadows"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              What We Do in the Shadows
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-            onClick={[Function]}
-          >
-            <video
-              className="player__video"
-              muted={true}
-              poster="johnny-english"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              Johnny English
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-            onClick={[Function]}
-          >
-            <video
-              className="player__video"
-              muted={true}
-              poster="shutter-island"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              Shutter Island
             </a>
           </h3>
         </article>

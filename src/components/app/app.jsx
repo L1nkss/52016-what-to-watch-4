@@ -45,4 +45,7 @@ const mapStateToProps = (state) => ({
   genres: state.genres
 });
 
+// Для тестов
+export {App};
+
 export default connect(mapStateToProps, null)(App);
