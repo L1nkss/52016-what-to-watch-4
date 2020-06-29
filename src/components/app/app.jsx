@@ -30,7 +30,7 @@ class App extends React.PureComponent {
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            <Main filmData={this.props.data} changePath={this.changeRoutePathToDev}/>
+            <Main changePath={this.changeRoutePathToDev}/>
           </Route>
           <Route exact path="/dev-component">
             <FilmDetailsWrapper data={detailFilmInformation} />
@@ -46,10 +46,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, null)(App);
-
-App.propTypes = {
-  data: propTypes.arrayOf(propTypes.shape({
-    name: propTypes.string.isRequired,
-    image: propTypes.string.isRequired
-  })).isRequired
-};

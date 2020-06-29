@@ -3,8 +3,7 @@ import {CatalogGenres} from "@components/catalog-nav/catalog-nav";
 import {connect} from "react-redux";
 
 const Main = (props) => {
-  console.log(props)
-  const {filmData: films, changePath, filteredFilms} = props;
+  const {changePath} = props;
 
   return (
     <>
@@ -68,7 +67,7 @@ const Main = (props) => {
           <CatalogGenres />
           <h2 className="catalog__title visually-hidden">Catalog</h2>
           {/* Отрисовка списка фильмов */}
-          <FilmList films={filteredFilms} changePath={changePath} />
+          <FilmList changePath={changePath} />
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
@@ -99,10 +98,6 @@ const mapStateToProps = (state) => ({
 
 // Подключение PropTypes
 Main.propTypes = {
-  filmData: propTypes.arrayOf(propTypes.shape({
-    name: propTypes.string.isRequired,
-    image: propTypes.string.isRequired
-  })).isRequired,
   changePath: propTypes.func.isRequired
 };
 

@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import {ActionCreate} from "../../reducer";
+import propTypes from 'prop-types';
 
 const catalogList = [
   `All genres`,
@@ -18,7 +19,7 @@ const renderCatalogList = (active, cb) => {
   return catalogList.map((element) => {
     let clazzName = `catalog__genres-item`;
     if (active === element) {
-      clazzName += ` catalog__genres-item--active`
+      clazzName += ` catalog__genres-item--active`;
     }
     return (
       <li className={clazzName} key={element} onClick={(evt) => cb(evt, element)}>
@@ -44,10 +45,15 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   onGenreClick(evt, type) {
     evt.preventDefault();
-    dispatch(ActionCreate.filterFilms(type));
+    dispatch(ActionCreate.changeFilter(type));
   }
 });
 
 const CatalogGenres = connect(mapStateToProps, mapDispatchToProps)(CatalogNav);
+
+CatalogNav.propTypes = {
+  genre: propTypes.string.isRequired,
+  onGenreClick: propTypes.func.isRequired
+};
 
 export {CatalogGenres};

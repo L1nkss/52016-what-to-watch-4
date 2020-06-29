@@ -1,7 +1,8 @@
 import FilmCard from "../film-card/film-card";
 import withVideoPlayer from "../../hocs/with-video-player/with-video-player";
+import {connect} from 'react-redux';
 
-export default class FilmList extends React.PureComponent {
+class FilmList extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,6 +37,12 @@ export default class FilmList extends React.PureComponent {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  films: state.filteredFilms
+});
+
+export default connect(mapStateToProps, null)(FilmList);
 
 FilmList.propTypes = {
   films: propTypes.arrayOf(propTypes.shape({

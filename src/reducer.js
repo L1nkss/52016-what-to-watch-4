@@ -2,7 +2,7 @@ import {films} from "./mocks/mocks";
 
 const ActionType = {
   FILTER_FILMS: `FILTER_FILMS`
-}
+};
 
 const initialState = {
   genre: `All genres`,
@@ -11,7 +11,7 @@ const initialState = {
 };
 
 const ActionCreate = {
-  filterFilms: (type) => ({
+  changeFilter: (type) => ({
     type: ActionType.FILTER_FILMS,
     payload: type
   })
