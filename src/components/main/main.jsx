@@ -1,6 +1,5 @@
 import FilmList from "../film-list/film-list";
 import {CatalogGenres} from "@components/catalog-nav/catalog-nav";
-import {connect} from "react-redux";
 
 const Main = (props) => {
   const {changePath} = props;
@@ -92,13 +91,9 @@ const Main = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  filteredFilms: state.filteredFilms
-});
-
 // Подключение PropTypes
 Main.propTypes = {
   changePath: propTypes.func.isRequired
 };
 
-export default connect(mapStateToProps, null)(Main);
+export default Main;

@@ -28,7 +28,7 @@ describe(`Testing App component`, () => {
       genre: `All genres`,
       allFilms: films,
       filteredFilms: films
-    })
+    });
     const tree = renderer
       .create(<Provider store={store}><App /></Provider>)
       .toJSON();
