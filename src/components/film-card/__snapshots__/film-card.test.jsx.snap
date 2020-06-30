@@ -8,6 +8,7 @@ exports[`Testing FilmCard component Component should successfully rendered 1`] =
 >
   <div
     className="small-movie-card__image"
+    onClick={[Function]}
   />
   <h3
     className="small-movie-card__title"
@@ -15,6 +16,7 @@ exports[`Testing FilmCard component Component should successfully rendered 1`] =
     <a
       className="small-movie-card__link"
       href="movie-page.html"
+      onClick={[Function]}
     >
       Fantastic Beasts: The Crimes of Grindelwald
     </a>
