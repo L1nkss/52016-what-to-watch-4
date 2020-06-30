@@ -3,8 +3,9 @@ import FilmDetails from "../film-details/film-details";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import {detailFilmInformation} from '../../mocks/mocks';
 import withTabs from "../../hocs/with-tabs/with-tabs";
+import {connect} from "react-redux";
 
-export default class App extends React.PureComponent {
+class App extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,7 +30,7 @@ export default class App extends React.PureComponent {
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            <Main filmData={this.props.data} changePath={this.changeRoutePathToDev}/>
+            <Main changePath={this.changeRoutePathToDev}/>
           </Route>
           <Route exact path="/dev-component">
             <FilmDetailsWrapper data={detailFilmInformation} />
@@ -40,9 +41,11 @@ export default class App extends React.PureComponent {
   }
 }
 
-App.propTypes = {
-  data: propTypes.arrayOf(propTypes.shape({
-    name: propTypes.string.isRequired,
-    image: propTypes.string.isRequired
-  })).isRequired
-};
+const mapStateToProps = (state) => ({
+  genres: state.genres
+});
+
+// Для тестов
+export {App};
+
+export default connect(mapStateToProps, null)(App);

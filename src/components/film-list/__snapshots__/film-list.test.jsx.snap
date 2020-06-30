@@ -11,11 +11,12 @@ exports[`Testing FilmList component Component should successfully rendered 1`] =
   >
     <div
       className="small-movie-card__image"
+      onClick={[Function]}
     >
       <video
         className="player__video"
         muted={true}
-        poster="bohemian-rhapsody"
+        poster="img/bohemian-rhapsody.jpg"
       />
     </div>
     <h3
@@ -24,6 +25,7 @@ exports[`Testing FilmList component Component should successfully rendered 1`] =
       <a
         className="small-movie-card__link"
         href="movie-page.html"
+        onClick={[Function]}
       >
         Bohemian Rhapsody
       </a>
@@ -36,11 +38,12 @@ exports[`Testing FilmList component Component should successfully rendered 1`] =
   >
     <div
       className="small-movie-card__image"
+      onClick={[Function]}
     >
       <video
         className="player__video"
         muted={true}
-        poster="fantastic-beasts-the-crimes-of-grindelwald"
+        poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
       />
     </div>
     <h3
@@ -49,158 +52,9 @@ exports[`Testing FilmList component Component should successfully rendered 1`] =
       <a
         className="small-movie-card__link"
         href="movie-page.html"
+        onClick={[Function]}
       >
         Fantastic Beasts: The Crimes of Grindelwald
-      </a>
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-  >
-    <div
-      className="small-movie-card__image"
-    >
-      <video
-        className="player__video"
-        muted={true}
-        poster="macbeth"
-      />
-    </div>
-    <h3
-      className="small-movie-card__title"
-    >
-      <a
-        className="small-movie-card__link"
-        href="movie-page.html"
-      >
-        Macbeth
-      </a>
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-  >
-    <div
-      className="small-movie-card__image"
-    >
-      <video
-        className="player__video"
-        muted={true}
-        poster="aviator"
-      />
-    </div>
-    <h3
-      className="small-movie-card__title"
-    >
-      <a
-        className="small-movie-card__link"
-        href="movie-page.html"
-      >
-        Aviator
-      </a>
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-  >
-    <div
-      className="small-movie-card__image"
-    >
-      <video
-        className="player__video"
-        muted={true}
-        poster="we-need-to-talk-about-kevin"
-      />
-    </div>
-    <h3
-      className="small-movie-card__title"
-    >
-      <a
-        className="small-movie-card__link"
-        href="movie-page.html"
-      >
-        We need to talk about Kevin
-      </a>
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-  >
-    <div
-      className="small-movie-card__image"
-    >
-      <video
-        className="player__video"
-        muted={true}
-        poster="what-we-do-in-the-shadows"
-      />
-    </div>
-    <h3
-      className="small-movie-card__title"
-    >
-      <a
-        className="small-movie-card__link"
-        href="movie-page.html"
-      >
-        What We Do in the Shadows
-      </a>
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-  >
-    <div
-      className="small-movie-card__image"
-    >
-      <video
-        className="player__video"
-        muted={true}
-        poster="johnny-english"
-      />
-    </div>
-    <h3
-      className="small-movie-card__title"
-    >
-      <a
-        className="small-movie-card__link"
-        href="movie-page.html"
-      >
-        Johnny English
-      </a>
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-  >
-    <div
-      className="small-movie-card__image"
-    >
-      <video
-        className="player__video"
-        muted={true}
-        poster="shutter-island"
-      />
-    </div>
-    <h3
-      className="small-movie-card__title"
-    >
-      <a
-        className="small-movie-card__link"
-        href="movie-page.html"
-      >
-        Shutter Island
       </a>
     </h3>
   </article>

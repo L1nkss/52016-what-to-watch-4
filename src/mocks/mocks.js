@@ -3,42 +3,50 @@ const films = [
   {
     name: `Bohemian Rhapsody`,
     image: `img/bohemian-rhapsody.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    genre: `Comedy`
   },
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
     image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    genre: `Drama`
   },
   {
     name: `Macbeth`,
     image: `img/macbeth.jpg`,
-    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    genre: `Crime`
   },
   {
     name: `Aviator`,
     image: `img/aviator.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    genre: `Documentary`
   },
   {
     name: `We need to talk about Kevin`,
     image: `img/we-need-to-talk-about-kevin.jpg`,
-    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    genre: `Horror`
   },
   {
     name: `What We Do in the Shadows`,
     image: `img/what-we-do-in-the-shadows.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    genre: `Romance`
   },
   {
     name: `Johnny English`,
     image: `img/johnny-english.jpg`,
-    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    genre: `Crime`
   },
   {
     name: `Shutter Island`,
     image: `img/shutter-island.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    genre: `Kids & Family`
   },
 ];
 

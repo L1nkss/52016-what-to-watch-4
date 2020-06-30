@@ -23,10 +23,7 @@ const Tabs = (props) => {
 };
 
 Tabs.propTypes = {
-  tabs: propTypes.shape({
-    name: propTypes.string.isRequired,
-    isActive: propTypes.bool.isRequired
-  }),
+  tabs: propTypes.arrayOf(propTypes.string).isRequired,
   handleTabClick: propTypes.func.isRequired,
   activeTab: propTypes.string.isRequired
 };

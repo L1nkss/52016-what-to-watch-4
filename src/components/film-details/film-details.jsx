@@ -158,7 +158,7 @@ FilmDetails.propTypes = {
       starring: propTypes.arrayOf(propTypes.string).isRequired,
       runTime: propTypes.string.isRequired,
       genre: propTypes.string.isRequired,
-      date: propTypes.number.isRequired
+      released: propTypes.number.isRequired
     }).isRequired,
     Reviews: propTypes.arrayOf(propTypes.object).isRequired,
     Header: propTypes.shape({
