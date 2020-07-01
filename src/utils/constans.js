@@ -18,6 +18,12 @@ const CatalogList = [
   `Romance`,
   `Sci-Fi`,
   `Thrillers`
-]
+];
 
-export {ActionType, MAX_FILM_ON_PAGE, CatalogList};
+// Табы
+const TabList = {
+  activeTab: `Overview`,
+  items: [`Overview`, `Details`, `Reviews`]
+};
+
+export {ActionType, MAX_FILM_ON_PAGE, CatalogList, TabList};

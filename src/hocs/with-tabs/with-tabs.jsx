@@ -1,10 +1,10 @@
-const withTabs = (Component) => {
+const withTabs = (Component, Tabs) => {
   class WithTabs extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        activeTab: `Overview`,
-        tabs: [`Overview`, `Details`, `Reviews`]
+        activeTab: Tabs.activeTab,
+        tabs: Tabs.items
       };
       this.handleTabClick = this.handleTabClick.bind(this);
     }
@@ -21,9 +21,10 @@ const withTabs = (Component) => {
       return (
         <Component
           {...this.props}
-          activeTab={this.state.activeTab}
           handleTabClick={this.handleTabClick}
-          tabs={this.state.tabs}/>
+          activeTab={this.state.activeTab}
+          tabs={this.state.tabs}
+        />
       );
     }
   }

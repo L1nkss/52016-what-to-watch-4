@@ -1,22 +1,12 @@
-const renderTabs = (tabs, cb, active) => {
-  return tabs.map((name) => {
-    let classNames = `movie-nav__item`;
-    if (active === name) {
-      classNames += ` movie-nav__item--active`;
-    }
-    return (
-      <li className={classNames} key={name} onClick={() => cb(name)}>
-        <a href="#" className="movie-nav__link">{name}</a>
-      </li>
-    );
-  });
-};
+import TabsItem from "./components/tabs-item";
 
 const Tabs = (props) => {
   return (
     <nav className="movie-nav movie-card__nav">
       <ul className="movie-nav__list">
-        {renderTabs(props.tabs, props.handleTabClick, props.activeTab)}
+        {props.tabs.map((tab) => {
+          return <TabsItem key={tab} tab={tab} active={props.activeTab} cb={props.handleTabClick} />;
+        })}
       </ul>
     </nav>
   );
