@@ -21,7 +21,6 @@ const ActionCreate = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.FILTER_FILMS:
-      // const filteredFilms = state.films.filter((film) => film.genre.indexOf(action.payload) !== -1)
       const filteredFilms = state.allFilms.filter((film) => {
         if (action.payload === `All genres`) {
           return film;
