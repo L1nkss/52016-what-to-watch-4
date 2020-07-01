@@ -3,10 +3,9 @@ import FilmDetails from "../film-details/film-details";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import {detailFilmInformation} from '../../mocks/mocks';
 import withTabs from "../../hocs/with-tabs/with-tabs";
-import {connect} from "react-redux";
 import {TabList} from "../../utils/constans";
 
-class App extends React.PureComponent {
+export default class App extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,12 +40,3 @@ class App extends React.PureComponent {
     );
   }
 }
-
-const mapStateToProps = (state) => ({
-  genres: state.genres
-});
-
-// Для тестов
-export {App};
-
-export default connect(mapStateToProps, null)(App);
