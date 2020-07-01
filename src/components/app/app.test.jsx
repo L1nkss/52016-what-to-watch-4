@@ -1,4 +1,3 @@
-import React from 'react';
 import {App} from './app';
 import configureStore from "redux-mock-store";
 import {Provider} from "react-redux";

@@ -1,35 +1,18 @@
 import {films} from "./mocks/mocks";
-
-const ActionType = {
-  FILTER_FILMS: `FILTER_FILMS`
-};
+import {ActionType} from "./utils/constans";
 
 const initialState = {
   genre: `All genres`,
-  allFilms: films,
-  filteredFilms: films
+  films
 };
-
-const ActionCreate = {
-  changeFilter: (type) => ({
-    type: ActionType.FILTER_FILMS,
-    payload: type
-  })
-};
-
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionType.FILTER_FILMS:
-      const filteredFilms = state.allFilms.filter((film) => {
-        if (action.payload === `All genres`) {
-          return film;
-        }
-        return film.genre.indexOf(action.payload) !== -1;
-      });
-      return Object.assign({}, state, {genre: action.payload, filteredFilms});
+    case ActionType.CHANGE_FILTER_TYPE:
+      return Object.assign({}, state, {genre: action.payload});
+    default:
+      return state;
   }
-  return state;
 };
 
-export {reducer, ActionCreate};
+export {reducer};
