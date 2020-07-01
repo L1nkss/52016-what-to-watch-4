@@ -1,4 +1,3 @@
-// import FilmCard from './film-card';
 import FilmCard from "@components/film-card/film-card";
 
 // Моки
