@@ -1,4 +1,4 @@
-import FilmList from "./film-list";
+import FilmList from "./film-list.connect";
 import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
 
@@ -25,8 +25,7 @@ describe(`Testing FilmList component`, () => {
   it(`Component should successfully rendered`, () => {
     const store = mockStore({
       genre: `All genres`,
-      allFilms: films,
-      filteredFilms: films
+      films
     });
     const component = renderer.create(<Provider store={store}><FilmList changePath={cb} /></Provider>);
     const tree = component.toJSON();
