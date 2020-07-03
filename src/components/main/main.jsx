@@ -1,5 +1,5 @@
-import FilmList from "../film-list/film-list";
-import {CatalogGenres} from "@components/catalog-nav/catalog-nav";
+import FilmList from "../film-list/film-list.connect";
+import CatalogNav from "@components/catalog-nav/catalog-nav.connect";
 
 const Main = (props) => {
   const {changePath} = props;
@@ -63,14 +63,10 @@ const Main = (props) => {
 
       <div className="page-content">
         <section className="catalog">
-          <CatalogGenres />
+          <CatalogNav />
           <h2 className="catalog__title visually-hidden">Catalog</h2>
           {/* Отрисовка списка фильмов */}
           <FilmList changePath={changePath} />
-
-          <div className="catalog__more">
-            <button className="catalog__button" type="button">Show more</button>
-          </div>
         </section>
 
         <footer className="page-footer">

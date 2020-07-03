@@ -27,8 +27,7 @@ describe(`Testing Main component`, () => {
   it(`Component should successfully rendered`, () => {
     const store = mockStore({
       genre: `All genres`,
-      allFilms: films,
-      filteredFilms: films
+      films
     });
     const tree = renderer
       .create(<Provider store={store}><Main changePath={cb}/></Provider>)

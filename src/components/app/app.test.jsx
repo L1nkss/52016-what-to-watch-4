@@ -1,5 +1,4 @@
-import React from 'react';
-import {App} from './app';
+import App from './app';
 import configureStore from "redux-mock-store";
 import {Provider} from "react-redux";
 
@@ -26,8 +25,7 @@ describe(`Testing App component`, () => {
   it(`Component should successfully rendered`, () => {
     const store = mockStore({
       genre: `All genres`,
-      allFilms: films,
-      filteredFilms: films
+      films
     });
     const tree = renderer
       .create(<Provider store={store}><App /></Provider>)
