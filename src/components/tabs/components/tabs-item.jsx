@@ -11,7 +11,7 @@ const TabsItem = (props) => {
   );
 };
 
-TabsItem.propType = {
+TabsItem.propTypes = {
   active: propTypes.string.isRequired,
   tab: propTypes.string.isRequired,
   cb: propTypes.func.isRequired

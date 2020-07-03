@@ -143,6 +143,8 @@ const FilmDetails = (props) => {
 
 
 FilmDetails.propTypes = {
+  tabs: propTypes.array.isRequired,
+  activeTab: propTypes.string.isRequired,
   handleTabClick: propTypes.func.isRequired,
   data: propTypes.shape({
     Overview: propTypes.shape({
