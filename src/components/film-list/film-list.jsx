@@ -4,20 +4,29 @@ import withVideoPlayer from "../../hocs/with-video-player/with-video-player";
 class FilmList extends React.PureComponent {
   constructor(props) {
     super(props);
+    this.limit = 8;
     this.state = {
-      activeFilm: 0
+      visible: 8,
     };
     this.renderCards = this.renderCards.bind(this);
-    this.onHoverCardHandler = this.onHoverCardHandler.bind(this);
   }
-  // Функция обработчик для показа активной карточки фильма(при наведении)
-  onHoverCardHandler(name) {
+
+  handleButtonClick() {
+    if (this.state.visible + this.limit > this.props.films.length) {
+      this.setState(() => {
+        return {
+          visible: this.props.films.length
+        };
+      });
+      return;
+    }
     this.setState(() => {
       return {
-        activeFilm: name
+        visible: this.state.visible + this.limit
       };
     });
   }
+
   renderCards(data, index) {
     const {name} = data;
     const keyIndex = `${index}-${name}`;
@@ -25,14 +34,27 @@ class FilmList extends React.PureComponent {
     return <FilmCardWrapper
       key={keyIndex}
       filmInfo={data}
-      onHoverCardHandler={this.onHoverCardHandler}
       onClickCardHandler={this.props.changePath}/>;
   }
   render() {
+    const films = this.props.films.slice(0, this.state.visible);
     return (
-      <div className="catalog__movies-list">
-        {this.props.films.map(this.renderCards)}
-      </div>
+      <>
+        <div className="catalog__movies-list">
+          {films.map(this.renderCards)}
+        </div>
+        {this.props.films.length > this.state.visible && (
+          <div className="catalog__more">
+            <button
+              className="catalog__button"
+              type="button"
+              onClick={() => this.handleButtonClick()}
+            >
+              Show more
+            </button>
+          </div>
+        )}
+      </>
     );
   }
 }

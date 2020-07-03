@@ -67,10 +67,6 @@ const Main = (props) => {
           <h2 className="catalog__title visually-hidden">Catalog</h2>
           {/* Отрисовка списка фильмов */}
           <FilmList changePath={changePath} />
-
-          <div className="catalog__more">
-            <button className="catalog__button" type="button">Show more</button>
-          </div>
         </section>
 
         <footer className="page-footer">
