@@ -1,8 +1,11 @@
 import FilmList from "../film-list/film-list.connect";
+import withLimits from "../../hocs/with-limits/with-limits";
 import CatalogNav from "@components/catalog-nav/catalog-nav.connect";
+import {filmLimit} from "../../utils/constans";
 
 const Main = (props) => {
   const {changePath} = props;
+  const FilmListWrapper = withLimits(FilmList, filmLimit);
 
   return (
     <>
@@ -66,7 +69,7 @@ const Main = (props) => {
           <CatalogNav />
           <h2 className="catalog__title visually-hidden">Catalog</h2>
           {/* Отрисовка списка фильмов */}
-          <FilmList changePath={changePath} />
+          <FilmListWrapper changePath={changePath} />
         </section>
 
         <footer className="page-footer">
