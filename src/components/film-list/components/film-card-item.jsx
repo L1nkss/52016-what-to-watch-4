@@ -13,10 +13,7 @@ const FilmCardItem = (props) => {
 };
 
 FilmCardItem.propTypes = {
-  data: propTypes.arrayOf(propTypes.shape({
-    name: propTypes.string.isRequired,
-    image: propTypes.string.isRequired
-  }).isRequired),
+  data: propTypes.object,
   index: propTypes.number.isRequired,
   changePath: propTypes.func.isRequired
 };
