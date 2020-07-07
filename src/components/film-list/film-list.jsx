@@ -1,54 +1,22 @@
-import FilmCard from "../film-card/film-card";
-import withVideoPlayer from "../../hocs/with-video-player/with-video-player";
+import FilmCardItem from "./components/film-card-item";
 
 class FilmList extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.limit = 8;
-    this.state = {
-      visible: 8,
-    };
-    this.renderCards = this.renderCards.bind(this);
-  }
-
-  handleButtonClick() {
-    if (this.state.visible + this.limit > this.props.films.length) {
-      this.setState(() => {
-        return {
-          visible: this.props.films.length
-        };
-      });
-      return;
-    }
-    this.setState(() => {
-      return {
-        visible: this.state.visible + this.limit
-      };
-    });
-  }
-
-  renderCards(data, index) {
-    const {name} = data;
-    const keyIndex = `${index}-${name}`;
-    const FilmCardWrapper = withVideoPlayer(FilmCard);
-    return <FilmCardWrapper
-      key={keyIndex}
-      filmInfo={data}
-      onClickCardHandler={this.props.changePath}/>;
-  }
   render() {
-    const films = this.props.films.slice(0, this.state.visible);
+    const {films, visible, changeVisible} = this.props;
+    const filmList = films.slice(0, visible);
     return (
       <>
         <div className="catalog__movies-list">
-          {films.map(this.renderCards)}
+          {filmList.map((film, index) => {
+            return <FilmCardItem key={film.name + index} data={film} index={index} changePath={this.props.changePath} />;
+          })}
         </div>
-        {this.props.films.length > this.state.visible && (
+        {films.length > visible && (
           <div className="catalog__more">
             <button
               className="catalog__button"
               type="button"
-              onClick={() => this.handleButtonClick()}
+              onClick={() => changeVisible(films)}
             >
               Show more
             </button>
@@ -66,5 +34,7 @@ FilmList.propTypes = {
     name: propTypes.string.isRequired,
     image: propTypes.string.isRequired
   }).isRequired),
-  changePath: propTypes.func.isRequired
+  changePath: propTypes.func.isRequired,
+  changeVisible: propTypes.func.isRequired,
+  visible: propTypes.number.isRequired
 };

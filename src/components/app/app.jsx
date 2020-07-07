@@ -8,21 +8,12 @@ import {TabList} from "../../utils/constans";
 export default class App extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-      currentPage: `/`
-    };
-
     this.changeRoutePathToDev = this.changeRoutePathToDev.bind(this);
   }
   changeRoutePathToDev(evt) {
     evt.preventDefault();
     // Меняет url, возможно вариант не самый лучший
     window.location.href = `/dev-component`;
-    this.setState(() => {
-      return {
-        currentPage: `/dev-component`
-      };
-    });
   }
   render() {
     const FilmDetailsWrapper = withTabs(FilmDetails, TabList);

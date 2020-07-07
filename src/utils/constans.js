@@ -26,4 +26,7 @@ const TabList = {
   items: [`Overview`, `Details`, `Reviews`]
 };
 
-export {ActionType, MAX_FILM_ON_PAGE, CatalogList, TabList};
+// Максимальное количество фильмов, которое можно вывести за 1 раз
+const filmLimit = 8;
+
+export {ActionType, MAX_FILM_ON_PAGE, CatalogList, TabList, filmLimit};

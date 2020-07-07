@@ -1,19 +1,15 @@
 const TabsItem = (props) => {
-  const {active, tab, cb} = props;
-  let clazzNames = `movie-nav__item`;
-  if (active === tab) {
-    clazzNames += ` movie-nav__item--active`;
-  }
+  const {name, cb} = props;
   return (
-    <li className={clazzNames} key={tab} onClick={() => cb(tab)}>
-      <a href="#" className="movie-nav__link">{tab}</a>
+    <li className={props.className} key={name} onClick={() => cb(name)}>
+      <a href="#" className="movie-nav__link">{name}</a>
     </li>
   );
 };
 
 TabsItem.propTypes = {
-  active: propTypes.string.isRequired,
-  tab: propTypes.string.isRequired,
+  className: propTypes.string.isRequired,
+  name: propTypes.string.isRequired,
   cb: propTypes.func.isRequired
 };
 
