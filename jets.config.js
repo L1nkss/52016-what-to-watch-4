@@ -10,7 +10,8 @@ module.exports = {
   "moduleFileExtensions": [`ts`, `tsx`, `js`, `jsx`, `json`, `node`],
   "modulePaths": [`<rootDir>/src/components/`],
   "moduleNameMapper": {
-    "^@components(.*)$": `<rootDir>/src/components$1`
+    "^@components(.*)$": `<rootDir>/src/components$1`,
+    "^@hocs(.*)$": `<rootDir>/src/hocs$1`,
   },
   "coveragePathIgnorePatterns": [`/test.setup.js`]
 };

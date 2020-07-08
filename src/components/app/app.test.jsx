@@ -24,8 +24,15 @@ const films = [
 describe(`Testing App component`, () => {
   it(`Component should successfully rendered`, () => {
     const store = mockStore({
-      genre: `All genres`,
-      films
+      GENRE: {
+        genre: `All genres`
+      },
+      DATA: {
+        films
+      },
+      PROMO: {
+        film: {}
+      }
     });
     const tree = renderer
       .create(<Provider store={store}><App /></Provider>)

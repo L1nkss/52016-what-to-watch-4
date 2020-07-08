@@ -32,7 +32,7 @@ export {FilmList};
 FilmList.propTypes = {
   films: propTypes.arrayOf(propTypes.shape({
     name: propTypes.string.isRequired,
-    image: propTypes.string.isRequired
+    posterImage: propTypes.string.isRequired
   }).isRequired),
   changePath: propTypes.func.isRequired,
   changeVisible: propTypes.func.isRequired,

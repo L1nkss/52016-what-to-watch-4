@@ -2,8 +2,9 @@ import {Header} from "@components/header/header";
 
 export default class PromoFilm extends React.Component {
   render() {
+    // TODO Сделать лоадер
     if (this.props.loading) {
-      return <h1>Грузимся</h1>;
+      return <div></div>;
     }
     return (
       <section className="movie-card">

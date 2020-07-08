@@ -3,8 +3,8 @@ import FilmCard from "@components/film-card/film-card";
 // Моки
 const film = {
   name: `Fantastic Beasts: The Crimes of Grindelwald`,
-  image: `fantastic-beasts-the-crimes-of-grindelwald`,
-  preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
+  previewImage: `fantastic-beasts-the-crimes-of-grindelwald`,
+  previewVideoLink: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
 };
 
 const cb = () => {};

@@ -24,8 +24,12 @@ const cb = () => {};
 describe(`Testing FilmList component`, () => {
   it(`Component should successfully rendered`, () => {
     const store = mockStore({
-      genre: `All genres`,
-      films
+      GENRE: {
+        genre: `All genres`
+      },
+      DATA: {
+        films
+      }
     });
     const component = renderer.create(<Provider store={store}><FilmList changePath={cb} /></Provider>);
     const tree = component.toJSON();

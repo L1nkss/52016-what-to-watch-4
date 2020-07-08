@@ -16,7 +16,6 @@ exports[`Testing FilmList component Component should successfully rendered 1`] =
       <video
         className="player__video"
         muted={true}
-        poster="img/bohemian-rhapsody.jpg"
       />
     </div>
     <h3
@@ -43,7 +42,6 @@ exports[`Testing FilmList component Component should successfully rendered 1`] =
       <video
         className="player__video"
         muted={true}
-        poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
       />
     </div>
     <h3
