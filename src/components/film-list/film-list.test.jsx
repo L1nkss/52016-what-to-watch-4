@@ -6,16 +6,24 @@ const mockStore = configureStore([]);
 // Моки
 const films = [
   {
-    name: `Bohemian Rhapsody`,
-    image: `img/bohemian-rhapsody.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-    genre: `Comedy`
+    name: `Fantastic Beasts: The Crimes of Grindelwald`,
+    backgroundImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    previewVideoLink: `img/bohemian-rhapsody.jpg`,
+    src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    genre: `Drama`,
+    previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    released: 2015
   },
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
-    image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-    genre: `Drama`
+    backgroundImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    previewVideoLink: `img/bohemian-rhapsody.jpg`,
+    src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    genre: `Drama`,
+    previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    released: 2015
   },
 ];
 
@@ -28,10 +36,15 @@ describe(`Testing FilmList component`, () => {
         genre: `All genres`
       },
       DATA: {
-        films
+        films,
+        loading: false
+      },
+      PROMO: {
+        film: films[0],
+        loading: false
       }
     });
-    const component = renderer.create(<Provider store={store}><FilmList changePath={cb} /></Provider>);
+    const component = renderer.create(<Provider store={store}><FilmList visible={8} changeVisible={() => {}} changePath={cb} /></Provider>);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

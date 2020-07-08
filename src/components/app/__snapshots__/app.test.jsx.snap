@@ -8,7 +8,10 @@ Array [
     <div
       className="movie-card__bg"
     >
-      <img />
+      <img
+        alt="Fantastic Beasts: The Crimes of Grindelwald"
+        src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+      />
     </div>
     <h1
       className="visually-hidden"
@@ -66,8 +69,9 @@ Array [
           className="movie-card__poster"
         >
           <img
-            alt="undefined poster"
+            alt="Fantastic Beasts: The Crimes of Grindelwald poster"
             height="327"
+            src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
             width="218"
           />
         </div>
@@ -76,16 +80,22 @@ Array [
         >
           <h2
             className="movie-card__title"
-          />
+          >
+            Fantastic Beasts: The Crimes of Grindelwald
+          </h2>
           <p
             className="movie-card__meta"
           >
             <span
               className="movie-card__genre"
-            />
+            >
+              Drama
+            </span>
             <span
               className="movie-card__year"
-            />
+            >
+              2015
+            </span>
           </p>
           <div
             className="movie-card__buttons"
@@ -269,6 +279,7 @@ Array [
             <video
               className="player__video"
               muted={true}
+              poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
             />
           </div>
           <h3
@@ -279,7 +290,7 @@ Array [
               href="movie-page.html"
               onClick={[Function]}
             >
-              Bohemian Rhapsody
+              Fantastic Beasts: The Crimes of Grindelwald
             </a>
           </h3>
         </article>
@@ -295,6 +306,7 @@ Array [
             <video
               className="player__video"
               muted={true}
+              poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
             />
           </div>
           <h3
