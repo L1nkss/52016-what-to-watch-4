@@ -1,9 +1,9 @@
 import {connect} from "react-redux";
 import {FilmList} from "./film-list";
-import {selectFilmsByType} from "./selectors/selectors";
+import {selectFilmsByGenre} from "./selectors/selectors";
 
 const mapStateToProps = (state) => ({
-  films: selectFilmsByType(state)
+  films: selectFilmsByGenre(state)
 });
 
 export default connect(mapStateToProps, null)(FilmList);

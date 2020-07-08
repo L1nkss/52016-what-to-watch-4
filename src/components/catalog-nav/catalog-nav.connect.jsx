@@ -1,15 +1,15 @@
-import {ActionCreate} from "../../actions";
+import ActionCreate from "../../reducer/genre/actions/actions";
 import {CatalogNav} from "./catalog-nav";
 import {connect} from "react-redux";
 
 const mapStateToProps = (state) => ({
-  genre: state.genre
+  genre: state.GENRE.genre
 });
 
 const mapDispatchToProps = (dispatch) => ({
   onGenreClick(evt, type) {
     evt.preventDefault();
-    dispatch(ActionCreate.changeFilter(type));
+    dispatch(ActionCreate.changeActiveGenre(type));
   }
 });
 

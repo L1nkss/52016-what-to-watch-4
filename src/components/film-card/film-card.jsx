@@ -1,6 +1,6 @@
 const FilmCard = (props) => {
   const {onClickCardHandler, renderPlayer, handleMouseEnter, handleMouseLeave} = props;
-  const {name, image, preview} = props.filmInfo;
+  const {name, preview_image, preview_video_link} = props.filmInfo;
 
   return (
     <article
@@ -9,7 +9,7 @@ const FilmCard = (props) => {
       onMouseLeave={() => handleMouseLeave()}
     >
       <div className="small-movie-card__image" onClick={onClickCardHandler}>
-        {renderPlayer(preview, image)}
+        {renderPlayer(preview_video_link, preview_image)}
       </div>
       <h3 className="small-movie-card__title">
         <a className="small-movie-card__link" href="movie-page.html" onClick={onClickCardHandler}>{name}</a>
