@@ -1,12 +1,11 @@
 import Tabs from "../tabs/tabs";
-import Overview from "../overview/overview";
-import Details from "../details/details";
-import Reviews from "../reviews/reviews";
+import Details from "./components/details";
+import Overview from "./components/overview";
+import Reviews from "./components/reviews";
 import MoreLikeFilms from "../more-like-films/more-like-films";
 
 const FilmDetails = (props) => {
   const {activeTab} = props;
-  console.log(props)
 
   const {
     Header: {poster, background, genre, year, name}
