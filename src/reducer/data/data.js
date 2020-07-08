@@ -12,7 +12,6 @@ const initialState = {
 const Operation = {
   loadFilms: () => (dispatch, getState, api) => {
     return api.get(`/films`)
-      // .then((response) => dispatch(ActionCreator.loadFilms(response.data)));
       .then((response) => {
         dispatch(ActionCreator.loadFilms(Adapter.convertData(response.data)));
       });
