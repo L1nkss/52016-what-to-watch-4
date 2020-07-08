@@ -8,15 +8,23 @@ const mockStore = configureStore([]);
 const films = [
   {
     name: `Bohemian Rhapsody`,
-    image: `img/bohemian-rhapsody.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-    genre: `Comedy`
+    backgroundImage: `img/bohemian-rhapsody.jpg`,
+    previewVideoLink: `img/bohemian-rhapsody.jpg`,
+    src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    genre: `Comedy`,
+    previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    released: 2015
   },
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
-    image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-    genre: `Drama`
+    backgroundImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    previewVideoLink: `img/bohemian-rhapsody.jpg`,
+    src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    genre: `Drama`,
+    previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    released: 2015
   },
 ];
 
@@ -30,10 +38,12 @@ describe(`Testing Main component`, () => {
         genre: `All genres`
       },
       DATA: {
-        films
+        films,
+        loading: false
       },
       PROMO: {
-        film: {}
+        film: films[0],
+        loading: false
       }
     });
     const tree = renderer

@@ -8,7 +8,10 @@ Array [
     <div
       className="movie-card__bg"
     >
-      <img />
+      <img
+        alt="Bohemian Rhapsody"
+        src="img/bohemian-rhapsody.jpg"
+      />
     </div>
     <h1
       className="visually-hidden"
@@ -66,8 +69,9 @@ Array [
           className="movie-card__poster"
         >
           <img
-            alt="undefined poster"
+            alt="Bohemian Rhapsody poster"
             height="327"
+            src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
             width="218"
           />
         </div>
@@ -76,16 +80,22 @@ Array [
         >
           <h2
             className="movie-card__title"
-          />
+          >
+            Bohemian Rhapsody
+          </h2>
           <p
             className="movie-card__meta"
           >
             <span
               className="movie-card__genre"
-            />
+            >
+              Comedy
+            </span>
             <span
               className="movie-card__year"
-            />
+            >
+              2015
+            </span>
           </p>
           <div
             className="movie-card__buttons"
@@ -269,6 +279,7 @@ Array [
             <video
               className="player__video"
               muted={true}
+              poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
             />
           </div>
           <h3
@@ -295,6 +306,7 @@ Array [
             <video
               className="player__video"
               muted={true}
+              poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
             />
           </div>
           <h3
