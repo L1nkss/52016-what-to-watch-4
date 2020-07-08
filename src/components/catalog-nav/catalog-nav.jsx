@@ -1,6 +1,6 @@
 import {CatalogList} from "../../utils/constans";
 import CatalogItem from "./components/catalog-item";
-import withActiveItem from "../../hocs/with-active-item/with-active-item";
+import withActiveItem from "@hocs/with-active-item/with-active-item";
 
 const CatalogNav = (props) => {
   const {genre, onGenreClick} = props;

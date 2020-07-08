@@ -1,5 +1,5 @@
 import FilmCard from "@components/film-card/film-card";
-import withVideoPlayer from "../../../hocs/with-video-player/with-video-player";
+import withVideoPlayer from "@hocs/with-video-player/with-video-player";
 
 const FilmCardItem = (props) => {
   const {data, index, changePath} = props;

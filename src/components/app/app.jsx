@@ -2,7 +2,7 @@ import Main from "../main/main";
 import FilmDetails from "../film-details/film-details";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import {detailFilmInformation} from '../../mocks/mocks';
-import withTabs from "../../hocs/with-tabs/with-tabs";
+import withTabs from "@hocs/with-tabs/with-tabs";
 import {TabList} from "../../utils/constans";
 
 export default class App extends React.PureComponent {

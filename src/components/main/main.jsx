@@ -1,5 +1,5 @@
 import FilmList from "../film-list/film-list.connect";
-import withLimits from "../../hocs/with-limits/with-limits";
+import withLimits from "@hocs/with-limits/with-limits";
 import CatalogNav from "@components/catalog-nav/catalog-nav.connect";
 import {filmLimit} from "../../utils/constans";
 import PromoFilm from "@components/promo-film/promo-film.connect";
@@ -37,7 +37,6 @@ const Main = (props) => {
   );
 };
 
-// Подключение PropTypes
 Main.propTypes = {
   changePath: propTypes.func.isRequired
 };
