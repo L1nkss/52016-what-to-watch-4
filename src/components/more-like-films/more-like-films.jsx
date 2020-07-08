@@ -1,5 +1,3 @@
-import {MoreLikeFilm} from "./components/more-like-film";
-
 export default class MoreLikeFilms extends React.Component {
   render() {
     return (

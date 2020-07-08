@@ -1,4 +1,4 @@
-export const Header = (props) => {
+export const Header = () => {
   return (
     <header className="page-header movie-card__head">
       <div className="logo">
@@ -15,5 +15,5 @@ export const Header = (props) => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};

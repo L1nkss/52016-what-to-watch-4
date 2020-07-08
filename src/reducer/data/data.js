@@ -1,9 +1,9 @@
 import ActionType from "./utils/constants";
 import ActionCreator from "./actions/actions";
+import Adapter from "../utils/adapter";
 
 const initialState = {
   films: [],
-  // promoFilm: null,
   loading: false,
   error: false
 };
@@ -12,12 +12,10 @@ const initialState = {
 const Operation = {
   loadFilms: () => (dispatch, getState, api) => {
     return api.get(`/films`)
-      .then((response) => dispatch(ActionCreator.loadFilms(response.data)));
-  },
-  loadPromoFilm: () => (dispatch, getState, api) => {
-    dispatch(ActionCreator.loadPromoFilmLoading());
-    return api.get(`/films/promo`)
-      .then((response) => dispatch(ActionCreator.loadPromoFilmSuccess(response.data)));
+      // .then((response) => dispatch(ActionCreator.loadFilms(response.data)));
+      .then((response) => {
+        dispatch(ActionCreator.loadFilms(Adapter.convertData(response.data)));
+      });
   }
 };
 
@@ -27,10 +25,6 @@ const reducer = (state = initialState, action) => {
       return Object.assign({}, state, {loading: true});
     case ActionType.LOAD_FILMS_SUCCESS:
       return Object.assign({}, state, {films: action.payload, loading: false});
-    case ActionType.LOAD_PROMO_FILM_LOADING:
-      return Object.assign({}, state, {loading: true});
-    case ActionType.LOAD_PROMO_FILM_SUCCESS:
-      return Object.assign({}, state, {promoFilm: action.payload, loading: false});
     default:
       return state;
   }

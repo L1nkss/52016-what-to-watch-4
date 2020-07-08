@@ -8,7 +8,7 @@ export default class PromoFilm extends React.Component {
     return (
       <section className="movie-card">
         <div className="movie-card__bg">
-          <img src={this.props.film.background_image} alt={this.props.film.name}/>
+          <img src={this.props.film.backgroundImage} alt={this.props.film.name}/>
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
@@ -16,7 +16,7 @@ export default class PromoFilm extends React.Component {
         <div className="movie-card__wrap">
           <div className="movie-card__info">
             <div className="movie-card__poster">
-              <img src={this.props.film.poster_image} alt={`${this.props.film.name} poster`} width="218" height="327" />
+              <img src={this.props.film.posterImage} alt={`${this.props.film.name} poster`} width="218" height="327" />
             </div>
 
             <div className="movie-card__desc">
@@ -47,3 +47,14 @@ export default class PromoFilm extends React.Component {
     );
   }
 }
+
+PromoFilm.propTypes = {
+  loading: propTypes.bool.isRequired,
+  film: propTypes.shape({
+    backgroundImage: propTypes.string.isRequired,
+    name: propTypes.string.isRequired,
+    posterImage: propTypes.string.isRequired,
+    genre: propTypes.string.isRequired,
+    released: propTypes.number.isRequired
+  })
+};

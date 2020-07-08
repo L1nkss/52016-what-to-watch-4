@@ -1,10 +1,6 @@
 import axios from 'axios';
 
-const Error ={
-  UNATHORIZED: 401
-};
-
-export const createAPI = (onUnathrized) => {
+export const createAPI = () => {
   const api = axios.create({
     baseURL: `https://htmlacademy-react-3.appspot.com/wtw`,
     timeout: 5000,
@@ -13,8 +9,8 @@ export const createAPI = (onUnathrized) => {
   const onSuccess = (response) => {
     return response;
   };
-  const onFail = (err) => {
-    const {response} = err;
+  const onFail = () => {
+
   };
   api.interceptors.response.use(onSuccess, onFail);
   return api;

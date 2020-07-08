@@ -1,5 +1,6 @@
 import ActionType from "./utils/constants";
 import ActionCreator from "./actions/actions";
+import Adapter from "../utils/adapter";
 
 const initialState = {
   film: null,
@@ -9,9 +10,9 @@ const initialState = {
 
 const Operation = {
   loadFilm: () => (dispatch, getState, api) => {
-    dispatch(ActionCreator.loadPromoFilmRequest())
+    dispatch(ActionCreator.loadPromoFilmRequest());
     return api.get(`/films/promo`)
-      .then((response) => dispatch(ActionCreator.loadPromoFilmSuccess(response.data)));
+      .then((response) => dispatch(ActionCreator.loadPromoFilmSuccess(Adapter.convertItem(response.data))));
   }
 };
 

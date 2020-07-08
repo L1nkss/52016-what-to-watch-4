@@ -1,4 +1,4 @@
-export const MoreLikeFilm = (props) => {
+export const MoreLikeFilm = () => {
   return (
     <article className="small-movie-card catalog__movies-card">
       <div className="small-movie-card__image">
@@ -10,4 +10,5 @@ export const MoreLikeFilm = (props) => {
       </h3>
     </article>
   );
-}
+};
+

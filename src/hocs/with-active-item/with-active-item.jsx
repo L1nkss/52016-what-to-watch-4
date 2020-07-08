@@ -15,15 +15,11 @@ const withActiveItem = (Compoment, className) => {
       );
     }
   }
-  return WithActiveItem;
-};
-
-withActiveItem.propTypes = {
-  Component: propTypes.shape({
+  WithActiveItem.propTypes = {
     active: propTypes.string.isRequired,
-    name: propTypes.string.isRequired
-  }),
-  className: propTypes.string.isRequired
+    name: propTypes.string.isRequired,
+  };
+  return WithActiveItem;
 };
 
 export default withActiveItem;
