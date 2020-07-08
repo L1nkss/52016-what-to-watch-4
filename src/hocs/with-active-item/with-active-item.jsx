@@ -2,11 +2,11 @@ const withActiveItem = (Compoment, className) => {
   class WithActiveItem extends React.Component {
     getClass() {
       const {active, name} = this.props;
-      let clazzNames = className;
+      let itemClass = className;
       if (active === name) {
-        clazzNames += ` ${className}--active`;
+        itemClass += ` ${className}--active`;
       }
-      return clazzNames;
+      return itemClass;
     }
     render() {
       const itemClass = this.getClass();
