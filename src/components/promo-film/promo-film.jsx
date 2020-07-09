@@ -1,4 +1,4 @@
-import {Header} from "@components/header/header";
+import Header from "@components/header/header.connect";
 
 export default class PromoFilm extends React.Component {
   render() {

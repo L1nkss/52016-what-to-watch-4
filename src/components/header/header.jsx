@@ -1,4 +1,5 @@
-export const Header = () => {
+export const Header = (props) => {
+  const {userAuthStatus} = props;
   return (
     <header className="page-header movie-card__head">
       <div className="logo">
@@ -10,9 +11,14 @@ export const Header = () => {
       </div>
 
       <div className="user-block">
-        <div className="user-block__avatar">
-          <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
-        </div>
+        {userAuthStatus === `AUTH` &&
+          <div className="user-block__avatar">
+            <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
+          </div>
+        }
+        {userAuthStatus === `NO_AUTH` &&
+          <a href="sign-in.html" className="user-block__link">Sign in</a>
+        }
       </div>
     </header>
   );
