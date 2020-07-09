@@ -3,8 +3,8 @@ import FilmCard from './film-card';
 // Моки
 const film = {
   name: `Fantastic Beasts: The Crimes of Grindelwald`,
-  image: `fantastic-beasts-the-crimes-of-grindelwald`,
-  preview: `path`
+  previewImage: `fantastic-beasts-the-crimes-of-grindelwald`,
+  previewVideoLink: `path`
 };
 
 const renderPlayerMock = jest.fn();

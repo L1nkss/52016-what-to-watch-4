@@ -1,5 +1,5 @@
 import TabsItem from "./components/tabs-item";
-import withActiveItem from "../../hocs/with-active-item/with-active-item";
+import withActiveItem from "@hocs/with-active-item/with-active-item";
 const Tabs = (props) => {
   return (
     <nav className="movie-nav movie-card__nav">

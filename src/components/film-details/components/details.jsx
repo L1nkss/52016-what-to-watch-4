@@ -1,7 +1,3 @@
-const renderStarrings = (starrings) => {
-  return starrings.join(`, \n`);
-};
-
 const Details = (props) => {
   return (
     <div className="movie-card__text movie-card__row">
@@ -13,7 +9,7 @@ const Details = (props) => {
         <p className="movie-card__details-item">
           <strong className="movie-card__details-name">Starring</strong>
           <span className="movie-card__details-value">
-            {renderStarrings(props.data.starring)}
+            {props.data.starring.join(`, \n`)}
           </span>
         </p>
       </div>

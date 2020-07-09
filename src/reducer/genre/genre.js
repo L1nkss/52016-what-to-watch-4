@@ -1,14 +1,12 @@
-import {films} from "./mocks/mocks";
-import {ActionType} from "./utils/constans";
+import ActionType from "./utils/constants";
 
 const initialState = {
-  genre: `All genres`,
-  films
+  genre: `All genres`
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionType.CHANGE_FILTER_TYPE:
+    case ActionType.CHANGE_ACTIVE_GENRE:
       return Object.assign({}, state, {genre: action.payload});
     default:
       return state;

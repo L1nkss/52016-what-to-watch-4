@@ -1,4 +1,4 @@
-import {ActionType} from "./utils/constans";
+import {ActionType} from "../../utils/constans";
 
 const ActionCreate = {
   changeFilter: (type) => ({

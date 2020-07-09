@@ -16,7 +16,7 @@ exports[`Testing FilmList component Component should successfully rendered 1`] =
       <video
         className="player__video"
         muted={true}
-        poster="img/bohemian-rhapsody.jpg"
+        poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
       />
     </div>
     <h3
@@ -27,7 +27,7 @@ exports[`Testing FilmList component Component should successfully rendered 1`] =
         href="movie-page.html"
         onClick={[Function]}
       >
-        Bohemian Rhapsody
+        Fantastic Beasts: The Crimes of Grindelwald
       </a>
     </h3>
   </article>
