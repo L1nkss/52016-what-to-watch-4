@@ -1,4 +1,6 @@
 import {AuthorizationStatus, ActionType} from "./utils/constants";
+import {RoutePathes} from "../../utils/constans";
+import history from "../../utils/history";
 
 const initialState = {
   authorizationStatus: AuthorizationStatus.NO_AUTH
@@ -33,7 +35,17 @@ const Operation = {
       .catch((err) => {
         throw err;
       });
-  }
+  },
+  login: (data) => (dispatch, getState, api) => {
+    return api.post(`/login`, {
+      email: data.login,
+      password: data.password
+    })
+      .then(() => {
+        dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH));
+        history.push(RoutePathes.ROOT);
+      });
+  },
 };
 
 export {Operation, reducer, ActionCreator};

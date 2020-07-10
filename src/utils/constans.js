@@ -6,6 +6,12 @@ const ActionType = {
 // Максимальное количество фильмов на странице
 const MAX_FILM_ON_PAGE = 8;
 
+// Пути для роутинга
+const RoutePathes = {
+  ROOT: `/`,
+  SIGN_IN: `sign-in`
+};
+
 // Каталог типов фильмов
 const CatalogList = [
   `All genres`,
@@ -29,4 +35,4 @@ const TabList = {
 // Максимальное количество фильмов, которое можно вывести за 1 раз
 const filmLimit = 8;
 
-export {ActionType, MAX_FILM_ON_PAGE, CatalogList, TabList, filmLimit};
+export {ActionType, MAX_FILM_ON_PAGE, CatalogList, TabList, filmLimit, RoutePathes};

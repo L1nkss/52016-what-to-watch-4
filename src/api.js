@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const Error = {
-  UNAUTHORIZED: 401
+  UNAUTHORIZED: 401,
+  BAD_REQUEST: 400
 };
 
 export const createAPI = (onUnauthorized) => {
@@ -17,6 +18,11 @@ export const createAPI = (onUnauthorized) => {
     const {response} = error;
     if (response.status === Error.UNAUTHORIZED) {
       onUnauthorized();
+      // Необходимо, чтобы цепочка промисов прервались и в Operation не выполнился промис success
+      throw error;
+    }
+    if (response.status === Error.BAD_REQUEST) {
+      throw error;
     }
   };
   api.interceptors.response.use(onSuccess, onFail);

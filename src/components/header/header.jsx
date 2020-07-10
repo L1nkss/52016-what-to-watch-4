@@ -1,3 +1,6 @@
+import {Link} from "react-router-dom";
+import {RoutePathes} from "../../utils/constans";
+
 export const Header = (props) => {
   const {userAuthStatus} = props;
   return (
@@ -17,7 +20,7 @@ export const Header = (props) => {
           </div>
         }
         {userAuthStatus === `NO_AUTH` &&
-          <a href="sign-in.html" className="user-block__link">Sign in</a>
+        <Link to={RoutePathes.SIGN_IN} className="user-block__link" >Sign in</Link>
         }
       </div>
     </header>
