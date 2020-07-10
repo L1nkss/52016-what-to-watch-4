@@ -1,3 +1,5 @@
+import {Footer} from "@components/footer/footer";
+
 export class SignIn extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -23,8 +25,6 @@ export class SignIn extends React.PureComponent {
               <span className="logo__letter logo__letter--3">W</span>
             </a>
           </div>
-
-          <h1 className="page-title user-page__title">Sign in</h1>
         </header>
 
         <div className="sign-in user-page__content">
@@ -44,20 +44,7 @@ export class SignIn extends React.PureComponent {
             </div>
           </form>
         </div>
-
-        <footer className="page-footer">
-          <div className="logo">
-            <a href="main.html" className="logo__link logo__link--light">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
-
-          <div className="copyright">
-            <p>© 2019 What to watch Ltd.</p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     );
   }

@@ -1,9 +1,3 @@
-const renderTexts = (texts) => {
-  return texts.map((text) => {
-    return <p key={text}>{text}</p>;
-  });
-};
-
 const Overview = (props) => {
   const {score, rating, director, starring, texts} = props.data;
   return (
@@ -17,8 +11,9 @@ const Overview = (props) => {
       </div>
 
       <div className="movie-card__text">
-        {renderTexts(texts)}
-
+        {texts.map((text) => {
+          return <p key={text}>{text}</p>;
+        })}
         <p className="movie-card__director"><strong>Director: {director}</strong></p>
 
         <p className="movie-card__starring"><strong>Starring: {starring}</strong></p>

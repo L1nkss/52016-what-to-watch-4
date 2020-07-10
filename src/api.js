@@ -1,8 +1,11 @@
 import axios from 'axios';
+import history from "./utils/history";
+import {RoutePathes} from "./utils/constans";
 
 const Error = {
   UNAUTHORIZED: 401,
-  BAD_REQUEST: 400
+  BAD_REQUEST: 400,
+  NOT_FOUND: 404
 };
 
 export const createAPI = (onUnauthorized) => {
@@ -22,6 +25,11 @@ export const createAPI = (onUnauthorized) => {
       throw error;
     }
     if (response.status === Error.BAD_REQUEST) {
+      throw error;
+    }
+
+    if (response.status === Error.NOT_FOUND) {
+      history.push(RoutePathes.NOT_FOUND);
       throw error;
     }
   };
