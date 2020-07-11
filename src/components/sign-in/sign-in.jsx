@@ -1,4 +1,7 @@
 import {Footer} from "@components/footer/footer";
+import {RoutePathes} from "../../utils/constans";
+import {Redirect} from "react-router";
+import {AuthorizationStatus} from "../../reducer/user/utils/constants";
 
 export class SignIn extends React.PureComponent {
   constructor(props) {
@@ -15,6 +18,9 @@ export class SignIn extends React.PureComponent {
     });
   }
   render() {
+    if (this.props.authorizationStatus === AuthorizationStatus.AUTH) {
+      return <Redirect to={RoutePathes.ROOT} />;
+    }
     return (
       <div className="user-page">
         <header className="page-header user-page__head">

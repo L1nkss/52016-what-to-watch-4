@@ -2,6 +2,10 @@ import {connect} from "react-redux";
 import {SignIn} from "./sign-in";
 import {Operation} from "../../reducer/user/user";
 
+const mapStateToProps = (state) => ({
+  authorizationStatus: state.USER.authorizationStatus
+});
+
 const mapDispatchToProps = (dispatch) => ({
   onSubmit(data) {
     dispatch(Operation.login(data));
@@ -9,4 +13,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

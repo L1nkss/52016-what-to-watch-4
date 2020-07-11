@@ -5,27 +5,47 @@ import {filmLimit} from "../../utils/constans";
 import PromoFilm from "@components/promo-film/promo-film.connect";
 import {Footer} from "@components/footer/footer";
 
-const Main = (props) => {
-  const {changePath} = props;
-  const FilmListWrapper = withLimits(FilmList, filmLimit);
-
-  return (
-    <>
-      <PromoFilm />
-      <div className="page-content">
-        <section className="catalog">
-          <CatalogNav />
-          <h2 className="catalog__title visually-hidden">Catalog</h2>
-          <FilmListWrapper changePath={changePath} />
-        </section>
-        <Footer />
-      </div>
-    </>
-  );
+export default class Main extends React.PureComponent {
+  render() {
+    const {changePath} = this.props;
+    const FilmListWrapper = withLimits(FilmList, filmLimit);
+    return (
+      <>
+        <PromoFilm />
+        <div className="page-content">
+          <section className="catalog">
+            <CatalogNav />
+            <h2 className="catalog__title visually-hidden">Catalog</h2>
+            <FilmListWrapper changePath={changePath} />
+          </section>
+          <Footer />
+        </div>
+      </>
+    );
+  }
 };
+
+
+// const Main = (props) => {
+//   const {changePath} = props;
+//   const FilmListWrapper = withLimits(FilmList, filmLimit);
+//   return (
+//     <>
+//       <PromoFilm />
+//       <div className="page-content">
+//         <section className="catalog">
+//           <CatalogNav />
+//           <h2 className="catalog__title visually-hidden">Catalog</h2>
+//           <FilmListWrapper changePath={changePath} />
+//         </section>
+//         <Footer />
+//       </div>
+//     </>
+//   );
+// };
 
 Main.propTypes = {
   changePath: propTypes.func.isRequired
 };
 
-export default Main;
+// export default Main;

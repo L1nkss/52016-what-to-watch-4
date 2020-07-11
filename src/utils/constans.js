@@ -8,7 +8,8 @@ const RoutePathes = {
   ROOT: `/`,
   SIGN_IN: `/sign-in`,
   NOT_FOUND: `/404`,
-  TEST: `/testing`
+  TEST: `/testing`,
+  LOADING: `/loading`
 };
 
 // Каталог типов фильмов
