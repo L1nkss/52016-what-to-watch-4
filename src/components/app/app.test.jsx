@@ -14,7 +14,8 @@ const films = [
     genre: `Drama`,
     previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    released: 2015
+    released: 2015,
+    id: 1
   },
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -24,7 +25,8 @@ const films = [
     genre: `Drama`,
     previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    released: 2015
+    released: 2015,
+    id: 2
   },
 ];
 
@@ -42,6 +44,9 @@ describe(`Testing App component`, () => {
       PROMO: {
         film: films[0],
         loading: false
+      },
+      USER: {
+        authorizationStatus: `NO_AUTH`
       }
     });
     const tree = renderer

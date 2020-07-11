@@ -16,7 +16,6 @@ const Main = (props) => {
         <section className="catalog">
           <CatalogNav />
           <h2 className="catalog__title visually-hidden">Catalog</h2>
-          {/* Отрисовка списка фильмов */}
           <FilmListWrapper changePath={changePath} />
         </section>
         <Footer />
