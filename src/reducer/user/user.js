@@ -1,18 +1,10 @@
 import {AuthorizationStatus, ActionType} from "./utils/constants";
 import {RoutePathes} from "../../utils/constans";
 import history from "../../utils/history";
+import ActionCreator from "./actions/actions";
 
 const initialState = {
   authorizationStatus: AuthorizationStatus.NO_AUTH
-};
-
-const ActionCreator = {
-  requireAuthorization: (status) => {
-    return {
-      type: ActionType.REQUIRED_AUTHORIZATION,
-      payload: status
-    };
-  }
 };
 
 const reducer = (state = initialState, action) => {

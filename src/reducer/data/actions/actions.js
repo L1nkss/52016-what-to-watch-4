@@ -1,31 +1,15 @@
 import ActionType from "../utils/constants";
 
 const ActionCreator = {
-  loadFilmsLoading: () => {
+  loadFilmsRequest: () => {
     return {
-      type: ActionType.LOAD_FILMS_LOADING
+      type: ActionType.LOAD_FILMS_REQUEST
     };
   },
   loadFilms: (films) => {
     return {
       type: ActionType.LOAD_FILMS_SUCCESS,
       payload: films
-    };
-  },
-  loadFilmsError: () => {
-    return {
-      type: ActionType.LOAD_FILMS_ERROR
-    };
-  },
-  loadPromoFilmLoading: () => {
-    return {
-      type: ActionType.LOAD_PROMO_FILM_LOADING
-    };
-  },
-  loadPromoFilmSuccess: (film) => {
-    return {
-      type: ActionType.LOAD_PROMO_FILM_SUCCESS,
-      payload: film
     };
   },
 };
