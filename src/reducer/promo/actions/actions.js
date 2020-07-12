@@ -11,6 +11,11 @@ const ActionCreator = {
       type: ActionType.LOAD_PROMO_FILM_SUCCESS,
       payload: film
     };
+  },
+  loadPromoFilmError: () => {
+    return {
+      type: ActionType.LOAD_PROMO_FILM_ERROR
+    };
   }
 };
 

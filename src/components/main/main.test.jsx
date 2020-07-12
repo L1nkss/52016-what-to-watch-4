@@ -2,6 +2,8 @@ import React from 'react';
 import Main from './main';
 import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
+import {Router} from "react-router";
+import {createMemoryHistory} from "history";
 
 const mockStore = configureStore([]);
 // Моки
@@ -14,7 +16,8 @@ const films = [
     genre: `Comedy`,
     previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    released: 2015
+    released: 2015,
+    id: 1
   },
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -24,15 +27,15 @@ const films = [
     genre: `Drama`,
     previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    released: 2015
+    released: 2015,
+    id: 2
   },
 ];
 
-const cb = () => {};
-
-
 describe(`Testing Main component`, () => {
   it(`Component should successfully rendered`, () => {
+    const cb = () => {};
+    const history = createMemoryHistory(`/sign-in`);
     const store = mockStore({
       GENRE: {
         genre: `All genres`
@@ -44,10 +47,19 @@ describe(`Testing Main component`, () => {
       PROMO: {
         film: films[0],
         loading: false
+      },
+      USER: {
+        authorizationStatus: `NO_AUTH`
       }
     });
+    const isDataLoading = false;
+    const isError = false;
     const tree = renderer
-      .create(<Provider store={store}><Main changePath={cb}/></Provider>)
+      .create(<Provider store={store}>
+        <Router history={history}>
+          <Main isDataLoading={isDataLoading} isError={isError} changePath={cb} />
+        </Router>
+      </Provider>)
       .toJSON();
 
     expect(tree).toMatchSnapshot();

@@ -7,18 +7,16 @@ const film = {
   previewVideoLink: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
 };
 
-const cb = () => {};
-
 describe(`Testing FilmCard component`, () => {
   it(`Component should successfully rendered`, () => {
     const component = renderer.create(
         <FilmCard
           filmInfo={film}
-          renderPlayer={cb}
-          onHoverCardHandler = {cb}
-          handleMouseEnter = {cb}
-          handleMouseLeave = {cb}
-          onClickCardHandler = {cb}
+          renderPlayer={() => {}}
+          onHoverCardHandler = {() => {}}
+          handleMouseEnter = {() => {}}
+          handleMouseLeave = {() => {}}
+          onClickCardHandler = {() => {}}
         />
     );
     const tree = component.toJSON();

@@ -56,3 +56,8 @@ export class SignIn extends React.PureComponent {
   }
 }
 
+SignIn.propTypes = {
+  onSubmit: propTypes.func.isRequired,
+  authorizationStatus: propTypes.string.isRequired
+};
+

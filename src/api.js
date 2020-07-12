@@ -10,7 +10,7 @@ const Error = {
 
 export const createAPI = (onUnauthorized) => {
   const api = axios.create({
-    baseURL: `https://htmlacademy-react-3.appspot.com/wtw`,
+    baseURL: `https://htmlacademy-react-3.appspot.com/wt2w`,
     timeout: 5000,
     withCredentials: true
   });

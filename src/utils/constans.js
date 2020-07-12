@@ -7,9 +7,7 @@ const ActionType = {
 const RoutePathes = {
   ROOT: `/`,
   SIGN_IN: `/sign-in`,
-  NOT_FOUND: `/404`,
-  TEST: `/testing`,
-  LOADING: `/loading`
+  SERVER_ERROR: `/error`
 };
 
 // Каталог типов фильмов

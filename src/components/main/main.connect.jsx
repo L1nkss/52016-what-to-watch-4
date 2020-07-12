@@ -2,8 +2,8 @@ import Main from "./main";
 import {connect} from "react-redux";
 
 const mapStateToProps = (state) => ({
-  isPromoLoading: state.PROMO.loading,
-  isFilmsLoading: state.DATA.loading
+  isDataLoading: state.DATA.loading || state.PROMO.loading,
+  isError: state.DATA.error || state.PROMO.error
 });
 
-export default connect(mapStateToProps,null)(Main);
+export default connect(mapStateToProps, null)(Main);

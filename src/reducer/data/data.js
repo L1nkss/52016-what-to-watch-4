@@ -15,7 +15,8 @@ const Operation = {
     return api.get(`/films`)
       .then((response) => {
         dispatch(ActionCreator.loadFilms(Adapter.convertData(response.data)));
-      });
+      })
+      .catch(() => dispatch(ActionCreator.loadFilmError()));
   }
 };
 
@@ -25,6 +26,8 @@ const reducer = (state = initialState, action) => {
       return Object.assign({}, state, {loading: true});
     case ActionType.LOAD_FILMS_SUCCESS:
       return Object.assign({}, state, {films: action.payload, loading: false});
+    case ActionType.LOAD_FILMS_ERROR:
+      return Object.assign({}, state, {loading: false, error: true});
     default:
       return state;
   }

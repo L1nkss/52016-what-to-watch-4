@@ -1,4 +1,4 @@
-export const NotFound = () => {
+export const ServerError = () => {
   return (
     <div className="user-page">
       <header className="page-header user-page__head">
@@ -12,7 +12,7 @@ export const NotFound = () => {
       </header>
 
       <div className="sign-in user-page__content">
-        <div>Страница не найдена</div>
+        <div>Упс, что то пошло не так, попробуйте перезагрузить страницу</div>
       </div>
 
       <footer className="page-footer">

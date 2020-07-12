@@ -12,6 +12,11 @@ const ActionCreator = {
       payload: films
     };
   },
+  loadFilmError: () => {
+    return {
+      type: ActionType.LOAD_FILMS_ERROR
+    };
+  }
 };
 
 export default ActionCreator;

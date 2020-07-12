@@ -26,3 +26,7 @@ export const Header = (props) => {
     </header>
   );
 };
+
+Header.propTypes = {
+  userAuthStatus: propTypes.string.isRequired
+};
