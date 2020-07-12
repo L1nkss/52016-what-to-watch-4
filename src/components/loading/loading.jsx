@@ -1,6 +1,6 @@
 export const Loading = () => {
   return (
-    <div className="testing">
+    <div className="loading-page">
       <div className="lds-ring">
         <div></div>
         <div></div>

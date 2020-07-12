@@ -1393,7 +1393,7 @@ main {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
 
-.testing {
+.loading-page {
   height: 100vh;
   position: absolute;
   top: 0;
