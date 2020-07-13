@@ -13,7 +13,8 @@ const films = [
     genre: `Drama`,
     previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    released: 2015
+    released: 2015,
+    id: 1
   },
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -23,14 +24,14 @@ const films = [
     genre: `Drama`,
     previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    released: 2015
+    released: 2015,
+    id: 2
   },
 ];
 
-const cb = () => {};
-
 describe(`Testing FilmList component`, () => {
   it(`Component should successfully rendered`, () => {
+    const cb = () => {};
     const store = mockStore({
       GENRE: {
         genre: `All genres`

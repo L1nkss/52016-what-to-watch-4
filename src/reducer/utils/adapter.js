@@ -8,7 +8,7 @@ export default class Adapter {
       backgroundImage: item.background_image,
       description: item.description,
       director: item.director,
-      genre: item.director,
+      genre: item.genre,
       id: item.id,
       isFavorite: item.is_favorite,
       name: item.name,

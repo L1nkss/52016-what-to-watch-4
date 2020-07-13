@@ -3,11 +3,20 @@ import withLimits from "@hocs/with-limits/with-limits";
 import CatalogNav from "@components/catalog-nav/catalog-nav.connect";
 import {filmLimit} from "../../utils/constans";
 import PromoFilm from "@components/promo-film/promo-film.connect";
+import {Footer} from "@components/footer/footer";
+import {Loading} from "@components/loading/loading";
+import {ServerError} from "@components/server-error/server-error";
+
 
 const Main = (props) => {
   const {changePath} = props;
   const FilmListWrapper = withLimits(FilmList, filmLimit);
-
+  if (props.isDataLoading) {
+    return <Loading />;
+  }
+  if (props.isError) {
+    return <ServerError/>;
+  }
   return (
     <>
       <PromoFilm />
@@ -15,30 +24,18 @@ const Main = (props) => {
         <section className="catalog">
           <CatalogNav />
           <h2 className="catalog__title visually-hidden">Catalog</h2>
-          {/* Отрисовка списка фильмов */}
           <FilmListWrapper changePath={changePath} />
         </section>
-
-        <footer className="page-footer">
-          <div className="logo">
-            <a className="logo__link logo__link--light">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
-
-          <div className="copyright">
-            <p>© 2019 What to watch Ltd.</p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
 };
 
 Main.propTypes = {
-  changePath: propTypes.func.isRequired
+  changePath: propTypes.func.isRequired,
+  isDataLoading: propTypes.bool,
+  isError: propTypes.bool
 };
 
 export default Main;

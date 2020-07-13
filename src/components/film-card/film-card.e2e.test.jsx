@@ -7,20 +7,16 @@ const film = {
   previewVideoLink: `path`
 };
 
-const renderPlayerMock = jest.fn();
-const clickHandlerMock = jest.fn();
-const callback = jest.fn();
-
 describe(`Testing e2e FilmCard component`, () => {
   it(`Should be clicked on title`, () => {
     const onTitleClickHandler = jest.fn();
     const Component = shallow(
         <FilmCard
           filmInfo={film}
-          renderPlayer={renderPlayerMock}
+          renderPlayer={() => {}}
           onClickCardHandler={onTitleClickHandler}
-          handleMouseEnter={callback}
-          handleMouseLeave={callback}
+          handleMouseEnter={() => {}}
+          handleMouseLeave={() => {}}
         />
     );
     const Title = Component.find(`.small-movie-card__link`);
@@ -33,10 +29,10 @@ describe(`Testing e2e FilmCard component`, () => {
     const Component = shallow(
         <FilmCard
           filmInfo={film}
-          renderPlayer={renderPlayerMock}
+          renderPlayer={() => {}}
           onClickCardHandler={onImageClickHandler}
-          handleMouseEnter={callback}
-          handleMouseLeave={callback}
+          handleMouseEnter={() => {}}
+          handleMouseLeave={() => {}}
         />
     );
     const Title = Component.find(`.small-movie-card__image`);
@@ -49,10 +45,10 @@ describe(`Testing e2e FilmCard component`, () => {
     const Component = shallow(
         <FilmCard
           filmInfo={film}
-          renderPlayer={renderPlayerMock}
-          onClickCardHandler={clickHandlerMock}
+          renderPlayer={() => {}}
+          onClickCardHandler={() => {}}
           handleMouseEnter={onCardMouseEnter}
-          handleMouseLeave={callback}
+          handleMouseLeave={() => {}}
         />
     );
     const Article = Component.find(`.small-movie-card`);
@@ -64,10 +60,10 @@ describe(`Testing e2e FilmCard component`, () => {
     const Component = shallow(
         <FilmCard
           filmInfo={film}
-          renderPlayer={renderPlayerMock}
-          onClickCardHandler={clickHandlerMock}
+          renderPlayer={() => {}}
+          onClickCardHandler={() => {}}
           handleMouseLeave={onCardMouseLeave}
-          handleMouseEnter={callback}
+          handleMouseEnter={() => {}}
         />
     );
     Component.simulate(`mouseleave`);
