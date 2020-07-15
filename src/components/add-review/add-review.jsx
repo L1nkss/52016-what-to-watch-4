@@ -7,12 +7,7 @@ import {RoutePathes} from "../../utils/constans";
 export default class AddReview extends React.Component {
   constructor(props) {
     super(props);
-    this.formRef = React.createRef();
     this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  componentDidMount() {
-    // this.formRef.current.
   }
 
   onSubmit(evt) {
@@ -28,7 +23,6 @@ export default class AddReview extends React.Component {
     if (this.props.isLoading) {
       formClasses += ` add-review__form--disabled`;
     }
-    console.log(this.props);
     const {posterImage, name, backgroundImage, id} = this.props.details;
     return (
       <section className="movie-card movie-card--full">
