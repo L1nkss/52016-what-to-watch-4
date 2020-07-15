@@ -1,8 +1,8 @@
 import Tabs from "../tabs/tabs";
 import Details from "./components/details";
 import Overview from "./components/overview";
-import Reviews from "./components/reviews";
-import MoreLikeFilms from "../more-like-films/more-like-films";
+import Reviews from "./components/reviews.connect";
+import MoreLikeFilms from "../more-like-films/more-like-films.connect";
 import {Loading} from "@components/loading/loading";
 import Header from "@components/header/header.connect";
 import {Link} from "react-router-dom";
@@ -64,7 +64,6 @@ const FilmDetails = (props) => {
                   <span>My list</span>
                 </button>
                 {userAuthStatus === `AUTH` &&
-                // <a href="add-review.html" className="btn movie-card__button">Add review</a>
                   <Link to={`${RoutePathes.ADD_REVIEW}/${id}`} className="btn movie-card__button">Add review</Link>
                 }
               </div>
@@ -82,7 +81,7 @@ const FilmDetails = (props) => {
               <Tabs tabs={props.tabs} handleTabClick={props.handleTabClick} activeTab={activeTab}/>
               {activeTab === `Overview` && <Overview data={OverviewData}/>}
               {activeTab === `Details` && <Details data={DetailsData} />}
-              {/*{activeTab === `Reviews` && <Reviews data={props.data.Reviews} />}*/}
+              {activeTab === `Reviews` && <Reviews getReviews={ () => props.getReviews(id)}/>}
             </div>
           </div>
         </div>
