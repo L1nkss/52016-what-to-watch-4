@@ -4,10 +4,12 @@ import {reducer as data} from "./data/data";
 import {reducer as genre} from "./genre/genre";
 import {reducer as promo} from "./promo/promo";
 import {reducer as user} from "./user/user";
+import {reducer as review} from "./review/review";
 
 export default combineReducers({
   [NameSpace.DATA]: data,
   [NameSpace.GENRE]: genre,
   [NameSpace.PROMO]: promo,
-  [NameSpace.USER]: user
+  [NameSpace.USER]: user,
+  [NameSpace.REVIEW]: review
 });

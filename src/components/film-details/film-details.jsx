@@ -3,45 +3,51 @@ import Details from "./components/details";
 import Overview from "./components/overview";
 import Reviews from "./components/reviews";
 import MoreLikeFilms from "../more-like-films/more-like-films";
+import {Loading} from "@components/loading/loading";
+import Header from "@components/header/header.connect";
+import {Link} from "react-router-dom";
+import {RoutePathes} from "../../utils/constans";
 
 const FilmDetails = (props) => {
-  const {activeTab} = props;
-
-  const {
-    Header: {poster, background, genre, year, name}
-  } = props.data;
+  const {activeTab, details} = props;
+  if (details === undefined) {
+    return <Loading />;
+  }
+  const {director, starring, rating, description, scoresCount, id} = details;
+  const {userAuthStatus} = props;
+  const {runTime, genre, released} = details;
+  const OverviewData = {
+    director,
+    starring,
+    rating,
+    description,
+    scoresCount
+  };
+  const DetailsData = {
+    director,
+    starring,
+    runTime,
+    genre,
+    released
+  };
   return (
     <>
       <section className="movie-card movie-card--full">
         <div className="movie-card__hero">
           <div className="movie-card__bg">
-            <img src={`img/${background}.jpg`} alt={name}/>
+            <img src={details.backgroundImage} alt={details.name}/>
           </div>
 
           <h1 className="visually-hidden">WTW</h1>
 
-          <header className="page-header movie-card__head">
-            <div className="logo">
-              <a href="main.html" className="logo__link">
-                <span className="logo__letter logo__letter--1">W</span>
-                <span className="logo__letter logo__letter--2">T</span>
-                <span className="logo__letter logo__letter--3">W</span>
-              </a>
-            </div>
-
-            <div className="user-block">
-              <div className="user-block__avatar">
-                <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
-              </div>
-            </div>
-          </header>
+          <Header />
 
           <div className="movie-card__wrap">
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">{name}</h2>
+              <h2 className="movie-card__title">{details.name}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">{genre}</span>
-                <span className="movie-card__year">{year}</span>
+                <span className="movie-card__genre">{details.genre}</span>
+                <span className="movie-card__year">{details.released}</span>
               </p>
 
               <div className="movie-card__buttons">
@@ -57,7 +63,10 @@ const FilmDetails = (props) => {
                   </svg>
                   <span>My list</span>
                 </button>
-                <a href="add-review.html" className="btn movie-card__button">Add review</a>
+                {userAuthStatus === `AUTH` &&
+                // <a href="add-review.html" className="btn movie-card__button">Add review</a>
+                  <Link to={`${RoutePathes.ADD_REVIEW}/${id}`} className="btn movie-card__button">Add review</Link>
+                }
               </div>
             </div>
           </div>
@@ -66,14 +75,14 @@ const FilmDetails = (props) => {
         <div className="movie-card__wrap movie-card__translate-top">
           <div className="movie-card__info">
             <div className="movie-card__poster movie-card__poster--big">
-              <img src={`img/${poster}.jpg`} alt={`${name} poster`} width="218" height="327"/>
+              <img src={details.posterImage} alt={`${details.name} poster`} width="218" height="327"/>
             </div>
 
             <div className="movie-card__desc">
               <Tabs tabs={props.tabs} handleTabClick={props.handleTabClick} activeTab={activeTab}/>
-              {activeTab === `Overview` && <Overview data={props.data.Overview}/>}
-              {activeTab === `Details` && <Details data={props.data.Details} />}
-              {activeTab === `Reviews` && <Reviews data={props.data.Reviews} />}
+              {activeTab === `Overview` && <Overview data={OverviewData}/>}
+              {activeTab === `Details` && <Details data={DetailsData} />}
+              {/*{activeTab === `Reviews` && <Reviews data={props.data.Reviews} />}*/}
             </div>
           </div>
         </div>
@@ -82,7 +91,7 @@ const FilmDetails = (props) => {
       <div className="page-content">
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title">More like this</h2>
-          <MoreLikeFilms genre={genre} />
+          <MoreLikeFilms genre={details.genre} />
         </section>
 
         <footer className="page-footer">

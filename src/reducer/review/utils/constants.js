@@ -1,0 +1,7 @@
+const ActionType = {
+  'POST_REVIEW_REQUEST': `POST_REVIEW_REQUEST`,
+  'POST_REVIEW_SUCCESS': `POST_REVIEW_SUCCESS`,
+  'POST_REVIEW_ERROR': `POST_REVIEW_ERROR`,
+};
+
+export default ActionType;

@@ -360,6 +360,10 @@ main {
   width: 520px;
   margin: 0 auto; }
 
+.add-review__form--disabled {
+  pointer-events: none;
+}
+
 .add-review__text {
   background: #E8C3C4;
   border-radius: 8px; }
@@ -1393,6 +1397,7 @@ main {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
 
+/* Страница загрузки */
 .loading-page {
   height: 100vh;
   position: absolute;
@@ -1442,3 +1447,23 @@ main {
   }
 }
 
+
+/* Нотифайка */
+.notification {
+  color: white;
+  padding: 16px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  opacity: 1;
+  transition: top 0.5s ease;
+}
+
+.notification--error {
+  background-color: red;
+}
+
+.notification--success {
+  background-color: green;
+}

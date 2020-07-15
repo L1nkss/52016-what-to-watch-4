@@ -9,7 +9,6 @@ import {ServerError} from "@components/server-error/server-error";
 
 
 const Main = (props) => {
-  const {changePath} = props;
   const FilmListWrapper = withLimits(FilmList, filmLimit);
   if (props.isDataLoading) {
     return <Loading />;
@@ -24,7 +23,7 @@ const Main = (props) => {
         <section className="catalog">
           <CatalogNav />
           <h2 className="catalog__title visually-hidden">Catalog</h2>
-          <FilmListWrapper changePath={changePath} />
+          <FilmListWrapper />
         </section>
         <Footer />
       </div>
@@ -33,7 +32,6 @@ const Main = (props) => {
 };
 
 Main.propTypes = {
-  changePath: propTypes.func.isRequired,
   isDataLoading: propTypes.bool,
   isError: propTypes.bool
 };

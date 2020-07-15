@@ -8,7 +8,7 @@ class FilmList extends React.PureComponent {
       <>
         <div className="catalog__movies-list">
           {filmList.map((film, index) => {
-            return <FilmCardItem key={film.id} data={film} index={index} changePath={this.props.changePath} />;
+            return <FilmCardItem key={film.id} data={film} index={index} />;
           })}
         </div>
         {films.length > visible && (
@@ -34,7 +34,6 @@ FilmList.propTypes = {
     name: propTypes.string.isRequired,
     posterImage: propTypes.string.isRequired
   }).isRequired),
-  changePath: propTypes.func.isRequired,
   changeVisible: propTypes.func.isRequired,
   visible: propTypes.number.isRequired
 };

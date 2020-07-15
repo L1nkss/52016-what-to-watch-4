@@ -1,6 +1,7 @@
 import axios from 'axios';
 import history from "./utils/history";
 import {RoutePathes} from "./utils/constans";
+import {baseUrl} from "./utils/constans";
 
 const Error = {
   UNAUTHORIZED: 401,
@@ -10,7 +11,7 @@ const Error = {
 
 export const createAPI = (onUnauthorized) => {
   const api = axios.create({
-    baseURL: `https://htmlacademy-react-3.appspot.com/wt2w`,
+    baseURL: `${baseUrl}/wtw`,
     timeout: 5000,
     withCredentials: true
   });

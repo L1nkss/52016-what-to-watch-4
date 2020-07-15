@@ -15,6 +15,7 @@ export default class Adapter {
       posterImage: item.poster_image,
       previewImage: item.preview_image,
       previewVideoLink: item.preview_video_link,
+      scoresCount: item.scores_count,
       rating: item.rating,
       released: item.released,
       runTime: item.run_time,
