@@ -1,21 +1,23 @@
 import Tabs from "../tabs/tabs";
-import Details from "./components/details";
-import Overview from "./components/overview";
-import Reviews from "./components/reviews.connect";
+import Details from "./components/details/details";
+import Overview from "./components/overview/overview";
+import Reviews from "./components/reviews/reviews.connect";
 import MoreLikeFilms from "../more-like-films/more-like-films.connect";
 import {Loading} from "@components/loading/loading";
 import Header from "@components/header/header.connect";
 import {Link} from "react-router-dom";
 import {RoutePathes} from "../../utils/constans";
+import {Footer} from "@components/footer/footer";
 
 const FilmDetails = (props) => {
   const {activeTab, details} = props;
   if (details === undefined) {
     return <Loading />;
   }
-  const {director, starring, rating, description, scoresCount, id} = details;
+  const {
+    director, starring, rating, description, scoresCount, id, runTime, genre, released
+  } = details;
   const {userAuthStatus} = props;
-  const {runTime, genre, released} = details;
   const OverviewData = {
     director,
     starring,
@@ -92,20 +94,7 @@ const FilmDetails = (props) => {
           <h2 className="catalog__title">More like this</h2>
           <MoreLikeFilms genre={details.genre} />
         </section>
-
-        <footer className="page-footer">
-          <div className="logo">
-            <a href="main.html" className="logo__link logo__link--light">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
-
-          <div className="copyright">
-            <p>© 2019 What to watch Ltd.</p>
-          </div>
-        </footer>
+        <Footer/>
       </div>
     </>
   );
@@ -116,28 +105,21 @@ FilmDetails.propTypes = {
   tabs: propTypes.array.isRequired,
   activeTab: propTypes.string.isRequired,
   handleTabClick: propTypes.func.isRequired,
-  data: propTypes.shape({
-    Overview: propTypes.shape({
-      rating: propTypes.number.isRequired,
-      score: propTypes.number.isRequired,
-      director: propTypes.string.isRequired,
-      starring: propTypes.string.isRequired
-    }).isRequired,
-    Details: propTypes.shape({
-      director: propTypes.string.isRequired,
-      starring: propTypes.arrayOf(propTypes.string).isRequired,
-      runTime: propTypes.string.isRequired,
-      genre: propTypes.string.isRequired,
-      released: propTypes.number.isRequired
-    }).isRequired,
-    Reviews: propTypes.arrayOf(propTypes.object).isRequired,
-    Header: propTypes.shape({
-      poster: propTypes.string.isRequired,
-      background: propTypes.string.isRequired,
-      genre: propTypes.string.isRequired,
-      year: propTypes.number.isRequired,
-      name: propTypes.string.isRequired,
-    }).isRequired
+  userAuthStatus: propTypes.string.isRequired,
+  getReviews: propTypes.func,
+  details: propTypes.shape({
+    runTime: propTypes.number.isRequired,
+    genre: propTypes.string.isRequired,
+    released: propTypes.number.isRequired,
+    director: propTypes.string.isRequired,
+    rating: propTypes.number.isRequired,
+    description: propTypes.string.isRequired,
+    scoresCount: propTypes.number.isRequired,
+    id: propTypes.number.isRequired,
+    starring: propTypes.array.isRequired,
+    backgroundImage: propTypes.string.isRequired,
+    name: propTypes.string.isRequired,
+    posterImage: propTypes.string.isRequired
   })
 };
 

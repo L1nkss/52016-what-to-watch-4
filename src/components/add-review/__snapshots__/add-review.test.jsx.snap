@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing Loading component Component should successfully rendered 1`] = `
+exports[`Testing AddReview component Component should successfully rendered 1`] = `
 <div
   className="loading-page"
 >

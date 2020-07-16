@@ -17,7 +17,7 @@ export default class Reviews extends React.Component {
 
           <div className="review__rating">{review.rating}</div>
         </div>
-      )
+      );
     });
   }
   render() {
@@ -39,5 +39,7 @@ export default class Reviews extends React.Component {
 }
 
 Reviews.propTypes = {
-  data: propTypes.arrayOf(propTypes.object)
+  loading: propTypes.bool.isRequired,
+  reviews: propTypes.array.isRequired,
+  getReviews: propTypes.func.isRequired
 };

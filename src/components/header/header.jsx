@@ -29,5 +29,9 @@ export const Header = (props) => {
 };
 
 Header.propTypes = {
-  userAuthStatus: propTypes.string.isRequired
+  userAuthStatus: propTypes.string.isRequired,
+  children: propTypes.element,
+  userInformation: propTypes.shape({
+    avatarUrl: propTypes.string.isRequired
+  })
 };

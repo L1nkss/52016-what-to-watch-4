@@ -2,28 +2,51 @@ import Header from "@components/header/header.connect";
 import {Loading} from "@components/loading/loading";
 import {Link} from "react-router-dom";
 import {RoutePathes} from "../../utils/constans";
+import {starsCount} from "@components/add-review/constants/constants";
 
 
 export default class AddReview extends React.Component {
   constructor(props) {
     super(props);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  onSubmit(evt) {
+  handleSubmit(evt) {
     evt.preventDefault();
     const data = new FormData(evt.target);
     this.props.onSubmit(this.props.details.id, data);
   }
+
+  renderRatingStars() {
+    const ratingStarts = [];
+    for (let i = 1; i <= starsCount; i++) {
+      const input = (
+        <>
+          <input
+            className="rating__input"
+            id={`star-${i}`}
+            type="radio"
+            name="rating"
+            disabled={this.props.isLoading}
+          />
+          <label className="rating__label" htmlFor={`star-${i}`}>{`Rating ${i}`}</label>
+        </>
+      );
+      ratingStarts.push(input);
+    }
+    return ratingStarts;
+  }
+
   render() {
-    let formClasses = `add-review__form`;
     if (this.props.details === undefined) {
       return <Loading />;
     }
+    let formClasses = `add-review__form`;
     if (this.props.isLoading) {
       formClasses += ` add-review__form--disabled`;
     }
     const {posterImage, name, backgroundImage, id} = this.props.details;
+    const {isLoading} = this.props;
     return (
       <section className="movie-card movie-card--full">
         <div className="movie-card__header">
@@ -51,59 +74,10 @@ export default class AddReview extends React.Component {
         </div>
 
         <div className="add-review">
-          <form action="#" className={formClasses} onSubmit={this.onSubmit}>
+          <form action="#" className={formClasses} onSubmit={this.handleSubmit}>
             <div className="rating">
               <div className="rating__stars">
-                <input
-                  className="rating__input"
-                  id="star-1"
-                  type="radio"
-                  name="rating"
-                  value="1"
-                  disabled={this.props.isLoading}
-                />
-                <label className="rating__label" htmlFor="star-1">Rating 1</label>
-
-                <input
-                  className="rating__input"
-                  id="star-2"
-                  type="radio"
-                  name="rating"
-                  value="2"
-                  disabled={this.props.isLoading}
-                />
-                <label className="rating__label" htmlFor="star-2">Rating 2</label>
-
-                <input
-                  className="rating__input"
-                  id="star-3"
-                  type="radio"
-                  name="rating"
-                  value="3"
-                  checked
-                  disabled={this.props.isLoading}
-                />
-                <label className="rating__label" htmlFor="star-3">Rating 3</label>
-
-                <input
-                  className="rating__input"
-                  id="star-4"
-                  type="radio"
-                  name="rating"
-                  value="4"
-                  disabled={this.props.isLoading}
-                />
-                <label className="rating__label" htmlFor="star-4">Rating 4</label>
-
-                <input
-                  className="rating__input"
-                  id="star-5"
-                  type="radio"
-                  name="rating"
-                  value="5"
-                  disabled={this.props.isLoading}
-                />
-                <label className="rating__label" htmlFor="star-5">Rating 5</label>
+                {this.renderRatingStars()}
               </div>
             </div>
 
@@ -115,13 +89,13 @@ export default class AddReview extends React.Component {
                 name="review-text"
                 id="review-text"
                 placeholder="Review text"
-                disabled={this.props.isLoading}
+                disabled={isLoading}
               />
               <div className="add-review__submit">
                 <button
                   className="add-review__btn"
                   type="submit"
-                  disabled={this.props.isLoading}>{this.props.isLoading ? `Отправляем данные` : `Post`}
+                  disabled={isLoading}>{isLoading ? `Отправляем данные` : `Post`}
                 </button>
               </div>
             </div>
@@ -132,3 +106,15 @@ export default class AddReview extends React.Component {
     );
   }
 }
+
+AddReview.propTypes = {
+  isError: propTypes.bool.isRequired,
+  isLoading: propTypes.bool.isRequired,
+  onSubmit: propTypes.func.isRequired,
+  details: propTypes.shape({
+    posterImage: propTypes.string.isRequired,
+    name: propTypes.string.isRequired,
+    backgroundImage: propTypes.string.isRequired,
+    id: propTypes.number.isRequired,
+  })
+};

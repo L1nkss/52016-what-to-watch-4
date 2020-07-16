@@ -271,7 +271,6 @@ Array [
         >
           <div
             className="small-movie-card__image"
-            onClick={[Function]}
           >
             <video
               className="player__video"
@@ -284,7 +283,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="movie-page.html"
+              href="/film-detail/1"
               onClick={[Function]}
             >
               Bohemian Rhapsody
@@ -298,7 +297,6 @@ Array [
         >
           <div
             className="small-movie-card__image"
-            onClick={[Function]}
           >
             <video
               className="player__video"
@@ -311,7 +309,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="movie-page.html"
+              href="/film-detail/2"
               onClick={[Function]}
             >
               Fantastic Beasts: The Crimes of Grindelwald

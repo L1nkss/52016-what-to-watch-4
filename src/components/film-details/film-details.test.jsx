@@ -46,7 +46,7 @@ const tabs = {
 describe(`Testing FilmDetails component`, () => {
   it(`Component should successfully rendered`, () => {
     const component = renderer.create(
-        <FilmDetails activeTab={tabs.activeTab} handleTabClick={() => {}} data={detailFilmInformation} tabs={tabs.names} />
+        <FilmDetails activeTab={tabs.activeTab} handleTabClick={() => {}} data={detailFilmInformation} tabs={tabs.names} userAuthStatus="AUTH" />
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

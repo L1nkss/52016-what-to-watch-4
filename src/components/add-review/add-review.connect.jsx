@@ -5,7 +5,7 @@ import {Operation} from "../../reducer/review/review";
 
 
 const mapStateToProps = (state, props) => ({
-  details: selectFilmById(Number(props.match.params.id), state),
+  details: selectFilmById(Number(props.computedMatch.params.id), state),
   isLoading: state.REVIEW.loading,
   isError: state.REVIEW.error,
 });

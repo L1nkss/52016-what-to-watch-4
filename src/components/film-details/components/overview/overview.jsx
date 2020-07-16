@@ -22,10 +22,11 @@ const Overview = (props) => {
 
 Overview.propTypes = {
   data: propTypes.shape({
-    rating: propTypes.number,
-    director: propTypes.string,
-    starring: propTypes.array,
-    description: propTypes.string
+    rating: propTypes.number.isRequired,
+    director: propTypes.string.isRequired,
+    starring: propTypes.array.isRequired,
+    description: propTypes.string.isRequired,
+    scoresCount: propTypes.number.isRequired
   }),
 };
 

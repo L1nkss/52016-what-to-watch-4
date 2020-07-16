@@ -12,3 +12,7 @@ export default class MoreLikeFilms extends React.Component {
     );
   }
 }
+
+MoreLikeFilms.propTypes = {
+  films: propTypes.array.isRequired
+};

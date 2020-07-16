@@ -38,7 +38,8 @@ Details.propTypes = {
     runTime: propTypes.string.isRequired,
     genre: propTypes.string.isRequired,
     released: propTypes.number.isRequired,
-    starring: propTypes.arrayOf(propTypes.string).isRequired
+    starring: propTypes.arrayOf(propTypes.string).isRequired,
+    director: propTypes.string.isRequired
   }).isRequired
 };
 

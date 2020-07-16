@@ -21,7 +21,9 @@ export default class App extends React.PureComponent {
             <Main />
           </Route>
           <Route exact path={`${RoutePathes.FILM_DETAIL}/:id?`} component={FilmDetailsWrapper} />
-          <PrivateRoute component={AddReview} exact path={`${RoutePathes.ADD_REVIEW}/:id?`}/>
+          <PrivateRoute exact path={`${RoutePathes.ADD_REVIEW}/:id?`} render={(props) => {
+            return <AddReview {...props} />;
+          }}/>
           <Route exact path={RoutePathes.SIGN_IN}>
             <SignIn />
           </Route>

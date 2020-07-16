@@ -5,7 +5,8 @@ describe(`User reducer test`, () => {
   it(`Should return the initial state`, () => {
     expect(reducer(undefined, {})).toEqual(
         {
-          authorizationStatus: AuthorizationStatus.NO_AUTH
+          authorizationStatus: AuthorizationStatus.NO_AUTH,
+          authorizationUserInfo: null
         });
   });
   it(`Should change authorization status correctly`, () => {

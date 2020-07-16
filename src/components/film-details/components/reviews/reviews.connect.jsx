@@ -1,4 +1,4 @@
-import Reviews from "@components/film-details/components/reviews";
+import Reviews from "@components/film-details/components/reviews/reviews";
 import {connect} from "react-redux";
 
 const mapStateToProps = (state) => ({
