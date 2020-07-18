@@ -1,39 +1,38 @@
 import axios from 'axios';
-import history from "./utils/history";
-import {RoutePathes} from "./utils/constans";
 import {baseUrl} from "./utils/constans";
 
-const Error = {
-  UNAUTHORIZED: 401,
-  BAD_REQUEST: 400,
-  NOT_FOUND: 404
-};
 
-export const createAPI = (onUnauthorized) => {
-  const api = axios.create({
-    baseURL: `${baseUrl}/wtw`,
-    timeout: 5000,
-    withCredentials: true
-  });
-  const onSuccess = (response) => {
-    return response;
-  };
-  const onFail = (error) => {
-    const {response} = error;
-    if (response.status === Error.UNAUTHORIZED) {
-      onUnauthorized();
-      // Необходимо, чтобы цепочка промисов прервались и в Operation не выполнился промис success
-      throw error;
-    }
-    if (response.status === Error.BAD_REQUEST) {
-      throw error;
-    }
-
-    if (response.status === Error.NOT_FOUND) {
-      history.push(RoutePathes.NOT_FOUND);
-      throw error;
-    }
-  };
-  api.interceptors.response.use(onSuccess, onFail);
-  return api;
-};
+export class Api {
+  constructor(onSuccess, onFail) {
+    this.api = axios.create({
+      baseURL: `${baseUrl}/wtw`,
+      timeout: 5000,
+      withCredentials: true
+    });
+    this.api.interceptors.response.use(onSuccess, onFail);
+  }
+  getFilms() {
+    return this.api.get(`/films`);
+  }
+  getPromoFilm() {
+    return this.api.get(`/films/promo`);
+  }
+  postReview(id, data) {
+    return this.api.post(`/comments/${id}`, {
+      rating: data.get(`rating`),
+      comment: data.get(`review-text`)
+    });
+  }
+  getReviews(id) {
+    return this.api.get(`/comments/${id}`);
+  }
+  getLogin() {
+    return this.api.get(`/login`);
+  }
+  postLogin(data) {
+    return this.api.post(`/login`, {
+      email: data.login,
+      password: data.password
+    });
+  }
+}

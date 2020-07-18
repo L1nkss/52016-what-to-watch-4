@@ -24,7 +24,7 @@ const reducer = (state = initialState, action) => {
 
 const Operation = {
   checkAuthStatus: () => (dispatch, getState, api) => {
-    return api.get(`/login`)
+    return api.getLogin()
       .then((response) => {
         dispatch(ActionCreator.requireAuthorizationData(Adapter.convertData(response.data)));
         dispatch(ActionCreator.requireAuthorization((AuthorizationStatus.AUTH)));
@@ -34,10 +34,7 @@ const Operation = {
       });
   },
   login: (data) => (dispatch, getState, api) => {
-    return api.post(`/login`, {
-      email: data.login,
-      password: data.password
-    })
+    return api.postLogin(data)
       .then((response) => {
         dispatch(ActionCreator.requireAuthorizationData(Adapter.convertData(response.data)));
         dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH));

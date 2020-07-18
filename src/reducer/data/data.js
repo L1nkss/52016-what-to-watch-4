@@ -12,7 +12,7 @@ const initialState = {
 const Operation = {
   loadFilms: () => (dispatch, getState, api) => {
     dispatch(ActionCreator.loadFilmsRequest());
-    return api.get(`/films`)
+    return api.getFilms()
       .then((response) => {
         dispatch(ActionCreator.loadFilms(Adapter.convertData(response.data)));
       })

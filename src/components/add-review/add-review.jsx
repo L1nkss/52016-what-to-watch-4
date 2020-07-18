@@ -27,6 +27,8 @@ export default class AddReview extends React.Component {
             id={`star-${i}`}
             type="radio"
             name="rating"
+            value={i}
+            defaultChecked={i === 3}
             disabled={this.props.isLoading}
           />
           <label className="rating__label" htmlFor={`star-${i}`}>{`Rating ${i}`}</label>

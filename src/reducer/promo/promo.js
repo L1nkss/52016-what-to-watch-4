@@ -11,7 +11,7 @@ const initialState = {
 const Operation = {
   loadFilm: () => (dispatch, getState, api) => {
     dispatch(ActionCreator.loadPromoFilmRequest());
-    return api.get(`/films/promo`)
+    return api.getPromoFilm()
       .then((response) => dispatch(ActionCreator.loadPromoFilmSuccess(Adapter.convertItem(response.data))))
       .catch(() => dispatch(ActionCreator.loadPromoFilmError()));
   }

@@ -10,7 +10,7 @@ const initialState = {
 const Operation = {
   loadReviews: (id) => (dispatch, getState, api) => {
     dispatch(ActionCreator.loadFilmReviewsRequest());
-    return api.get(`/comments/${id}`)
+    return api.getReviews(id)
       .then((response) => {
         dispatch(ActionCreator.loadFilmReviewsSuccess(response.data));
       })

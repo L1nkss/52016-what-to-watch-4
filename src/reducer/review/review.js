@@ -11,10 +11,7 @@ const initialState = {
 const Operation = {
   postReview: (id, data) => (dispatch, getState, api) => {
     dispatch(ActionCreator.postReviewRequest());
-    return api.post(`/comments/${id}`, {
-      rating: data.get(`rating`),
-      comment: data.get(`review-text`)
-    })
+    return api.postReview(id, data)
       .then(() => {
         dispatch(ActionCreator.postReviewSuccess());
         history.push(`${RoutePathes.FILM_DETAIL}/${id}`);
