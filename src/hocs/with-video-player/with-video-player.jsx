@@ -13,15 +13,25 @@ const withVideoPlayer = (Component) => {
       this.handleMouseLeave = this.handleMouseLeave.bind(this);
     }
     handleMouseEnter() {
+      if (this._debounce) {
+        return;
+      }
       this._debounce = setTimeout(() => {
-        this.setState({isActivePlayer: true});
+        // this.setState({isActivePlayer: true});
+        this.setState(() => ({isActivePlayer: true}));
       }, 1000);
     }
     handleMouseLeave() {
       if (this._debounce) {
         clearTimeout(this._debounce);
+        this._debounce = null;
       }
-      this.setState({isActivePlayer: false});
+      // this.setState({isActivePlayer: false});
+      this.setState(() => ({isActivePlayer: false}));
+    }
+
+    componentWillUnmount() {
+      clearTimeout(this._debounce);
     }
 
     render() {
