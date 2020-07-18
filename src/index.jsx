@@ -5,10 +5,7 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import {createAPI} from "./api";
 import {Api} from "./api";
-import {Operation as OperationData} from "./reducer/data/data";
-import {Operation as OperationPromo} from "./reducer/promo/promo";
 import {ActionCreator, Operation as OperationUser} from "./reducer/user/user";
 import {AuthorizationStatus} from "./reducer/user/utils/constants";
 import history from "./utils/history";
@@ -40,17 +37,12 @@ const onFailRequest = (error) => {
   }
 };
 
-// const api = createAPI(onUnauthorized);
 const api = new Api(onSuccess, onFailRequest);
 
 const store = createStore(
     reducer,
     composeWithDevTools(applyMiddleware(thunk.withExtraArgument(api)))
 );
-
-store.dispatch(OperationData.loadFilms());
-store.dispatch(OperationPromo.loadFilm());
-store.dispatch(OperationUser.checkAuthStatus());
 
 ReactDOM.render(
     <Provider store={store}>

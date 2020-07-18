@@ -1,4 +1,4 @@
-import adapterFilmGenreNavigation from '../utils/utils';
+import adapterFilmGenreNavigation from '../../film-list/utils/utils';
 import {createSelector} from 'reselect';
 
 const getActiveGenre = (state) => state.GENRE.genre;

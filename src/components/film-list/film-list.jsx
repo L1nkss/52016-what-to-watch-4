@@ -1,6 +1,8 @@
 import FilmCardItem from "./components/film-card-item";
 
-class FilmList extends React.PureComponent {
+
+export default class FilmList extends React.PureComponent {
+
   render() {
     const {films, visible, changeVisible} = this.props;
     const filmList = films.slice(0, visible);
@@ -26,8 +28,6 @@ class FilmList extends React.PureComponent {
     );
   }
 }
-
-export {FilmList};
 
 FilmList.propTypes = {
   films: propTypes.arrayOf(propTypes.shape({
