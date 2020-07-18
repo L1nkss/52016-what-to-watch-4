@@ -21,7 +21,7 @@ export default class AddReview extends React.Component {
     const ratingStarts = [];
     for (let i = 1; i <= starsCount; i++) {
       const input = (
-        <>
+        <React.Fragment key={`star-${i}`}>
           <input
             className="rating__input"
             id={`star-${i}`}
@@ -32,7 +32,7 @@ export default class AddReview extends React.Component {
             disabled={this.props.isLoading}
           />
           <label className="rating__label" htmlFor={`star-${i}`}>{`Rating ${i}`}</label>
-        </>
+        </React.Fragment>
       );
       ratingStarts.push(input);
     }
@@ -40,7 +40,7 @@ export default class AddReview extends React.Component {
   }
 
   render() {
-    if (this.props.details === undefined) {
+    if (!this.props.details) {
       return <Loading />;
     }
     let formClasses = `add-review__form`;
