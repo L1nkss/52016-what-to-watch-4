@@ -10,12 +10,12 @@ const FilmCard = (props) => {
       onMouseOver={() => handleMouseEnter()}
       onMouseLeave={() => handleMouseLeave()}
     >
-      <div className="small-movie-card__image" >
-        {renderPlayer(previewVideoLink, previewImage)}
-      </div>
-      <h3 className="small-movie-card__title">
-        <Link to={`${RoutePathes.FILM_DETAIL}/${props.filmInfo.id}`} className="small-movie-card__link" >{name}</Link>
-      </h3>
+      <Link to={`${RoutePathes.FILM_DETAIL}/${props.filmInfo.id}`} className="c-inherit">
+        <div className="small-movie-card__image" >
+          {renderPlayer(previewVideoLink, previewImage)}
+        </div>
+        <h3 className="small-movie-card__title">{name}</h3>
+      </Link>
     </article>
   );
 };
