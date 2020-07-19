@@ -17,8 +17,7 @@ const withVideoPlayer = (Component) => {
         return;
       }
       this._debounce = setTimeout(() => {
-        // this.setState({isActivePlayer: true});
-        this.setState(() => ({isActivePlayer: true}));
+        this.setState({isActivePlayer: true});
       }, 1000);
     }
     handleMouseLeave() {
@@ -26,8 +25,7 @@ const withVideoPlayer = (Component) => {
         clearTimeout(this._debounce);
         this._debounce = null;
       }
-      // this.setState({isActivePlayer: false});
-      this.setState(() => ({isActivePlayer: false}));
+      this.setState({isActivePlayer: false});
     }
 
     componentWillUnmount() {
