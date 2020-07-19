@@ -16,20 +16,6 @@ const ErrorCodes = {
   NOT_FOUND: 404
 };
 
-// Каталог типов фильмов
-const CatalogList = [
-  `All genres`,
-  `Comedies`,
-  `Crime`,
-  `Documentary`,
-  `Dramas`,
-  `Horror`,
-  `Kids & Family`,
-  `Romance`,
-  `Sci-Fi`,
-  `Thrillers`
-];
-
 // Табы
 const TabList = {
   activeTab: `Overview`,
@@ -39,4 +25,4 @@ const TabList = {
 // Максимальное количество фильмов, которое можно вывести за 1 раз
 const filmLimit = 8;
 
-export {CatalogList, TabList, filmLimit, RoutePathes, baseUrl, ErrorCodes};
+export {TabList, filmLimit, RoutePathes, baseUrl, ErrorCodes};

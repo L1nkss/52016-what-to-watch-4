@@ -6,6 +6,7 @@ export const selectFilmsByFilmGenre = createSelector(
     (films, props) => props,
     (films, props) => {
       return films.filter((film) => {
+        console.log(props.genre === film.genre)
         return film.genre === adapterFilmGenreNavigation(props.genre);
       });
     }

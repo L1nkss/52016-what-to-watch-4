@@ -46,7 +46,6 @@ export default class PromoFilm extends React.Component {
 }
 
 PromoFilm.propTypes = {
-  loading: propTypes.bool.isRequired,
   film: propTypes.shape({
     backgroundImage: propTypes.string.isRequired,
     name: propTypes.string.isRequired,
