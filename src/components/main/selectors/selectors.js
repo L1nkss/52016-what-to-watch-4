@@ -1,4 +1,3 @@
-import adapterFilmGenreNavigation from '../../film-list/utils/utils';
 import {createSelector} from 'reselect';
 
 const getActiveGenre = (state) => state.GENRE.genre;
@@ -12,7 +11,7 @@ export const selectFilmsByGenre = createSelector(
         if (genre === `All genres`) {
           return film;
         }
-        return film.genre === adapterFilmGenreNavigation(genre);
+        return film.genre === genre;
       });
     }
 );
