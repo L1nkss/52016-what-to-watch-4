@@ -1,4 +1,4 @@
-import {CatalogList} from "../../utils/constans";
+import {CatalogList} from "@utils/constans";
 import CatalogItem from "./components/catalog-item";
 import withActiveItem from "@hocs/with-active-item/with-active-item";
 

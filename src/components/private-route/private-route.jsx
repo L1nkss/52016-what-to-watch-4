@@ -1,6 +1,6 @@
 import {Route, Redirect} from "react-router";
-import {RoutePathes} from "../../utils/constans";
-import {AuthorizationStatus} from "../../reducer/user/utils/constants";
+import {AuthorizationStatus} from "@reducer/user/utils/constants";
+import {RoutePathes} from "@utils/constans";
 
 const PrivateRoute = (props) => {
   const {userAuth, path, exact, render} = props;

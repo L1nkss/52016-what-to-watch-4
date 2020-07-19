@@ -1,7 +1,7 @@
 import {Footer} from "@components/footer/footer";
-import {RoutePathes} from "../../utils/constans";
 import {Redirect} from "react-router";
-import {AuthorizationStatus} from "../../reducer/user/utils/constants";
+import {AuthorizationStatus} from "@reducer/user/utils/constants";
+import {RoutePathes} from "@utils/constans";
 
 export class SignIn extends React.PureComponent {
   constructor(props) {
