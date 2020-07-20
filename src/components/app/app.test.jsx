@@ -43,11 +43,13 @@ describe(`Testing App component`, () => {
       },
       DATA: {
         films,
-        loading: false
+        loading: false,
+        error: false
       },
       PROMO: {
         film: films[0],
-        loading: false
+        loading: false,
+        error: false
       },
       USER: {
         authorizationStatus: `NO_AUTH`
