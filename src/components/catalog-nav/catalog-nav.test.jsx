@@ -9,6 +9,9 @@ describe(`Testing catalog-nav component`, () => {
     const store = mockStore({
       GENRE: {
         genre: `All genres`
+      },
+      DATA: {
+        films: []
       }
     });
     const tree = renderer.create(<Provider store={store}><CatalogNav /></Provider>).toJSON();

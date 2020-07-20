@@ -10,7 +10,9 @@ module.exports = {
   resolve: {
     alias: {
       "@components": path.resolve(__dirname, `src/components`),
-      "@hocs": path.resolve(__dirname, `src/hocs`)
+      "@hocs": path.resolve(__dirname, `src/hocs`),
+      "@utils": path.resolve(__dirname, `src/utils`),
+      "@reducer": path.resolve(__dirname, `src/reducer`)
     },
     extensions: [`.js`, `.jsx`, `ts`, `tsx`],
   },

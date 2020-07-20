@@ -2,7 +2,7 @@
 
 exports[`Testing Loading component Component should successfully rendered 1`] = `
 <div
-  className="testing"
+  className="loading-page"
 >
   <div
     className="lds-ring"

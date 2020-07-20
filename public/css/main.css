@@ -360,6 +360,10 @@ main {
   width: 520px;
   margin: 0 auto; }
 
+.add-review__form--disabled {
+  pointer-events: none;
+}
+
 .add-review__text {
   background: #E8C3C4;
   border-radius: 8px; }
@@ -1393,6 +1397,7 @@ main {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
 
+/* Страница загрузки */
 .loading-page {
   height: 100vh;
   position: absolute;
@@ -1442,3 +1447,86 @@ main {
   }
 }
 
+/* Лоадер для локальных страниц */
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.8s infinite ease-in-out;
+}
+.loader {
+  color: #ffffff;
+  font-size: 10px;
+  margin: 80px auto;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.loader:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 3.5em;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+/* Нотифайка */
+.notification {
+  color: white;
+  padding: 16px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  opacity: 1;
+  transition: top 0.5s ease;
+}
+
+.notification--error {
+  background-color: red;
+}
+
+.notification--success {
+  background-color: green;
+}
+
+/* Наследовать цвет*/
+.c-inherit {
+  color: inherit;
+}

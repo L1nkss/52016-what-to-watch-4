@@ -1,8 +1,10 @@
+import {filmLimit} from "@utils/constans";
+
 const withLimits = (Component, limit) => {
   class WithLimits extends React.Component {
     constructor(props) {
       super(props);
-      this.limit = limit;
+      this.limit = filmLimit;
       this.state = {
         visible: limit
       };

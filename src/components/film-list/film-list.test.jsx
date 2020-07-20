@@ -1,6 +1,8 @@
-import FilmList from "./film-list.connect";
+import FilmList from "./film-list";
 import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
+import {Router} from "react-router";
+import {createMemoryHistory} from "history";
 
 const mockStore = configureStore([]);
 // Моки
@@ -31,7 +33,7 @@ const films = [
 
 describe(`Testing FilmList component`, () => {
   it(`Component should successfully rendered`, () => {
-    const cb = () => {};
+    const history = createMemoryHistory(`/sign-in`);
     const store = mockStore({
       GENRE: {
         genre: `All genres`
@@ -45,7 +47,7 @@ describe(`Testing FilmList component`, () => {
         loading: false
       }
     });
-    const component = renderer.create(<Provider store={store}><FilmList visible={8} changeVisible={() => {}} changePath={cb} /></Provider>);
+    const component = renderer.create(<Router history={history}><Provider store={store}><FilmList visible={8} changeVisible={() => {}} films={[]} /></Provider></Router>);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

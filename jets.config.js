@@ -12,6 +12,8 @@ module.exports = {
   "moduleNameMapper": {
     "^@components(.*)$": `<rootDir>/src/components$1`,
     "^@hocs(.*)$": `<rootDir>/src/hocs$1`,
+    "^@reducer(.*)$": `<rootDir>/src/reducer$1`,
+    "^@utils(.*)$": `<rootDir>/src/utils$1`
   },
   "coveragePathIgnorePatterns": [`/test.setup.js`]
 };

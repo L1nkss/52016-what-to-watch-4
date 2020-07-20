@@ -1,8 +1,9 @@
 import {Link} from "react-router-dom";
-import {RoutePathes} from "../../utils/constans";
+import {RoutePathes} from "@utils/constans";
+import {baseUrl} from "@utils/constans";
 
 export const Header = (props) => {
-  const {userAuthStatus} = props;
+  const {userAuthStatus, userInformation} = props;
   return (
     <header className="page-header movie-card__head">
       <div className="logo">
@@ -12,11 +13,11 @@ export const Header = (props) => {
           <span className="logo__letter logo__letter--3">W</span>
         </a>
       </div>
-
+      {props.children}
       <div className="user-block">
         {userAuthStatus === `AUTH` &&
           <div className="user-block__avatar">
-            <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
+            <img src={`${baseUrl}${userInformation.avatarUrl}`} alt="User avatar" width="63" height="63"/>
           </div>
         }
         {userAuthStatus === `NO_AUTH` &&
@@ -28,5 +29,9 @@ export const Header = (props) => {
 };
 
 Header.propTypes = {
-  userAuthStatus: propTypes.string.isRequired
+  userAuthStatus: propTypes.string.isRequired,
+  children: propTypes.element,
+  userInformation: propTypes.shape({
+    avatarUrl: propTypes.string.isRequired
+  })
 };
