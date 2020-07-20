@@ -4,8 +4,10 @@ import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
 import {Router} from "react-router";
 import {createMemoryHistory} from "history";
+import thunk from 'redux-thunk';
 
-const mockStore = configureStore([]);
+const middlewares = [thunk];
+const mockStore = configureStore(middlewares);
 // Моки
 const films = [
   {
@@ -34,30 +36,38 @@ const films = [
 
 describe(`Testing Main component`, () => {
   it(`Component should successfully rendered`, () => {
-    const cb = () => {};
     const history = createMemoryHistory(`/sign-in`);
+    const cb = () => {};
     const store = mockStore({
       GENRE: {
         genre: `All genres`
       },
       DATA: {
         films,
-        loading: false
+        loading: false,
+        error: false
       },
       PROMO: {
         film: films[0],
-        loading: false
+        loading: false,
+        error: false
       },
       USER: {
         authorizationStatus: `NO_AUTH`
       }
     });
-    const isDataLoading = false;
-    const isError = false;
     const tree = renderer
       .create(<Provider store={store}>
         <Router history={history}>
-          <Main isDataLoading={isDataLoading} isError={isError} changePath={cb} />
+          <Main
+            loadFilms={cb}
+            isError={false}
+            isDataLoading={false}
+            loadPromoFilm={cb}
+            checkAuthStatus={cb}
+            promoFilm={films[0]}
+            films={films}
+          />
         </Router>
       </Provider>)
       .toJSON();

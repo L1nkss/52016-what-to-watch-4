@@ -16,5 +16,6 @@ export {CatalogNav};
 
 CatalogNav.propTypes = {
   genre: propTypes.string.isRequired,
-  onGenreClick: propTypes.func.isRequired
+  onGenreClick: propTypes.func.isRequired,
+  allGenres: propTypes.array.isRequired
 };

@@ -42,7 +42,12 @@ export default class Main extends React.Component {
 }
 
 Main.propTypes = {
-  isDataLoading: propTypes.bool,
-  isError: propTypes.bool
+  isDataLoading: propTypes.bool.isRequired,
+  isError: propTypes.bool.isRequired,
+  promoFilm: propTypes.object.isRequired,
+  films: propTypes.array.isRequired,
+  loadFilms: propTypes.func.isRequired,
+  loadPromoFilm: propTypes.func.isRequired,
+  checkAuthStatus: propTypes.func.isRequired,
 };
 

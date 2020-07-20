@@ -35,7 +35,7 @@ const Details = (props) => {
 
 Details.propTypes = {
   data: propTypes.shape({
-    runTime: propTypes.string.isRequired,
+    runTime: propTypes.number.isRequired,
     genre: propTypes.string.isRequired,
     released: propTypes.number.isRequired,
     starring: propTypes.arrayOf(propTypes.string).isRequired,

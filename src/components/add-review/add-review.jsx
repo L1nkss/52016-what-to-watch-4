@@ -3,6 +3,7 @@ import {Loading} from "@components/loading/loading";
 import {Link} from "react-router-dom";
 import {RoutePathes} from "@utils/constans";
 import {starsCount} from "@components/add-review/constants/constants";
+const Fragment = React.Fragment;
 
 
 export default class AddReview extends React.Component {
@@ -21,7 +22,7 @@ export default class AddReview extends React.Component {
     const ratingStarts = [];
     for (let i = 1; i <= starsCount; i++) {
       const input = (
-        <React.Fragment key={`star-${i}`}>
+        <Fragment key={`star-${i}`}>
           <input
             className="rating__input"
             id={`star-${i}`}
@@ -32,7 +33,7 @@ export default class AddReview extends React.Component {
             disabled={this.props.isLoading}
           />
           <label className="rating__label" htmlFor={`star-${i}`}>{`Rating ${i}`}</label>
-        </React.Fragment>
+        </Fragment>
       );
       ratingStarts.push(input);
     }
