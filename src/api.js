@@ -16,22 +16,25 @@ export class Api {
   getPromoFilm() {
     return this.api.get(`/films/promo`);
   }
-  postReview(id, data) {
-    return this.api.post(`/comments/${id}`, {
-      rating: data.get(`rating`),
-      comment: data.get(`review-text`)
-    });
-  }
   getReviews(id) {
     return this.api.get(`/comments/${id}`);
   }
   getLogin() {
     return this.api.get(`/login`);
   }
+  getFavorite() {
+    return this.api.get(`/favorite`);
+  }
   postLogin(data) {
     return this.api.post(`/login`, {
       email: data.login,
       password: data.password
+    });
+  }
+  postReview(id, data) {
+    return this.api.post(`/comments/${id}`, {
+      rating: data.get(`rating`),
+      comment: data.get(`review-text`)
     });
   }
 }

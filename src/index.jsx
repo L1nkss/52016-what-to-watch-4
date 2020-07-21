@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import App from '@components/app/App';
+import App from '@components/app/app.connect';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from "redux-devtools-extension";

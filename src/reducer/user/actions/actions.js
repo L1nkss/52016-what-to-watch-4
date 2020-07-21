@@ -1,16 +1,21 @@
 import {ActionType} from "../utils/constants";
 
 const ActionCreator = {
-  requireAuthorization: (status) => {
+  authorizationRequest: () => {
     return {
-      type: ActionType.REQUIRED_AUTHORIZATION,
+      type: ActionType.AUTHORIZATION_REQUEST
+    };
+  },
+  authorizationSuccess: (status) => {
+    return {
+      type: ActionType.AUTHORIZATION_SUCCESS,
       payload: status
     };
   },
-  requireAuthorizationData: (data) => {
+  saveUserInformation: (info) => {
     return {
-      type: ActionType.REQUIRED_AUTHORIZATION_DATA,
-      payload: data
+      type: ActionType.SAVE_USER_INFORMATION,
+      payload: info
     };
   }
 };

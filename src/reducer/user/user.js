@@ -6,17 +6,20 @@ import Adapter from "./utils/adapter";
 
 const initialState = {
   authorizationStatus: AuthorizationStatus.NO_AUTH,
-  authorizationUserInfo: null
+  authorizationUserInfo: null,
+  loading: false
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionType.REQUIRED_AUTHORIZATION:
+    case ActionType.AUTHORIZATION_REQUEST:
+      return Object.assign({}, state, {loading: true});
+    case ActionType.AUTHORIZATION_SUCCESS:
       return Object.assign({}, state, {
-        authorizationStatus: action.payload
+        loading: false, authorizationStatus: action.payload
       });
-    case ActionType.REQUIRED_AUTHORIZATION_DATA:
-      return Object.assign({}, state, {authorizationUserInfo: action.payload});
+    case ActionType.SAVE_USER_INFORMATION:
+      return Object.assign({}, state, {loading: false, authorizationUserInfo: action.payload});
     default:
       return state;
   }
@@ -24,10 +27,11 @@ const reducer = (state = initialState, action) => {
 
 const Operation = {
   checkAuthStatus: () => (dispatch, getState, api) => {
+    dispatch(ActionCreator.authorizationRequest());
     return api.getLogin()
       .then((response) => {
-        dispatch(ActionCreator.requireAuthorizationData(Adapter.convertData(response.data)));
-        dispatch(ActionCreator.requireAuthorization((AuthorizationStatus.AUTH)));
+        dispatch(ActionCreator.saveUserInformation(Adapter.convertData(response.data)));
+        dispatch(ActionCreator.authorizationSuccess((AuthorizationStatus.AUTH)));
       })
       .catch((err) => {
         throw err;
@@ -36,8 +40,8 @@ const Operation = {
   login: (data) => (dispatch, getState, api) => {
     return api.postLogin(data)
       .then((response) => {
-        dispatch(ActionCreator.requireAuthorizationData(Adapter.convertData(response.data)));
-        dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH));
+        dispatch(ActionCreator.saveUserInformation(Adapter.convertData(response.data)));
+        dispatch(ActionCreator.authorizationSuccess(AuthorizationStatus.AUTH));
         history.push(RoutePathes.ROOT);
       });
   },

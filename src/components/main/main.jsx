@@ -9,22 +9,22 @@ import {ServerError} from "@components/server-error/server-error";
 
 
 export default class Main extends React.Component {
-  componentDidMount() {
-    // Загружаем все фильмы
-    this.props.loadFilms();
-    // Загружаем промо фильм
-    this.props.loadPromoFilm();
-    // Проверяем статус авторизации пользователя
-    this.props.checkAuthStatus();
-  }
+  // componentDidMount() {
+  //   // Загружаем все фильмы
+  //   this.props.loadFilms();
+  //   // Загружаем промо фильм
+  //   this.props.loadPromoFilm();
+  //   // Проверяем статус авторизации пользователя
+  //   this.props.checkAuthStatus();
+  // }
   render() {
     const FilmListWrapper = withLimits(FilmList, filmLimit);
-    if (this.props.isDataLoading || !this.props.films || !this.props.promoFilm) {
-      return <Loading />;
-    }
-    if (this.props.isError) {
-      return <ServerError/>;
-    }
+    // if (this.props.isDataLoading || !this.props.films || !this.props.promoFilm) {
+    //   return <Loading />;
+    // }
+    // if (this.props.isError) {
+    //   return <ServerError/>;
+    // }
     return (
       <>
         <PromoFilm film={this.props.promoFilm} />

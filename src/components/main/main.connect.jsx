@@ -12,10 +12,10 @@ const mapStateToProps = (state) => ({
   promoFilm: state.PROMO.film
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  loadFilms: () => dispatch(OperationData.loadFilms()),
-  loadPromoFilm: () => dispatch(OperationPromo.loadFilm()),
-  checkAuthStatus: () => dispatch(OperationUser.checkAuthStatus())
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   loadFilms: () => dispatch(OperationData.loadFilms()),
+//   loadPromoFilm: () => dispatch(OperationPromo.loadFilm()),
+//   checkAuthStatus: () => dispatch(OperationUser.checkAuthStatus())
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, null)(Main);
