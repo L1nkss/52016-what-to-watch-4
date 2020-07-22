@@ -1,5 +1,5 @@
-import {AuthorizationStatus, ActionType} from "./utils/constants";
-import {RoutePathes} from "../../utils/constans";
+import {AuthorizationStatus, ActionType} from "./constants/constants.js";
+import {RoutePathes} from "../../constants/constants";
 import history from "../../utils/history";
 import ActionCreator from "./actions/actions";
 import Adapter from "./utils/adapter";

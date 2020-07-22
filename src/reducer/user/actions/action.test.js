@@ -1,6 +1,6 @@
 import ActionCreator from "./actions";
-import {ActionType} from "../utils/constants";
-import {AuthorizationStatus} from "../utils/constants";
+import {ActionType} from "../constants/constants.js";
+import {AuthorizationStatus} from "../constants/constants.js";
 
 describe(`User action creators work correctly`, () => {
   it(`Action creator for require authorization should return correct action`, () => {

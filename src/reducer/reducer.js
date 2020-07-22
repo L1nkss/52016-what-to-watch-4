@@ -1,4 +1,4 @@
-import NameSpace from "./utils/constants";
+import NameSpace from "./constants/constants.js";
 import {combineReducers} from "redux";
 import {reducer as data} from "./data/data";
 import {reducer as genre} from "./genre/genre";

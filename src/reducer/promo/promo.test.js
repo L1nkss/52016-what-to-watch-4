@@ -1,5 +1,5 @@
 import {reducer} from "./promo";
-import ActionType from "./utils/constants";
+import ActionType from "./constants/constants.js";
 
 describe(`Promo reducer test`, () => {
   it(`Should return initial state`, () => {

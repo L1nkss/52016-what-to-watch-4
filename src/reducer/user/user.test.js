@@ -1,5 +1,5 @@
 import {reducer} from "./user";
-import {ActionType, AuthorizationStatus} from "./utils/constants";
+import {ActionType, AuthorizationStatus} from "./constants/constants.js";
 
 describe(`User reducer test`, () => {
   it(`Should return the initial state`, () => {

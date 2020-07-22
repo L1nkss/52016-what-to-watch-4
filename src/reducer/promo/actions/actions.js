@@ -1,4 +1,4 @@
-import ActionType from "../utils/constants";
+import ActionType from "../constants/constants.js";
 
 const ActionCreator = {
   loadPromoFilmRequest: () => {
@@ -16,8 +16,14 @@ const ActionCreator = {
     return {
       type: ActionType.LOAD_PROMO_FILM_ERROR
     };
+  },
+  changePromoFilmField: (newValue) => {
+    return {
+      type: ActionType.CHANGE_PROMO_FILM_FIELD,
+      payload: newValue
+    };
   }
 };
 
-export default ActionCreator;
+export {ActionCreator};
 

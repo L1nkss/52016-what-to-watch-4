@@ -1,8 +1,8 @@
 import FilmList from "../film-list/film-list";
 import withLimits from "@hocs/with-limits/with-limits";
 import CatalogNav from "@components/catalog-nav/catalog-nav.connect";
-import {filmLimit} from "@utils/constans";
-import PromoFilm from "@components/promo-film/promo-film";
+import {filmLimit} from "../../constants/constants";
+import PromoFilm from "@components/promo-film/promo-film.connect";
 import {Footer} from "@components/footer/footer";
 
 
@@ -16,7 +16,7 @@ export default class Main extends React.Component {
           <section className="catalog">
             <CatalogNav />
             <h2 className="catalog__title visually-hidden">Catalog</h2>
-            <FilmListWrapper />
+            <FilmListWrapper films={this.props.films} />
           </section>
           <Footer />
         </div>

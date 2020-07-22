@@ -1,5 +1,5 @@
 import {reducer} from "./genre";
-import ActionType from "./utils/constants";
+import ActionType from "./constants/constants.js";
 
 describe(`Genre reducer test`, () => {
   it(`Should return initial state`, () => {

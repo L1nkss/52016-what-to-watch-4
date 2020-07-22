@@ -1,5 +1,5 @@
 import {reducer} from "./data";
-import ActionType from "./utils/constants";
+import ActionType from "./constants/constants.js";
 
 describe(`Data reducer test`, () => {
   it(`Should return initial state`, () => {

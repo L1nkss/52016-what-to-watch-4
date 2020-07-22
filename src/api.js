@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {baseUrl} from "@utils/constans";
+import {baseUrl} from "./constants/constants";
 
 export class Api {
   constructor(onSuccess, onFail) {

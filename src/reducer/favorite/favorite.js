@@ -1,6 +1,7 @@
 import ActionType from "@reducer/favorite/constants/constants";
 import ActionCreator from "@reducer/favorite/actions/actions";
 import {ActionCreator as ActionCreatorData} from "../data/actions/actions";
+import {ActionCreator as ActionCreatorPromo} from "../promo/actions/actions";
 
 const initialState = {
   films: null,
@@ -19,12 +20,19 @@ const Operation = {
       .then(() => {
         // Получаем список всех фильмов (делаем spread оператор, чтобы получить новый массив)
         const films = [...getState().DATA.films];
+        // Получаем промо фильм
+        const promoFilm = Object.assign({}, getState().PROMO.film);
         // Находим индекс элемента, у которого изменился статус фильма
         const idx = films.findIndex((film) => film.id === id);
         // Меняем статус внутри фильма
         films[idx].isFavorite = Boolean(status);
         // Вызываем диспачт для обновления глобального стейта
         dispatch(ActionCreatorData.changeFilms(films));
+        // Сравниваем изменившийся фильм с промо фильмом, если совпадает, меняем информацию
+        if (promoFilm.id === id) {
+          promoFilm.isFavorite = Boolean(status);
+          dispatch(ActionCreatorPromo.changePromoFilmField(promoFilm));
+        }
       });
   }
 };

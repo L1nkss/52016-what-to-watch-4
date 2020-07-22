@@ -1,4 +1,4 @@
-import ActionType from "../utils/constants";
+import ActionType from "../constants/constants.js";
 import ActionCreator from "./actions";
 
 describe(`Promo action creators work correctly`, () => {

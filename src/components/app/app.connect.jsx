@@ -18,7 +18,8 @@ const mapDispatchToProps = (dispatch) => ({
   loadFilms: () => dispatch(OperationData.loadFilms()),
   loadPromoFilm: () => dispatch(OperationPromo.loadFilm()),
   checkAuthStatus: () => dispatch(OperationUser.checkAuthStatus()),
-  loadFavoritesFilms: () => dispatch(OperationFavorite.loadFavoriteFilms())
+  loadFavoritesFilms: () => dispatch(OperationFavorite.loadFavoriteFilms()),
+  changeStatusFilm: (id, status) => dispatch(OperationFavorite.postFavoriteFilm(id, status))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
