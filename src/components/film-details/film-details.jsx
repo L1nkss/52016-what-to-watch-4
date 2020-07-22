@@ -117,6 +117,7 @@ FilmDetails.propTypes = {
   handleTabClick: propTypes.func.isRequired,
   userAuthStatus: propTypes.string.isRequired,
   getReviews: propTypes.func,
+  changeStatusFilm: propTypes.func,
   details: propTypes.shape({
     runTime: propTypes.number.isRequired,
     genre: propTypes.string.isRequired,

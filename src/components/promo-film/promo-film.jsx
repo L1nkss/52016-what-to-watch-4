@@ -56,6 +56,9 @@ PromoFilm.propTypes = {
     name: propTypes.string.isRequired,
     posterImage: propTypes.string.isRequired,
     genre: propTypes.string.isRequired,
+    id: propTypes.number.isRequired,
+    isFavorite: propTypes.bool.isRequired,
     released: propTypes.number.isRequired
-  })
+  }),
+  changeStatusFilm: propTypes.func.isRequired
 };

@@ -115,6 +115,7 @@ exports[`Testing PromoFilm component Component should successfully rendered 1`] 
           </button>
           <button
             className="btn btn--list movie-card__button"
+            onClick={[Function]}
             type="button"
           >
             <svg

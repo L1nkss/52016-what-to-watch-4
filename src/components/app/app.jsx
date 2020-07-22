@@ -68,4 +68,6 @@ App.propTypes = {
   loadFilms: propTypes.func.isRequired,
   loadPromoFilm: propTypes.func.isRequired,
   checkAuthStatus: propTypes.func.isRequired,
+  loadFavoritesFilms: propTypes.func.isRequired,
+  isUserStatusChecked: propTypes.bool.isRequired
 };
