@@ -31,6 +31,9 @@ export class Api {
       password: data.password
     });
   }
+  postFavoriteFilm(id, status) {
+    return this.api.post(`/favorite/${id}/${status}`);
+  }
   postReview(id, data) {
     return this.api.post(`/comments/${id}`, {
       rating: data.get(`rating`),

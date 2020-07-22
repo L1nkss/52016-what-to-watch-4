@@ -22,7 +22,7 @@ export default class FilmDetails extends React.PureComponent {
       return <Loading />;
     }
     const {
-      director, starring, rating, description, scoresCount, id, runTime, genre, released
+      director, starring, rating, description, scoresCount, id, runTime, genre, released, isFavorite
     } = details;
     const OverviewData = {
       director,
@@ -38,6 +38,7 @@ export default class FilmDetails extends React.PureComponent {
       genre,
       released
     };
+    console.log(this.props)
     return (
       <>
         <section className="movie-card movie-card--full">
@@ -65,9 +66,13 @@ export default class FilmDetails extends React.PureComponent {
                     </svg>
                     <span>Play</span>
                   </button>
-                  <button className="btn btn--list movie-card__button" type="button">
+                  <button
+                    className="btn btn--list movie-card__button"
+                    type="button"
+                    onClick={() => this.props.changeStatusFilm(id, Number(!isFavorite))}
+                  >
                     <svg viewBox="0 0 19 20" width="19" height="20">
-                      <use xlinkHref="#add" />
+                      <use xlinkHref={isFavorite ? `#in-list` : `#add`} />
                     </svg>
                     <span>My list</span>
                   </button>

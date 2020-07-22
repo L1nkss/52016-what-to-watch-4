@@ -4,6 +4,7 @@ import {RoutePathes} from "@utils/constans";
 
 const PrivateRoute = (props) => {
   const {userAuth, path, exact, render} = props;
+  console.log(props)
   return (
     <Route
       exact={exact}

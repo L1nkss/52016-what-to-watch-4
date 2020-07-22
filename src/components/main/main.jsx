@@ -27,7 +27,8 @@ export default class Main extends React.Component {
     // }
     return (
       <>
-        <PromoFilm film={this.props.promoFilm} />
+        {/*<PromoFilm film={this.props.promoFilm} />*/}
+        <PromoFilm />
         <div className="page-content">
           <section className="catalog">
             <CatalogNav />

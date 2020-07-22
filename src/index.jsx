@@ -14,7 +14,7 @@ import {ErrorCodes} from "@utils/constans";
 
 
 const onUnauthorized = () => {
-  store.dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.NO_AUTH));
+  store.dispatch(ActionCreator.authorizationSuccess(AuthorizationStatus.NO_AUTH));
 };
 
 const onSuccess = (response) => {

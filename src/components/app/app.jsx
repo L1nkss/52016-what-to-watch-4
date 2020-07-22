@@ -21,6 +21,8 @@ export default class App extends React.PureComponent {
     this.props.loadPromoFilm();
     // Проверяем статус авторизации пользователя
     this.props.checkAuthStatus();
+    // Загружаем список фильмов(my-list)
+    this.props.loadFavoritesFilms();
   }
   render() {
     const FilmDetailsWrapper = withTabs(FilmDetails, TabList);
