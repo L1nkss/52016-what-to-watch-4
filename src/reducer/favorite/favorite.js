@@ -17,8 +17,8 @@ const Operation = {
   postFavoriteFilm: (id, status) => (dispatch, getState, api) => {
     return api.postFavoriteFilm(id, status)
       .then(() => {
-        // Получаем список всех фильмов
-        const films = getState().DATA.films;
+        // Получаем список всех фильмов (делаем spread оператор, чтобы получить новый массив)
+        const films = [...getState().DATA.films];
         // Находим индекс элемента, у которого изменился статус фильма
         const idx = films.findIndex((film) => film.id === id);
         // Меняем статус внутри фильма

@@ -38,7 +38,6 @@ export default class FilmDetails extends React.PureComponent {
       genre,
       released
     };
-    console.log(this.props)
     return (
       <>
         <section className="movie-card movie-card--full">
@@ -130,6 +129,7 @@ FilmDetails.propTypes = {
     starring: propTypes.array.isRequired,
     backgroundImage: propTypes.string.isRequired,
     name: propTypes.string.isRequired,
-    posterImage: propTypes.string.isRequired
+    posterImage: propTypes.string.isRequired,
+    isFavorite: propTypes.bool.isRequired
   })
 };
