@@ -19,7 +19,8 @@ const films = [
     previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     released: 2015,
-    id: 1
+    id: 1,
+    isFavorite: false
   },
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -30,7 +31,8 @@ const films = [
     previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     released: 2015,
-    id: 2
+    id: 2,
+    isFavorite: false
   },
 ];
 

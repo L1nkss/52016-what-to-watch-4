@@ -11,7 +11,8 @@ const film = {
   id: 2,
   backgroundImage: `https://image.com`,
   genre: `Crime`,
-  released: 2015
+  released: 2015,
+  isFavorite: true
 };
 
 describe(`Testing PromoFilm component`, () => {
@@ -34,7 +35,7 @@ describe(`Testing PromoFilm component`, () => {
       }
     });
     const component = renderer.create(<Provider store={store}>
-      <Router history={history}><PromoFilm film={film} loading={false} /></Router>
+      <Router history={history}><PromoFilm changeStatusFilm={() => {}} film={film} loading={false} /></Router>
     </Provider>).toJSON();
     expect(component).toMatchSnapshot();
   });
