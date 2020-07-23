@@ -17,7 +17,7 @@ export const Header = (props) => {
       <div className="user-block">
         {userAuthStatus === `AUTH` &&
           <div className="user-block__avatar">
-            <img src={`${baseUrl}${userInformation.avatarUrl}`} alt="User avatar" width="63" height="63"/>
+            <Link to={RoutePathes.MY_LIST}><img src={`${baseUrl}${userInformation.avatarUrl}`} alt="User avatar" width="63" height="63"/></Link>
           </div>
         }
         {userAuthStatus === `NO_AUTH` &&
