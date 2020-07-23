@@ -26,7 +26,7 @@ export default class App extends React.PureComponent {
   }
   render() {
     const FilmDetailsWrapper = withTabs(FilmDetails, TabList);
-    if (this.props.isDataLoading || !this.props.films || !this.props.promoFilm || this.props.isUserStatusChecked) {
+    if (this.props.isDataLoading || !this.props.films || !this.props.promoFilm) {
       return <Loading />;
     }
     if (this.props.isError) {
@@ -68,6 +68,5 @@ App.propTypes = {
   loadFilms: propTypes.func.isRequired,
   loadPromoFilm: propTypes.func.isRequired,
   checkAuthStatus: propTypes.func.isRequired,
-  loadFavoritesFilms: propTypes.func.isRequired,
-  isUserStatusChecked: propTypes.bool.isRequired
+  loadFavoritesFilms: propTypes.func.isRequired
 };

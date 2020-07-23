@@ -11,7 +11,6 @@ const mapStateToProps = (state) => ({
   isError: state.DATA.error || state.PROMO.error,
   films: selectFilmsByGenre(state),
   promoFilm: state.PROMO.film,
-  isUserStatusChecked: state.USER.loading
 });
 
 const mapDispatchToProps = (dispatch) => ({
