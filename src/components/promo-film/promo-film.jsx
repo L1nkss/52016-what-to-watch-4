@@ -52,13 +52,13 @@ export default class PromoFilm extends React.Component {
 
 PromoFilm.propTypes = {
   film: propTypes.shape({
-    backgroundImage: propTypes.string.isRequired,
-    name: propTypes.string.isRequired,
-    posterImage: propTypes.string.isRequired,
-    genre: propTypes.string.isRequired,
-    id: propTypes.number.isRequired,
-    isFavorite: propTypes.bool.isRequired,
-    released: propTypes.number.isRequired
+    backgroundImage: propTypes.string,
+    name: propTypes.string,
+    posterImage: propTypes.string,
+    genre: propTypes.string,
+    id: propTypes.number,
+    isFavorite: propTypes.bool,
+    released: propTypes.number
   }),
   changeStatusFilm: propTypes.func.isRequired
 };

@@ -3,7 +3,7 @@ import {ActionCreator} from "./actions/actions";
 import Adapter from "../utils/adapter";
 
 const initialState = {
-  film: null,
+  film: {},
   loading: false,
   error: false
 };
