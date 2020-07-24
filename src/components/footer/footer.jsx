@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer className="page-footer">
       <div className="logo">
-        <Link to={RoutePathes.ROOT} className="logo__link">
+        <Link to={RoutePathes.ROOT} className="logo__link logo__link--light">
           <span className="logo__letter logo__letter--1">W</span>
           <span className="logo__letter logo__letter--2">T</span>
           <span className="logo__letter logo__letter--3">W</span>

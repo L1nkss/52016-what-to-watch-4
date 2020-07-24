@@ -8,7 +8,7 @@ import {RoutePathes} from "../../constants/constants";
 import history from "@utils/history";
 import {ServerError} from "@components/server-error/server-error";
 import {NotFound} from "@components/not-found/not-found";
-import MyList from "@components/my-list/my-list";
+import MyList from "@components/my-list/my-list.connect";
 import AddReview from "@components/add-review/add-review.connect";
 import PrivateRoute from "@components/private-route/private-route.connect";
 import {Loading} from "@components/loading/loading";

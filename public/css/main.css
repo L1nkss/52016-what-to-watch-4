@@ -1530,3 +1530,8 @@ main {
 .c-inherit {
   color: inherit;
 }
+
+/* Выравнивание по X */
+.mx-auto {
+  margin: 0 auto;
+}
