@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import App from '@components/app/App';
+import App from '@components/app/app.connect';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from "redux-devtools-extension";
@@ -7,14 +7,14 @@ import thunk from "redux-thunk";
 import {Api} from "./api";
 import reducer from "@reducer/reducer";
 import {ActionCreator} from "@reducer/user/user";
-import {AuthorizationStatus} from "@reducer/user/utils/constants";
+import {AuthorizationStatus} from "@reducer/user/constants/constants.js";
 import history from "@utils/history";
-import {RoutePathes} from "@utils/constans";
-import {ErrorCodes} from "@utils/constans";
+import {RoutePathes} from "./constants/constants";
+import {ErrorCodes} from "./constants/constants";
 
 
 const onUnauthorized = () => {
-  store.dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.NO_AUTH));
+  store.dispatch(ActionCreator.authorizationSuccess(AuthorizationStatus.NO_AUTH));
 };
 
 const onSuccess = (response) => {

@@ -43,18 +43,30 @@ describe(`Testing App component`, () => {
       },
       DATA: {
         films,
-        loading: false
+        loading: false,
+        error: false
       },
       PROMO: {
         film: films[0],
-        loading: false
+        loading: false,
+        error: false
       },
       USER: {
         authorizationStatus: `NO_AUTH`
       }
     });
     const tree = renderer
-      .create(<Provider store={store}><App /></Provider>)
+      .create(<Provider store={store}><App
+        films={films}
+        isDataLoading={false}
+        isError={false}
+        promoFilm={films[0]}
+        loadFilms={() => {}}
+        loadPromoFilm={() => {}}
+        loadFavoritesFilms={() => {}}
+        checkAuthStatus={() => {}}
+        isUserStatusChecked={true}
+      /></Provider>)
       .toJSON();
 
     expect(tree).toMatchSnapshot();

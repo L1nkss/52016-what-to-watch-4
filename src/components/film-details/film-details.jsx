@@ -6,7 +6,7 @@ import MoreLikeFilms from "../more-like-films/more-like-films.connect";
 import {Loading} from "@components/loading/loading";
 import Header from "@components/header/header.connect";
 import {Link} from "react-router-dom";
-import {RoutePathes} from "@utils/constans";
+import {RoutePathes} from "../../constants/constants";
 import {Footer} from "@components/footer/footer";
 
 export default class FilmDetails extends React.PureComponent {
@@ -22,7 +22,7 @@ export default class FilmDetails extends React.PureComponent {
       return <Loading />;
     }
     const {
-      director, starring, rating, description, scoresCount, id, runTime, genre, released
+      director, starring, rating, description, scoresCount, id, runTime, genre, released, isFavorite
     } = details;
     const OverviewData = {
       director,
@@ -65,9 +65,13 @@ export default class FilmDetails extends React.PureComponent {
                     </svg>
                     <span>Play</span>
                   </button>
-                  <button className="btn btn--list movie-card__button" type="button">
+                  <button
+                    className="btn btn--list movie-card__button"
+                    type="button"
+                    onClick={() => this.props.changeStatusFilm(id, Number(!isFavorite))}
+                  >
                     <svg viewBox="0 0 19 20" width="19" height="20">
-                      <use xlinkHref="#add" />
+                      <use xlinkHref={isFavorite ? `#in-list` : `#add`} />
                     </svg>
                     <span>My list</span>
                   </button>
@@ -113,6 +117,7 @@ FilmDetails.propTypes = {
   handleTabClick: propTypes.func.isRequired,
   userAuthStatus: propTypes.string.isRequired,
   getReviews: propTypes.func,
+  changeStatusFilm: propTypes.func,
   details: propTypes.shape({
     runTime: propTypes.number.isRequired,
     genre: propTypes.string.isRequired,
@@ -125,6 +130,7 @@ FilmDetails.propTypes = {
     starring: propTypes.array.isRequired,
     backgroundImage: propTypes.string.isRequired,
     name: propTypes.string.isRequired,
-    posterImage: propTypes.string.isRequired
+    posterImage: propTypes.string.isRequired,
+    isFavorite: propTypes.bool.isRequired
   })
 };

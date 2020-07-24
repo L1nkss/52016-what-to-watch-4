@@ -1,9 +1,9 @@
-import ActionType from "./utils/constants";
-import ActionCreator from "./actions/actions";
+import ActionType from "./constants/constants.js";
+import {ActionCreator} from "./actions/actions";
 import Adapter from "../utils/adapter";
 
 const initialState = {
-  film: null,
+  film: {},
   loading: false,
   error: false
 };
@@ -25,6 +25,8 @@ const reducer = (state = initialState, action) => {
       return Object.assign({}, state, {film: action.payload, loading: false});
     case ActionType.LOAD_PROMO_FILM_ERROR:
       return Object.assign({}, state, {loading: false, error: true});
+    case ActionType.CHANGE_PROMO_FILM_FIELD:
+      return Object.assign({}, state, {film: action.payload});
     default:
       return state;
   }

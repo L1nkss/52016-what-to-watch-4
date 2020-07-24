@@ -25,6 +25,8 @@ exports[`Testing PromoFilm component Component should successfully rendered 1`] 
     >
       <a
         className="logo__link"
+        href="/"
+        onClick={[Function]}
       >
         <span
           className="logo__letter logo__letter--1"
@@ -115,6 +117,7 @@ exports[`Testing PromoFilm component Component should successfully rendered 1`] 
           </button>
           <button
             className="btn btn--list movie-card__button"
+            onClick={[Function]}
             type="button"
           >
             <svg
@@ -123,7 +126,7 @@ exports[`Testing PromoFilm component Component should successfully rendered 1`] 
               width="19"
             >
               <use
-                xlinkHref="#add"
+                xlinkHref="#in-list"
               />
             </svg>
             <span>

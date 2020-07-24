@@ -6,7 +6,8 @@ const RoutePathes = {
   SIGN_IN: `/sign-in`,
   SERVER_ERROR: `/error`,
   ADD_REVIEW: `/add-review`,
-  FILM_DETAIL: `/film-detail`
+  FILM_DETAIL: `/film-detail`,
+  MY_LIST: `/my-list`
 };
 
 // Коды ошибок

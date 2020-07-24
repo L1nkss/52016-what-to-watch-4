@@ -1,5 +1,5 @@
-import ActionType from "../utils/constants";
-import ActionCreator from "./actions";
+import ActionType from "../constants/constants.js";
+import {ActionCreator} from "./actions";
 
 describe(`Data action creators work correctly`, () => {
   it(`Action creator return correct action`, () => {

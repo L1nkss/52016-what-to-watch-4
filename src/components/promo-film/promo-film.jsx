@@ -2,6 +2,7 @@ import Header from "@components/header/header.connect";
 
 export default class PromoFilm extends React.Component {
   render() {
+    const {id, isFavorite} = this.props.film;
     return (
       <section className="movie-card">
         <div className="movie-card__bg">
@@ -30,9 +31,13 @@ export default class PromoFilm extends React.Component {
                   </svg>
                   <span>Play</span>
                 </button>
-                <button className="btn btn--list movie-card__button" type="button">
+                <button
+                  className="btn btn--list movie-card__button"
+                  type="button"
+                  onClick={() => this.props.changeStatusFilm(id, Number(!isFavorite))}
+                >
                   <svg viewBox="0 0 19 20" width="19" height="20">
-                    <use xlinkHref="#add"></use>
+                    <use xlinkHref={isFavorite ? `#in-list` : `#add`} />
                   </svg>
                   <span>My list</span>
                 </button>
@@ -47,10 +52,13 @@ export default class PromoFilm extends React.Component {
 
 PromoFilm.propTypes = {
   film: propTypes.shape({
-    backgroundImage: propTypes.string.isRequired,
-    name: propTypes.string.isRequired,
-    posterImage: propTypes.string.isRequired,
-    genre: propTypes.string.isRequired,
-    released: propTypes.number.isRequired
-  })
+    backgroundImage: propTypes.string,
+    name: propTypes.string,
+    posterImage: propTypes.string,
+    genre: propTypes.string,
+    id: propTypes.number,
+    isFavorite: propTypes.bool,
+    released: propTypes.number
+  }),
+  changeStatusFilm: propTypes.func.isRequired
 };

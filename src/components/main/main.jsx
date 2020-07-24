@@ -1,30 +1,14 @@
 import FilmList from "../film-list/film-list";
 import withLimits from "@hocs/with-limits/with-limits";
 import CatalogNav from "@components/catalog-nav/catalog-nav.connect";
-import {filmLimit} from "@utils/constans";
-import PromoFilm from "@components/promo-film/promo-film";
+import {filmLimit} from "../../constants/constants";
+import PromoFilm from "@components/promo-film/promo-film.connect";
 import {Footer} from "@components/footer/footer";
-import {Loading} from "@components/loading/loading";
-import {ServerError} from "@components/server-error/server-error";
 
 
 export default class Main extends React.Component {
-  componentDidMount() {
-    // Загружаем все фильмы
-    this.props.loadFilms();
-    // Загружаем промо фильм
-    this.props.loadPromoFilm();
-    // Проверяем статус авторизации пользователя
-    this.props.checkAuthStatus();
-  }
   render() {
     const FilmListWrapper = withLimits(FilmList, filmLimit);
-    if (this.props.isDataLoading || !this.props.films || !this.props.promoFilm) {
-      return <Loading />;
-    }
-    if (this.props.isError) {
-      return <ServerError/>;
-    }
     return (
       <>
         <PromoFilm film={this.props.promoFilm} />
@@ -45,9 +29,6 @@ Main.propTypes = {
   isDataLoading: propTypes.bool.isRequired,
   isError: propTypes.bool.isRequired,
   promoFilm: propTypes.object.isRequired,
-  films: propTypes.array.isRequired,
-  loadFilms: propTypes.func.isRequired,
-  loadPromoFilm: propTypes.func.isRequired,
-  checkAuthStatus: propTypes.func.isRequired,
+  films: propTypes.array.isRequired
 };
 

@@ -1,5 +1,5 @@
 import ActionCreator from "./actions";
-import ActionType from "../utils/constants";
+import ActionType from "../constants/constants.js";
 
 describe(`Genre action creators work correctly`, () => {
   it(`Action creator should return correct action`, () => {

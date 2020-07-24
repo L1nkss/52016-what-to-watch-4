@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import {RoutePathes} from "@utils/constans";
+import {RoutePathes} from "../../constants/constants";
 
 const FilmCard = (props) => {
   const {renderPlayer, handleMouseEnter, handleMouseLeave} = props;

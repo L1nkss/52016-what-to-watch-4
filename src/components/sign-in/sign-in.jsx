@@ -1,7 +1,7 @@
 import {Footer} from "@components/footer/footer";
 import {Redirect} from "react-router";
-import {AuthorizationStatus} from "@reducer/user/utils/constants";
-import {RoutePathes} from "@utils/constans";
+import {AuthorizationStatus} from "@reducer/user/constants/constants.js";
+import {RoutePathes} from "../../constants/constants";
 
 export class SignIn extends React.PureComponent {
   constructor(props) {
@@ -41,7 +41,7 @@ export class SignIn extends React.PureComponent {
                 <label className="sign-in__label visually-hidden" htmlFor="user-email">Email address</label>
               </div>
               <div className="sign-in__field">
-                <input className="sign-in__input" ref={this.passwordRef} type="password" placeholder="Password" name="user-password" id="user-password"/>
+                <input className="sign-in__input" autoComplete="on" ref={this.passwordRef} type="password" placeholder="Password" name="user-password" id="user-password"/>
                 <label className="sign-in__label visually-hidden" htmlFor="user-password">Password</label>
               </div>
             </div>

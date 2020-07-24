@@ -1,4 +1,4 @@
-import ActionType from "../utils/constants";
+import ActionType from "../constants/constants.js";
 
 const ActionCreator = {
   loadFilmsRequest: () => {
@@ -16,7 +16,13 @@ const ActionCreator = {
     return {
       type: ActionType.LOAD_FILMS_ERROR
     };
+  },
+  changeFilms: (films) => {
+    return {
+      type: ActionType.CHANGE_FILMS,
+      payload: films
+    };
   }
 };
 
-export default ActionCreator;
+export {ActionCreator};
