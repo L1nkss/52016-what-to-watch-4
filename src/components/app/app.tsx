@@ -24,8 +24,7 @@ type TApp = {
   isDataLoading: boolean,
   films: Array<TFilm>,
   promoFilm: TFilm,
-  isError: boolean,
-  changeStatusFilm: (id: number, status: string) => void
+  isError: boolean
 }
 
 export {TApp};
@@ -76,14 +75,3 @@ export default class App extends React.PureComponent<TApp> {
     );
   }
 }
-
-// App.propTypes = {
-//   isDataLoading: propTypes.bool.isRequired,
-//   isError: propTypes.bool.isRequired,
-//   promoFilm: propTypes.object.isRequired,
-//   films: propTypes.array.isRequired,
-//   loadFilms: propTypes.func.isRequired,
-//   loadPromoFilm: propTypes.func.isRequired,
-//   checkAuthStatus: propTypes.func.isRequired,
-//   loadFavoritesFilms: propTypes.func.isRequired
-// };

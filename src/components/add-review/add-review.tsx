@@ -1,12 +1,27 @@
 import Header from "@components/header/header.connect";
 import {Loading} from "@components/loading/loading";
 import {Link} from "react-router-dom";
-import {RoutePathes} from "../../constants/constants.ts";
+import {RoutePathes} from "../../constants/constants";
 import {starsCount} from "@components/add-review/constants/constants";
+import * as React from "react";
 const Fragment = React.Fragment;
 
+type TAddReview = {
+  id: number,
+  backgroundImage: string,
+  name: string,
+  posterImage: string
+}
 
-export default class AddReview extends React.Component {
+interface IAddReview {
+  isError: boolean,
+  isLoading: boolean,
+  onSubmit: (id: number, data: FormData) => void,
+  details: TAddReview
+}
+
+
+export default class AddReview extends React.Component<IAddReview> {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -109,15 +124,3 @@ export default class AddReview extends React.Component {
     );
   }
 }
-
-AddReview.propTypes = {
-  isError: propTypes.bool.isRequired,
-  isLoading: propTypes.bool.isRequired,
-  onSubmit: propTypes.func.isRequired,
-  details: propTypes.shape({
-    posterImage: propTypes.string.isRequired,
-    name: propTypes.string.isRequired,
-    backgroundImage: propTypes.string.isRequired,
-    id: propTypes.number.isRequired,
-  })
-};

@@ -65,16 +65,18 @@ export default class FilmDetails extends React.PureComponent {
                     </svg>
                     <span>Play</span>
                   </button>
-                  <button
-                    className="btn btn--list movie-card__button"
-                    type="button"
-                    onClick={() => this.props.changeStatusFilm(id, Number(!isFavorite))}
-                  >
-                    <svg viewBox="0 0 19 20" width="19" height="20">
-                      <use xlinkHref={isFavorite ? `#in-list` : `#add`} />
-                    </svg>
-                    <span>My list</span>
-                  </button>
+                  {userAuthStatus === `AUTH` &&
+                    <button
+                      className="btn btn--list movie-card__button"
+                      type="button"
+                      onClick={() => this.props.changeStatusFilm(id, Number(!isFavorite))}
+                    >
+                      <svg viewBox="0 0 19 20" width="19" height="20">
+                        <use xlinkHref={isFavorite ? `#in-list` : `#add`}/>
+                      </svg>
+                      <span>My list</span>
+                    </button>
+                  }
                   {userAuthStatus === `AUTH` &&
                   <Link to={`${RoutePathes.ADD_REVIEW}/${id}`} className="btn movie-card__button">Add review</Link>
                   }

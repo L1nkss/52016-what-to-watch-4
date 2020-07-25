@@ -31,16 +31,18 @@ export default class PromoFilm extends React.Component {
                   </svg>
                   <span>Play</span>
                 </button>
+                {this.props.userAuthStatus === `AUTH` &&
                 <button
                   className="btn btn--list movie-card__button"
                   type="button"
                   onClick={() => this.props.changeStatusFilm(id, Number(!isFavorite))}
                 >
                   <svg viewBox="0 0 19 20" width="19" height="20">
-                    <use xlinkHref={isFavorite ? `#in-list` : `#add`} />
+                    <use xlinkHref={isFavorite ? `#in-list` : `#add`}/>
                   </svg>
                   <span>My list</span>
                 </button>
+                }
               </div>
             </div>
           </div>

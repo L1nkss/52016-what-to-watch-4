@@ -3,8 +3,12 @@ import {connect} from "react-redux";
 // import {Operation as OperationFavorite} from "redux/favorite/favorite";
 import {Operation as OperationFavorite} from "@redux/reducers/favorite/favorite";
 
-const mapDispatchToProps = (dispatch) => ({
-  changeStatusFilm: (id, status) => dispatch(OperationFavorite.postFavoriteFilm(id, status))
+const mapStateToPRops = (state) => ({
+  userAuthStatus: state.USER.authorizationStatus,
 });
 
-export default connect(null, mapDispatchToProps)(PromoFilm);
+const mapDispatchToProps = (dispatch) => ({
+  changeStatusFilm: (id, status) => dispatch(OperationFavorite.postFavoriteFilm(id, status)),
+});
+
+export default connect(mapStateToPRops, mapDispatchToProps)(PromoFilm);

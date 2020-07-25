@@ -1,6 +1,8 @@
 import CatalogItem from "./components/catalog-item";
 import withActiveItem from "@hocs/with-active-item/with-active-item";
 
+import * as React from "react";
+
 const CatalogNav = (props) => {
   const {genre, onGenreClick} = props;
   return (
@@ -14,8 +16,8 @@ const CatalogNav = (props) => {
 };
 export {CatalogNav};
 
-CatalogNav.propTypes = {
-  genre: propTypes.string.isRequired,
-  onGenreClick: propTypes.func.isRequired,
-  allGenres: propTypes.array.isRequired
-};
+// CatalogNav.propTypes = {
+//   genre: propTypes.string.isRequired,
+//   onGenreClick: propTypes.func.isRequired,
+//   allGenres: propTypes.array.isRequired
+// };

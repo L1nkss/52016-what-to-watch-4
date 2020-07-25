@@ -1,7 +1,6 @@
 import AddReview from "@components/add-review/add-review";
 import {connect} from "react-redux";
-import {selectFilmById} from "../../utils/selectors";
-// import {Operation} from "../../reducer/review/review";
+import {selectFilmById} from "@utils/selectors";
 import {Operation} from "@redux/reducers/review/review";
 
 

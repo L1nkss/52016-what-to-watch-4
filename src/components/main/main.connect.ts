@@ -1,4 +1,4 @@
-import Main from "./main";
+import Main from "@components/main/main";
 import {connect} from "react-redux";
 import {selectFilmsByGenre} from "@components/main/selectors/selectors";
 

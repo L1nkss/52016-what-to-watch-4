@@ -17,16 +17,14 @@ interface IProps {
   loadFilms: () => void,
   loadPromoFilm: () => void,
   checkAuthStatus: () => void,
-  loadFavoritesFilms: () => void,
-  changeStatusFilm: (id: number, status: string) => void
+  loadFavoritesFilms: () => void
 }
 
 const mapDispatchToProps = (dispatch):IProps => ({
   loadFilms: () => dispatch(OperationData.loadFilms()),
   loadPromoFilm: () => dispatch(OperationPromo.loadFilm()),
   checkAuthStatus: () => dispatch(OperationUser.checkAuthStatus()),
-  loadFavoritesFilms: () => dispatch(OperationFavorite.loadFavoriteFilms()),
-  changeStatusFilm: (id, status) => dispatch(OperationFavorite.postFavoriteFilm(id, status))
+  loadFavoritesFilms: () => dispatch(OperationFavorite.loadFavoriteFilms())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

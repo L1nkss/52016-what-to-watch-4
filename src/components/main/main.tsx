@@ -1,12 +1,19 @@
 import FilmList from "../film-list/film-list";
 import withLimits from "@hocs/with-limits/with-limits";
 import CatalogNav from "@components/catalog-nav/catalog-nav.connect";
-import {filmLimit} from "../../constants/constants.ts";
+import {filmLimit} from "../../constants/constants";
 import PromoFilm from "@components/promo-film/promo-film.connect";
 import {Footer} from "@components/footer/footer";
 
+import * as React from "react";
+import {TFilm} from "../../types/types";
 
-export default class Main extends React.Component {
+interface IMain {
+  promoFilm: TFilm,
+  films: Array<TFilm>
+}
+
+export default class Main extends React.Component<IMain> {
   render() {
     const FilmListWrapper = withLimits(FilmList, filmLimit);
     return (
@@ -24,11 +31,3 @@ export default class Main extends React.Component {
     );
   }
 }
-
-Main.propTypes = {
-  isDataLoading: propTypes.bool.isRequired,
-  isError: propTypes.bool.isRequired,
-  promoFilm: propTypes.object.isRequired,
-  films: propTypes.array.isRequired
-};
-

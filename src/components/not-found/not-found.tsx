@@ -1,5 +1,7 @@
 import {Footer} from "@components/footer/footer";
 
+import * as React from "react";
+
 export const NotFound = () => {
   return (
     <div className="user-page">

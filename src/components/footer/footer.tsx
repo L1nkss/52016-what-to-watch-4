@@ -1,5 +1,7 @@
 import {Link} from "react-router-dom";
-import {RoutePathes} from "../../constants/constants.ts";
+import {RoutePathes} from "../../constants/constants";
+
+import * as React from "react";
 
 export const Footer = () => {
   return (

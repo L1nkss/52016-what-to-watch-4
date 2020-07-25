@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, {AxiosAdapter, AxiosRequestConfig} from 'axios';
 import {baseUrl} from "./constants/constants";
 
 interface IApi {
@@ -6,12 +6,13 @@ interface IApi {
 }
 
 export default class Api implements IApi{
-    api = axios.create({
-        baseURL: `${baseUrl}/wtw`,
-        timeout: 5000,
-        withCredentials: true
-      });
+  public api;
   constructor(onSuccess, onFail) {
+    this.api = axios.create({
+      baseURL: `${baseUrl}/wtw`,
+      timeout: 5000,
+      withCredentials: true
+    });
     this.api.interceptors.response.use(onSuccess, onFail);
   }
   getFilms() {
