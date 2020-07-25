@@ -1,4 +1,5 @@
-import ActionCreate from "../../reducer/genre/actions/actions";
+// import ActionCreate from "../../reducer/genre/actions/actions";
+import ActionCreator from "@redux/reducers/genre/actions/actions";
 import {CatalogNav} from "./catalog-nav";
 import {connect} from "react-redux";
 import {getAllGenres} from "@components/catalog-nav/selectors/selectors";
@@ -11,7 +12,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   onGenreClick(evt, type) {
     evt.preventDefault();
-    dispatch(ActionCreate.changeActiveGenre(type));
+    dispatch(ActionCreator.changeActiveGenre(type));
   }
 });
 

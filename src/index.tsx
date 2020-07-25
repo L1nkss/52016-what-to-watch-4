@@ -1,6 +1,6 @@
 // import ReactDOM from 'react-dom';
-import App from '@components/app/app.connect';
 import {Provider} from 'react-redux';
+import App from "@components/app/app.connect";
 import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from "redux-devtools-extension";
 import thunk from "redux-thunk";
@@ -52,6 +52,6 @@ import store from "./redux/store";
 
 ReactDOM.render(
     <Provider store={store}>
-      {/*<App />*/}
+      <App />
     </Provider>, document.querySelector(`#root`)
 );

@@ -2,10 +2,10 @@ import Main from "../main/main.connect";
 import FilmDetails from "../film-details/film-details.connect";
 import {Switch, Route, Router} from "react-router-dom";
 import withTabs from "@hocs/with-tabs/with-tabs";
-import {TabList} from "../../constants/constants.ts";
+import {TabList} from "../../constants/constants";
 import SignIn from "@components/sign-in/sign-in.connect";
-import {RoutePathes} from "../../constants/constants.ts";
-import history from "@utils/history.";
+import {RoutePathes} from "../../constants/constants";
+import history from "@utils/history";
 import {ServerError} from "@components/server-error/server-error";
 import {NotFound} from "@components/not-found/not-found";
 import MyList from "@components/my-list/my-list.connect";
@@ -13,7 +13,24 @@ import AddReview from "@components/add-review/add-review.connect";
 import PrivateRoute from "@components/private-route/private-route.connect";
 import {Loading} from "@components/loading/loading";
 
-export default class App extends React.PureComponent {
+import * as React from "react";
+import {TFilm} from "../../types/types";
+
+type TApp = {
+  loadFilms: () => void,
+  loadPromoFilm: () => void,
+  checkAuthStatus: () => void,
+  loadFavoritesFilms: () => void,
+  isDataLoading: boolean,
+  films: Array<TFilm>,
+  promoFilm: TFilm,
+  isError: boolean,
+  changeStatusFilm: (id: number, status: string) => void
+}
+
+export {TApp};
+
+export default class App extends React.PureComponent<TApp> {
   componentDidMount() {
     // Загружаем все фильмы
     this.props.loadFilms();
@@ -60,13 +77,13 @@ export default class App extends React.PureComponent {
   }
 }
 
-App.propTypes = {
-  isDataLoading: propTypes.bool.isRequired,
-  isError: propTypes.bool.isRequired,
-  promoFilm: propTypes.object.isRequired,
-  films: propTypes.array.isRequired,
-  loadFilms: propTypes.func.isRequired,
-  loadPromoFilm: propTypes.func.isRequired,
-  checkAuthStatus: propTypes.func.isRequired,
-  loadFavoritesFilms: propTypes.func.isRequired
-};
+// App.propTypes = {
+//   isDataLoading: propTypes.bool.isRequired,
+//   isError: propTypes.bool.isRequired,
+//   promoFilm: propTypes.object.isRequired,
+//   films: propTypes.array.isRequired,
+//   loadFilms: propTypes.func.isRequired,
+//   loadPromoFilm: propTypes.func.isRequired,
+//   checkAuthStatus: propTypes.func.isRequired,
+//   loadFavoritesFilms: propTypes.func.isRequired
+// };

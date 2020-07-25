@@ -15,7 +15,7 @@ module.exports = {
       "@reducer": path.resolve(__dirname, `src/reducer`),
       "@redux": path.resolve(__dirname, `src/redux`)
     },
-    extensions: [`.ts`, `.tsx`, `.js`, `json`],
+    extensions: [`.ts`, `.tsx`, `.js`, `.jsx`, `json`],
   },
   devServer: {
     contentBase: path.join(__dirname, `public`),
