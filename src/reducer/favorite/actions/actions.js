@@ -1,4 +1,4 @@
-import ActionType from "@reducer/favorite/constants/constants";
+import ActionType from "redux/favorite/constants/constants";
 
 const ActionCreator = {
   loadFavoriteFilmsRequest: () => {

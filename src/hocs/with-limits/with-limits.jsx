@@ -1,4 +1,4 @@
-import {filmLimit} from "../../constants/constants";
+import {filmLimit} from "../../constants/constants.ts";
 
 const withLimits = (Component, limit) => {
   class WithLimits extends React.Component {

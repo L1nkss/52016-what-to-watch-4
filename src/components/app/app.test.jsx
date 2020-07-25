@@ -2,7 +2,7 @@ import App from './app';
 import configureStore from "redux-mock-store";
 import {Provider} from "react-redux";
 import thunk from 'redux-thunk';
-import {Api} from "../../api";
+import {Api} from "../../api.";
 
 const api = new Api(() => {}, () => {});
 const middlewares = [thunk.withExtraArgument(api)];

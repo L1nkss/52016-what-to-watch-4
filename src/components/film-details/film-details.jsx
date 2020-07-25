@@ -6,7 +6,7 @@ import MoreLikeFilms from "../more-like-films/more-like-films.connect";
 import {Loading} from "@components/loading/loading";
 import Header from "@components/header/header.connect";
 import {Link} from "react-router-dom";
-import {RoutePathes} from "../../constants/constants";
+import {RoutePathes} from "../../constants/constants.ts";
 import {Footer} from "@components/footer/footer";
 
 export default class FilmDetails extends React.PureComponent {

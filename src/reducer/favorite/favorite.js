@@ -1,5 +1,5 @@
-import ActionType from "@reducer/favorite/constants/constants";
-import ActionCreator from "@reducer/favorite/actions/actions";
+import ActionType from "redux/favorite/constants/constants";
+import ActionCreator from "redux/favorite/actions/actions";
 import {ActionCreator as ActionCreatorData} from "../data/actions/actions";
 import {ActionCreator as ActionCreatorPromo} from "../promo/actions/actions";
 

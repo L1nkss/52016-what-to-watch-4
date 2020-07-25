@@ -12,9 +12,10 @@ module.exports = {
       "@components": path.resolve(__dirname, `src/components`),
       "@hocs": path.resolve(__dirname, `src/hocs`),
       "@utils": path.resolve(__dirname, `src/utils`),
-      "@reducer": path.resolve(__dirname, `src/reducer`)
+      "@reducer": path.resolve(__dirname, `src/reducer`),
+      "@redux": path.resolve(__dirname, `src/redux`)
     },
-    extensions: [`.js`, `.jsx`, `ts`, `tsx`],
+    extensions: [`.ts`, `.tsx`, `.js`, `json`],
   },
   devServer: {
     contentBase: path.join(__dirname, `public`),

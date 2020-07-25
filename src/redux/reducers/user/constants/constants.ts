@@ -1,0 +1,12 @@
+const AuthorizationStatus = {
+  AUTH: `AUTH`,
+  NO_AUTH: `NO_AUTH`,
+};
+
+const ActionType = {
+  AUTHORIZATION_REQUEST: `AUTHORIZATION_REQUEST`,
+  AUTHORIZATION_SUCCESS: `AUTHORIZATION_SUCCESS`,
+  SAVE_USER_INFORMATION: `SAVE_USER_INFORMATION`,
+};
+
+export {AuthorizationStatus, ActionType};

@@ -1,7 +1,7 @@
 import ActionType from "./constants/constants.js";
 import ActionCreator from "./actions/actions";
-import history from "../../utils/history";
-import {RoutePathes} from "../../constants/constants";
+import history from "@utils/history.";
+import {RoutePathes} from "../../constants/constants.ts";
 
 const initialState = {
   loading: false,

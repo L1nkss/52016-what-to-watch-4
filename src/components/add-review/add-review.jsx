@@ -1,7 +1,7 @@
 import Header from "@components/header/header.connect";
 import {Loading} from "@components/loading/loading";
 import {Link} from "react-router-dom";
-import {RoutePathes} from "../../constants/constants";
+import {RoutePathes} from "../../constants/constants.ts";
 import {starsCount} from "@components/add-review/constants/constants";
 const Fragment = React.Fragment;
 

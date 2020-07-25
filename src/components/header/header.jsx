@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
-import {RoutePathes} from "../../constants/constants";
-import {baseUrl} from "../../constants/constants";
+import {RoutePathes} from "../../constants/constants.ts";
+import {baseUrl} from "../../constants/constants.ts";
 
 export const Header = (props) => {
   const {userAuthStatus, userInformation, isUserPage = false} = props;

@@ -1,7 +1,7 @@
 import FilmList from "../film-list/film-list";
 import withLimits from "@hocs/with-limits/with-limits";
 import CatalogNav from "@components/catalog-nav/catalog-nav.connect";
-import {filmLimit} from "../../constants/constants";
+import {filmLimit} from "../../constants/constants.ts";
 import PromoFilm from "@components/promo-film/promo-film.connect";
 import {Footer} from "@components/footer/footer";
 
