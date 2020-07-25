@@ -5,13 +5,6 @@ import {Operation as OperationData} from "@redux/reducers/data/data";
 import {Operation as OperationPromo} from "@redux/reducers/promo/promo";
 import {Operation as OperationUser} from "@redux/reducers/user/user";
 import {Operation as OperationFavorite} from "@redux/reducers/favorite/favorite";
-// import {Operation as OperationData} from "redux/data/data";
-// import {Operation as OperationPromo} from "redux/promo/promo";
-// import {Operation as OperationUser} from "redux/user/user";
-// import {Operation as OperationFavorite} from "redux/favorite/favorite";
-
-import {TApp} from "@components/app/app";
-import {TFilm} from "../../types/types";
 
 const mapStateToProps = (state) => ({
   isDataLoading: state.DATA.loading || state.PROMO.loading,
