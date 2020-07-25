@@ -1,7 +1,8 @@
 import {Route, Redirect} from "react-router";
 // import {AuthorizationStatus} from "redux/user/constants/constants.ts";
 import {AuthorizationStatus} from "@redux/reducers/user/constants/constants";
-import {RoutePathes} from "../../constants/constants.ts";
+import {RoutePathes} from "../../constants/constants";
+import * as React from "react";
 
 const PrivateRoute = (props) => {
   const {userAuth, path, exact, render} = props;
@@ -19,13 +20,6 @@ const PrivateRoute = (props) => {
       }
     />
   );
-};
-
-PrivateRoute.propTypes = {
-  exact: propTypes.bool.isRequired,
-  path: propTypes.string.isRequired,
-  render: propTypes.func.isRequired,
-  userAuth: propTypes.string.isRequired
 };
 
 export default PrivateRoute;

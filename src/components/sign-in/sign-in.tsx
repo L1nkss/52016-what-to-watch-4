@@ -2,9 +2,18 @@ import {Footer} from "@components/footer/footer";
 import {Redirect} from "react-router";
 // import {AuthorizationStatus} from "redux/user/constants/constants.ts";
 import {AuthorizationStatus} from "@redux/reducers/user/constants/constants";
-import {RoutePathes} from "../../constants/constants.ts";
+import {RoutePathes} from "../../constants/constants";
+import * as React from "react";
+import {TUserAuthStatus} from "../../constants/types";
 
-export class SignIn extends React.PureComponent {
+interface ISignIn {
+  onSubmit: ({login: string, password: number}) => void,
+  authorizationStatus: TUserAuthStatus
+}
+
+export class SignIn extends React.PureComponent<ISignIn> {
+  private loginRef: React.RefObject<HTMLInputElement>;
+  private passwordRef: React.RefObject<HTMLInputElement>;
   constructor(props) {
     super(props);
     this.loginRef = React.createRef();
@@ -56,9 +65,3 @@ export class SignIn extends React.PureComponent {
     );
   }
 }
-
-SignIn.propTypes = {
-  onSubmit: propTypes.func.isRequired,
-  authorizationStatus: propTypes.string.isRequired
-};
-

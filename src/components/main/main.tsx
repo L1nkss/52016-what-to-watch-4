@@ -6,7 +6,7 @@ import PromoFilm from "@components/promo-film/promo-film.connect";
 import {Footer} from "@components/footer/footer";
 
 import * as React from "react";
-import {TFilm} from "../../types/types";
+import {TFilm} from "../../constants/types";
 
 interface IMain {
   promoFilm: TFilm,

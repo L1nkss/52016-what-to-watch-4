@@ -1,6 +1,14 @@
 import Header from "@components/header/header.connect";
+import * as React from "react";
+import {TFilm, TUserAuthStatus} from "../../constants/types";
 
-export default class PromoFilm extends React.Component {
+interface IPromoFilm {
+  film: TFilm,
+  userAuthStatus: TUserAuthStatus,
+  changeStatusFilm: (id: number, isFavorite: number) => void,
+}
+
+export default class PromoFilm extends React.Component<IPromoFilm> {
   render() {
     const {id, isFavorite} = this.props.film;
     return (
@@ -52,15 +60,15 @@ export default class PromoFilm extends React.Component {
   }
 }
 
-PromoFilm.propTypes = {
-  film: propTypes.shape({
-    backgroundImage: propTypes.string,
-    name: propTypes.string,
-    posterImage: propTypes.string,
-    genre: propTypes.string,
-    id: propTypes.number,
-    isFavorite: propTypes.bool,
-    released: propTypes.number
-  }),
-  changeStatusFilm: propTypes.func.isRequired
-};
+// PromoFilm.propTypes = {
+//   film: propTypes.shape({
+//     backgroundImage: propTypes.string,
+//     name: propTypes.string,
+//     posterImage: propTypes.string,
+//     genre: propTypes.string,
+//     id: propTypes.number,
+//     isFavorite: propTypes.bool,
+//     released: propTypes.number
+//   }),
+//   changeStatusFilm: propTypes.func.isRequired
+// };

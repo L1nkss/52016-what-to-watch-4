@@ -1,8 +1,14 @@
 import Header from "@components/header/header.connect";
 import FilmCardItem from "@components/film-list/components/film-card-item";
 import {Footer} from "@components/footer/footer";
+import {TFilm} from "../../constants/types";
+import * as React from "react";
 
-export default class MyList extends React.Component {
+interface IMyList {
+  favoriteFilms: Array<TFilm>
+}
+
+export default class MyList extends React.Component<IMyList> {
   render() {
 
     return (
@@ -21,7 +27,7 @@ export default class MyList extends React.Component {
               </div>
             }
             {this.props.favoriteFilms.map((film, index) => {
-              return <FilmCardItem key={film.id} data={film} index={index} />;
+              return <FilmCardItem key={film.id} data={film} />;
             })}
           </div>
         </section>
@@ -30,7 +36,3 @@ export default class MyList extends React.Component {
     );
   }
 }
-
-MyList.propTypes = {
-  favoriteFilms: propTypes.array.isRequired
-};

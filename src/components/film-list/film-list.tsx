@@ -1,7 +1,15 @@
 import FilmCardItem from "./components/film-card-item";
+import * as React from "react";
+import {TFilm} from "../../constants/types";
+
+interface IFilmList {
+  films: Array<TFilm>,
+  visible: number,
+  changeVisible: (films: Array<TFilm>) => void
+}
 
 
-export default class FilmList extends React.PureComponent {
+export default class FilmList extends React.PureComponent<IFilmList> {
 
   render() {
     const {films, visible, changeVisible} = this.props;
@@ -10,7 +18,7 @@ export default class FilmList extends React.PureComponent {
       <>
         <div className="catalog__movies-list">
           {filmList.map((film, index) => {
-            return <FilmCardItem key={film.id} data={film} index={index} />;
+            return <FilmCardItem key={film.id} data={film} />;
           })}
         </div>
         {films.length > visible && (
@@ -28,12 +36,3 @@ export default class FilmList extends React.PureComponent {
     );
   }
 }
-
-FilmList.propTypes = {
-  films: propTypes.arrayOf(propTypes.shape({
-    name: propTypes.string.isRequired,
-    posterImage: propTypes.string.isRequired
-  }).isRequired),
-  changeVisible: propTypes.func.isRequired,
-  visible: propTypes.number.isRequired
-};

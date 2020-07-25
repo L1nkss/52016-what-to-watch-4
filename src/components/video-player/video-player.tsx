@@ -1,4 +1,13 @@
-export default class VideoPlayer extends React.PureComponent {
+import * as React from "react";
+
+interface IVideoPlayer {
+  isActive: boolean,
+  src: string,
+  poster: string
+}
+
+export default class VideoPlayer extends React.PureComponent<IVideoPlayer> {
+  private _videoRef: React.RefObject<HTMLVideoElement>;
   constructor(props) {
     super(props);
     this._videoRef = React.createRef();
@@ -25,9 +34,3 @@ export default class VideoPlayer extends React.PureComponent {
     );
   }
 }
-
-VideoPlayer.propTypes = {
-  poster: propTypes.string.isRequired,
-  isActive: propTypes.bool.isRequired,
-  src: propTypes.string.isRequired
-};

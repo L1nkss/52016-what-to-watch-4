@@ -1,8 +1,18 @@
 import {Link} from "react-router-dom";
-import {RoutePathes} from "../../constants/constants.ts";
-import {baseUrl} from "../../constants/constants.ts";
+import {RoutePathes} from "../../constants/constants";
+import {baseUrl} from "../../constants/constants";
+import * as React from "react";
+import {TUserAuthStatus, TUserInfo} from "../../constants/types";
+import {ReactNode} from "react";
 
-export const Header = (props) => {
+interface IHeader {
+  userAuthStatus: TUserAuthStatus,
+  children: ReactNode,
+  isUserPage: boolean,
+  userInformation: TUserInfo
+}
+
+export const Header = (props: IHeader) => {
   const {userAuthStatus, userInformation, isUserPage = false} = props;
   return (
     <header className={`page-header ${isUserPage ? `user-page__head` : `movie-card__head`}`}>
@@ -26,13 +36,4 @@ export const Header = (props) => {
       </div>
     </header>
   );
-};
-
-Header.propTypes = {
-  userAuthStatus: propTypes.string.isRequired,
-  children: propTypes.element,
-  userInformation: propTypes.shape({
-    avatarUrl: propTypes.string.isRequired
-  }),
-  isUserPage: propTypes.bool
 };

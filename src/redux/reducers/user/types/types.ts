@@ -1,9 +1,4 @@
-type TUserInfo = {
-  id: number,
-  email: string,
-  name: string,
-  avatarUrl: string
-}
+import {TUserInfo} from "../../../../constants/types";
 
 interface IInitialState {
   authorizationStatus: string,

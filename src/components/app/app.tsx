@@ -14,7 +14,7 @@ import PrivateRoute from "@components/private-route/private-route.connect";
 import {Loading} from "@components/loading/loading";
 
 import * as React from "react";
-import {TFilm} from "../../types/types";
+import {TFilm} from "../../constants/types";
 
 type TApp = {
   loadFilms: () => void,

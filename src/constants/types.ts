@@ -18,4 +18,13 @@ type TFilm = {
   videoLink: string
 }
 
-export {TFilm}
+type TUserAuthStatus = 'AUTH' | 'NO_AUTH';
+
+type TUserInfo = {
+  id: number,
+  email: string,
+  name: string,
+  avatarUrl: string
+}
+
+export {TFilm, TUserAuthStatus, TUserInfo}

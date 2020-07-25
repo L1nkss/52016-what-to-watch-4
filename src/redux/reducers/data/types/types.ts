@@ -1,4 +1,4 @@
-import {TFilm} from "../../../../types/types";
+import {TFilm} from "../../../../constants/types";
 
 interface IInitialState {
   loading: boolean,

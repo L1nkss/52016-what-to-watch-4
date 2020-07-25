@@ -6,10 +6,23 @@ import MoreLikeFilms from "../more-like-films/more-like-films.connect";
 import {Loading} from "@components/loading/loading";
 import Header from "@components/header/header.connect";
 import {Link} from "react-router-dom";
-import {RoutePathes} from "../../constants/constants.ts";
+import {RoutePathes} from "../../constants/constants";
 import {Footer} from "@components/footer/footer";
+import {TFilm, TUserAuthStatus} from "../../constants/types";
 
-export default class FilmDetails extends React.PureComponent {
+import * as React from "react";
+
+interface IFilmDetails {
+  details: TFilm,
+  getReviews: (id: number) => void,
+  userAuthStatus: TUserAuthStatus,
+  activeTab: string,
+  changeStatusFilm: (id: number, isFavorite: number) => void,
+  handleTabClick: () => void,
+  tabs: Array<string>
+}
+
+export default class FilmDetails extends React.PureComponent<IFilmDetails> {
   componentDidMount() {
     if (this.props.details) {
       const {id} = this.props.details;
@@ -112,27 +125,3 @@ export default class FilmDetails extends React.PureComponent {
     );
   }
 }
-
-FilmDetails.propTypes = {
-  tabs: propTypes.array.isRequired,
-  activeTab: propTypes.string.isRequired,
-  handleTabClick: propTypes.func.isRequired,
-  userAuthStatus: propTypes.string.isRequired,
-  getReviews: propTypes.func,
-  changeStatusFilm: propTypes.func,
-  details: propTypes.shape({
-    runTime: propTypes.number.isRequired,
-    genre: propTypes.string.isRequired,
-    released: propTypes.number.isRequired,
-    director: propTypes.string.isRequired,
-    rating: propTypes.number.isRequired,
-    description: propTypes.string.isRequired,
-    scoresCount: propTypes.number.isRequired,
-    id: propTypes.number.isRequired,
-    starring: propTypes.array.isRequired,
-    backgroundImage: propTypes.string.isRequired,
-    name: propTypes.string.isRequired,
-    posterImage: propTypes.string.isRequired,
-    isFavorite: propTypes.bool.isRequired
-  })
-};
