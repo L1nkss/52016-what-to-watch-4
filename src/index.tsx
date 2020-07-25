@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import App from '@components/app/app.connect';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
@@ -11,6 +11,9 @@ import {AuthorizationStatus} from "@reducer/user/constants/constants.js";
 import history from "@utils/history";
 import {RoutePathes} from "./constants/constants";
 import {ErrorCodes} from "./constants/constants";
+// временное решение
+import * as React from "react"
+import * as ReactDOM from 'react-dom';
 
 
 const onUnauthorized = () => {
