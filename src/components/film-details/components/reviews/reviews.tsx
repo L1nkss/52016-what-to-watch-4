@@ -1,17 +1,38 @@
-export default class Reviews extends React.Component {
+import * as React from "react";
+import * as moment from "moment";
+
+type TReview = {
+  rating: number,
+  comment: string
+}
+
+interface IReviews {
+  loading: boolean,
+  reviews: Array<TReview>
+  getReviews: () => void
+}
+
+export default class Reviews extends React.Component<IReviews> {
   constructor(props) {
     super(props);
+    // Перенести из констуктора
     this.props.getReviews();
   }
   renderReview(reviews) {
     return reviews.map((review) => {
+      const date = moment(review.date).format("MMMM D, YYYY");
+      console.log(date);
       return (
         <div className="review" key={review.id}>
           <blockquote className="review__quote">
             <p className="review__text">{review.comment}</p>
             <footer className="review__details">
               <cite className="review__author">{review.user.name}</cite>
-              <time className="review__date" dateTime="2016-12-24">{review.date}</time>
+              <time
+                className="review__date"
+                dateTime={moment(review.date).format("YYYY-M-D")}>
+                {moment(review.date).format("MMMM D, YYYY")}
+              </time>
             </footer>
           </blockquote>
 
@@ -37,9 +58,3 @@ export default class Reviews extends React.Component {
     );
   }
 }
-
-Reviews.propTypes = {
-  loading: propTypes.bool.isRequired,
-  reviews: propTypes.array.isRequired,
-  getReviews: propTypes.func.isRequired
-};
