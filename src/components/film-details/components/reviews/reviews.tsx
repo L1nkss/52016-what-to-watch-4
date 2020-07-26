@@ -21,7 +21,6 @@ export default class Reviews extends React.Component<IReviews> {
   renderReview(reviews) {
     return reviews.map((review) => {
       const date = moment(review.date).format("MMMM D, YYYY");
-      console.log(date);
       return (
         <div className="review" key={review.id}>
           <blockquote className="review__quote">
