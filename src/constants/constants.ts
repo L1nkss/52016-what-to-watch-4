@@ -1,4 +1,33 @@
+// Базовый урл для запросов
 const baseUrl = `https://4.react.pages.academy`;
+
+// Информация по правилам формированию оценки
+const textRatingInformation = {
+  Bad: {
+    value: `Bad`,
+    min: 0,
+    max: 3
+  },
+  Normal: {
+    value: `Normal`,
+    min: 3,
+    max: 5
+  },
+  Good: {
+    value: `Good`,
+    min: 5,
+    max: 8
+  },
+  VeryGood: {
+    value: `Very good`,
+    min: 8,
+    max: 10
+  },
+  Awesome: {
+    value: `Awesome`,
+    min: 10
+  }
+};
 
 // Пути для роутинга
 const RoutePathes = {
@@ -26,4 +55,4 @@ const TabList = {
 // Максимальное количество фильмов, которое можно вывести за 1 раз
 const filmLimit = 8;
 
-export {TabList, filmLimit, RoutePathes, baseUrl, ErrorCodes};
+export {TabList, filmLimit, RoutePathes, baseUrl, ErrorCodes, textRatingInformation};
