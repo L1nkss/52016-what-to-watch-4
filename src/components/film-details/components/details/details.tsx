@@ -1,5 +1,21 @@
-const Details = (props) => {
+import * as React from "react";
+import {getDurationOfFilm} from "@components/film-details/utils/utils";
+
+type TData = {
+    runTime: number
+    genre: string
+    released: number
+    starring: Array<string>,
+    director: string
+}
+
+interface IDetails {
+  data: TData
+}
+
+const Details = (props: IDetails) => {
   const {genre, released, starring, runTime, director} = props.data;
+
   return (
     <div className="movie-card__text movie-card__row">
       <div className="movie-card__text-col">
@@ -18,7 +34,7 @@ const Details = (props) => {
       <div className="movie-card__text-col">
         <p className="movie-card__details-item">
           <strong className="movie-card__details-name">Run Time</strong>
-          <span className="movie-card__details-value">{runTime}</span>
+          <span className="movie-card__details-value">{getDurationOfFilm(runTime)}</span>
         </p>
         <p className="movie-card__details-item">
           <strong className="movie-card__details-name">Genre</strong>
@@ -31,16 +47,6 @@ const Details = (props) => {
       </div>
     </div>
   );
-};
-
-Details.propTypes = {
-  data: propTypes.shape({
-    runTime: propTypes.number.isRequired,
-    genre: propTypes.string.isRequired,
-    released: propTypes.number.isRequired,
-    starring: propTypes.arrayOf(propTypes.string).isRequired,
-    director: propTypes.string.isRequired
-  }).isRequired
 };
 
 export default Details;

@@ -18,10 +18,10 @@ const Overview = (props: IOverview) => {
   return (
     <>
       <div className="movie-rating">
-        <div className="movie-rating__score">{scoresCount}</div>
+        <div className="movie-rating__score">{rating}</div>
         <p className="movie-rating__meta">
           <span className="movie-rating__level">{getFilmRating(rating)}</span>
-          <span className="movie-rating__count">{rating} ratings</span>
+          <span className="movie-rating__count">{scoresCount} ratings</span>
         </p>
       </div>
 

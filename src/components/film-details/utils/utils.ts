@@ -7,7 +7,7 @@ const getFilmRating = (value: number) => {
   if (value >=textRatingInformation.Normal.min && value < textRatingInformation.Normal.max) {
     return textRatingInformation.Normal.value
   }
-  if (value >= 5 && textRatingInformation.Good.min < textRatingInformation.Good.max) {
+  if (value >= textRatingInformation.Good.min && value < textRatingInformation.Good.max) {
     return textRatingInformation.Good.value
   }
   if (value >=textRatingInformation.VeryGood.min && value < textRatingInformation.VeryGood.max) {
@@ -18,4 +18,13 @@ const getFilmRating = (value: number) => {
   }
 };
 
-export {getFilmRating};
+const getDurationOfFilm = (time: number) => {
+  const hours = (time / 60);
+  const rHours = Math.floor(hours);
+  const minutes = (hours - rHours) * 60;
+  const rMinutes = Math.round(minutes);
+
+  return `${rHours}h ${rMinutes}m`;
+};
+
+export {getFilmRating, getDurationOfFilm};
