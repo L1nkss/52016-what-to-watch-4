@@ -7,13 +7,14 @@ import {ReactNode} from "react";
 
 interface IHeader {
   userAuthStatus: TUserAuthStatus,
-  children: ReactNode,
-  isUserPage: boolean,
-  userInformation: TUserInfo
+  children?: ReactNode,
+  isUserPage?: boolean,
+  userInformation: TUserInfo,
+  hideAvatar?: boolean
 }
 
 export const Header = (props: IHeader) => {
-  const {userAuthStatus, userInformation, isUserPage = false} = props;
+  const {userAuthStatus, userInformation, isUserPage = false, hideAvatar = false} = props;
   return (
     <header className={`page-header ${isUserPage ? `user-page__head` : `movie-card__head`}`}>
       <div className="logo">
@@ -30,7 +31,7 @@ export const Header = (props: IHeader) => {
             <Link to={RoutePathes.MY_LIST}><img src={`${baseUrl}${userInformation.avatarUrl}`} alt="User avatar" width="63" height="63"/></Link>
           </div>
         }
-        {userAuthStatus === `NO_AUTH` &&
+        {userAuthStatus === `NO_AUTH` && !hideAvatar &&
         <Link to={RoutePathes.SIGN_IN} className="user-block__link" >Sign in</Link>
         }
       </div>
