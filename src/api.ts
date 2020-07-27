@@ -1,11 +1,11 @@
-import axios, {AxiosAdapter, AxiosRequestConfig} from 'axios';
+import axios from 'axios';
 import {baseUrl} from "./constants/constants";
 
 interface IApi {
   api: object
 }
 
-export default class Api implements IApi{
+export default class Api implements IApi {
   public api;
   constructor(onSuccess, onFail) {
     this.api = axios.create({

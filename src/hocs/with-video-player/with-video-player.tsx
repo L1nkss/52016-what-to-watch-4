@@ -38,32 +38,10 @@ const withVideoPlayer = (Component) => {
       this.handleFullScreenClick = this.handleFullScreenClick.bind(this);
       this.setupRef = this.setupRef.bind(this);
     }
-
-    // componentDidMount(): void {
-    //   this.video = this.videoRef.current;
-    //   this.video = this.props.src;
-    // }
     setupRef(src): void {
       this.video = this.videoRef.current;
       this.video.src = src;
       this.video.addEventListener(`timeupdate`, this.handleProgress);
-    }
-
-    componentDidUpdate(): void {
-      // console.log(document.fullscreenElement)
-      // if (this.props.isFullScreen && !document.fullscreenElement) {
-      //   console.log('request')
-      //   this.video.requestFullscreen();
-      // }
-      // console.log(this.video.paused);
-
-      // if (this.state.isActivePlayer) {
-      //   this.video.play()
-      // } else if (!this.state.isActivePlayer && !this.video.paused) {
-      //   this.video.pause()
-      // } else {
-      //   this.video.load()
-      // }
     }
 
     handleMouseEnter() {
@@ -71,7 +49,6 @@ const withVideoPlayer = (Component) => {
         return;
       }
       this._debounce = setTimeout(() => {
-        // this.setState({isActivePlayer: true}, this.changePlayerStatus);
         this.video.play();
       }, 1000);
     }
@@ -82,7 +59,6 @@ const withVideoPlayer = (Component) => {
       } else if (!this.state.isActivePlayer && !this.video.paused) {
         this.video.pause()
       } else {
-        console.log('tyt')
         this.video.load()
       }
     }
@@ -97,17 +73,6 @@ const withVideoPlayer = (Component) => {
       } else {
         document.exitFullscreen()
       }
-      // if (!document.fullscreenElement) {
-      //   console.log('s')
-      //   this.setState((state) => ({isFullScreen: true}));
-      //   return;
-      //   // player.requestFullscreen()
-      // }
-      // console.log('tyt')
-      // this.setState((state) => ({isFullScreen: false}));
-      // // console.log(document.fullscreenElement)
-      // // // return document.fullscreenElement
-
     }
 
     handleProgress() {
@@ -121,12 +86,14 @@ const withVideoPlayer = (Component) => {
         clearTimeout(this._debounce);
         this._debounce = null;
       }
-      // this.setState({isActivePlayer: false}, this.changePlayerStatus);
       this.video.load()
     }
 
     componentWillUnmount() {
       clearTimeout(this._debounce);
+      if (this.video) {
+        this.video.removeEventListener(`timeupdate`, this.handleProgress);
+      }
     }
 
     render() {
@@ -145,10 +112,7 @@ const withVideoPlayer = (Component) => {
               <VideoPlayer
                 src={src}
                 poster={poster}
-                isFullScreen={this.state.isFullScreen}
                 setupRef={this.setupRef}
-                isActive={this.state.isActivePlayer}
-                handleProgress={this.handleProgress}
                 videoRef={this.videoRef}/>
             );
           }}

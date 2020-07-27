@@ -37,8 +37,8 @@ const onFailRequest = (error) => {
 const api = new Api(onSuccess, onFailRequest);
 
 const store = createStore(
-  reducer,
-  composeWithDevTools(applyMiddleware(thunk.withExtraArgument(api)))
+    reducer,
+    composeWithDevTools(applyMiddleware(thunk.withExtraArgument(api)))
 );
 
 export default store;

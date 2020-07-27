@@ -6,4 +6,4 @@ interface IInitialState {
   loading: boolean
 }
 
-export default IInitialState
+export default IInitialState;

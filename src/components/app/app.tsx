@@ -36,7 +36,7 @@ export default class App extends React.PureComponent<TApp> {
     super(props);
     this.state = {
       name: null
-    }
+    };
   }
   componentDidMount() {
     // Загружаем все фильмы

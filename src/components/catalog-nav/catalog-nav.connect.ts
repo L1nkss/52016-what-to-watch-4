@@ -10,8 +10,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onGenreClick: (evt, type) => {
-      evt.preventDefault();
-      dispatch(ActionCreator.changeActiveGenre(type));
+    evt.preventDefault();
+    dispatch(ActionCreator.changeActiveGenre(type));
   }
 });
 

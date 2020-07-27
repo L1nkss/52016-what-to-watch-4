@@ -72,12 +72,12 @@ export default class FilmDetails extends React.PureComponent<IFilmDetails> {
                 </p>
 
                 <div className="movie-card__buttons">
-                  <button className="btn btn--play movie-card__button" type="button">
+                  <Link to={`${RoutePathes.PLAYER}/${id}`} className="btn btn--play movie-card__button">
                     <svg viewBox="0 0 19 19" width="19" height="19">
-                      <use xlinkHref="#play-s" />
+                      <use xlinkHref="#play-s"></use>
                     </svg>
                     <span>Play</span>
-                  </button>
+                  </Link>
                   {userAuthStatus === `AUTH` &&
                     <button
                       className="btn btn--list movie-card__button"
