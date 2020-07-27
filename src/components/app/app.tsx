@@ -12,9 +12,11 @@ import MyList from "@components/my-list/my-list.connect";
 import AddReview from "@components/add-review/add-review.connect";
 import PrivateRoute from "@components/private-route/private-route.connect";
 import {Loading} from "@components/loading/loading";
-
+import Player from "@components/player/player.connect";
 import * as React from "react";
 import {TFilm} from "../../constants/types";
+import withVideoPlayer from "@hocs/with-video-player/with-video-player";
+
 
 type TApp = {
   loadFilms: () => void,
@@ -30,6 +32,12 @@ type TApp = {
 export {TApp};
 
 export default class App extends React.PureComponent<TApp> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: null
+    }
+  }
   componentDidMount() {
     // Загружаем все фильмы
     this.props.loadFilms();
@@ -42,6 +50,7 @@ export default class App extends React.PureComponent<TApp> {
   }
   render() {
     const FilmDetailsWrapper = withTabs(FilmDetails, TabList);
+    const PlayerWrapper = withVideoPlayer(Player);
     if (this.props.isDataLoading || !this.props.films || !this.props.promoFilm) {
       return <Loading />;
     }
@@ -64,6 +73,7 @@ export default class App extends React.PureComponent<TApp> {
           <Route exact path={RoutePathes.SIGN_IN}>
             <SignIn />
           </Route>
+          <Route exact path={`${RoutePathes.PLAYER}/:id?`} component={PlayerWrapper} />
           <Route exact path={RoutePathes.SERVER_ERROR}>
             <ServerError />
           </Route>

@@ -36,7 +36,8 @@ const RoutePathes = {
   SERVER_ERROR: `/error`,
   ADD_REVIEW: `/add-review`,
   FILM_DETAIL: `/film-detail`,
-  MY_LIST: `/my-list`
+  MY_LIST: `/my-list`,
+  PLAYER: `/player`
 };
 
 // Коды ошибок

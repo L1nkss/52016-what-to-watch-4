@@ -21,16 +21,4 @@ const FilmCard = (props) => {
   );
 };
 
-// FilmCard.propTypes = {
-//   filmInfo: propTypes.shape({
-//     previewVideoLink: propTypes.string.isRequired,
-//     name: propTypes.string.isRequired,
-//     previewImage: propTypes.string.isRequired,
-//     id: propTypes.number.isRequired
-//   }).isRequired,
-//   handleMouseEnter: propTypes.func.isRequired,
-//   handleMouseLeave: propTypes.func.isRequired,
-//   renderPlayer: propTypes.func.isRequired
-// };
-
 export default FilmCard;

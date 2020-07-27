@@ -1,6 +1,8 @@
 import Header from "@components/header/header.connect";
 import * as React from "react";
 import {TFilm, TUserAuthStatus} from "../../constants/types";
+import {Link} from "react-router-dom";
+import {RoutePathes} from "../../constants/constants";
 
 interface IPromoFilm {
   film: TFilm,
@@ -33,12 +35,12 @@ export default class PromoFilm extends React.Component<IPromoFilm> {
               </p>
 
               <div className="movie-card__buttons">
-                <button className="btn btn--play movie-card__button" type="button">
+                <Link to={`${RoutePathes.PLAYER}/${this.props.film.id}`} className="btn btn--play movie-card__button">
                   <svg viewBox="0 0 19 19" width="19" height="19">
                     <use xlinkHref="#play-s"></use>
                   </svg>
                   <span>Play</span>
-                </button>
+                </Link>
                 {this.props.userAuthStatus === `AUTH` &&
                 <button
                   className="btn btn--list movie-card__button"
