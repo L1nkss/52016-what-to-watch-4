@@ -1,5 +1,12 @@
+import * as React from "react";
+
+interface IWithTabsState {
+  activeTab: string,
+  tabs: Array<string>
+}
+
 const withTabs = (Component, Tabs) => {
-  class WithTabs extends React.Component {
+  class WithTabs extends React.Component<{}, IWithTabsState> {
     constructor(props) {
       super(props);
       this.state = {

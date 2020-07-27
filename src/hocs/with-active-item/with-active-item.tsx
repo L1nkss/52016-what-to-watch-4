@@ -1,5 +1,15 @@
+import * as React from "react";
+
+interface IWithActiveItem {
+  active: string,
+  name: string
+  cb?: (evt: React.MouseEvent, name: string) => void,
+  // key?: string
+}
+
+
 const withActiveItem = (Compoment, className) => {
-  class WithActiveItem extends React.Component {
+  class WithActiveItem extends React.Component<IWithActiveItem> {
     getClass() {
       const {active, name} = this.props;
       let itemClass = className;
@@ -15,10 +25,7 @@ const withActiveItem = (Compoment, className) => {
       );
     }
   }
-  WithActiveItem.propTypes = {
-    active: propTypes.string.isRequired,
-    name: propTypes.string.isRequired,
-  };
+
   return WithActiveItem;
 };
 

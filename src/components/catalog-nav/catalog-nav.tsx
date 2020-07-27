@@ -5,7 +5,7 @@ import * as React from "react";
 
 interface ICatalogNav {
   allGenres: Array<string>,
-  onGenreClick: () => void,
+  onGenreClick: (evt: React.MouseEvent, name: string) => void,
   genre: string
 }
 

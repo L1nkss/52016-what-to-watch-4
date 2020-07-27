@@ -1,6 +1,7 @@
 import VideoPlayer from '@components/video-player/video-player';
 import * as React from "react";
 import {TFilm} from "../../constants/types";
+import {ReactNode} from "react";
 
 interface IState {
   isActivePlayer: boolean,

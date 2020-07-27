@@ -1,7 +1,18 @@
-import {filmLimit} from "../../constants/constants.ts";
+import * as React from "react";
+import {filmLimit} from "../../constants/constants";
+import {TFilm} from "../../constants/types";
+
+interface IWithLimitsState {
+  visible: number
+}
+
+interface IWithLimitsProps {
+  films: Array<TFilm>
+}
 
 const withLimits = (Component, limit) => {
-  class WithLimits extends React.Component {
+  class WithLimits extends React.Component<IWithLimitsProps, IWithLimitsState> {
+    limit: number;
     constructor(props) {
       super(props);
       this.limit = filmLimit;

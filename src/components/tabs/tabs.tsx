@@ -4,7 +4,7 @@ import * as React from "react";
 
 interface ITabs {
   activeTab: string,
-  tabs: Array<String>,
+  tabs: Array<string>,
   handleTabClick: () => void
 }
 
