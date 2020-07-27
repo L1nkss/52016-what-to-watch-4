@@ -3,7 +3,13 @@ import withActiveItem from "@hocs/with-active-item/with-active-item";
 
 import * as React from "react";
 
-const CatalogNav = (props) => {
+interface ICatalogNav {
+  allGenres: Array<string>,
+  onGenreClick: () => void,
+  genre: string
+}
+
+const CatalogNav = (props: ICatalogNav) => {
   const {genre, onGenreClick} = props;
   return (
     <ul className="catalog__genres-list">

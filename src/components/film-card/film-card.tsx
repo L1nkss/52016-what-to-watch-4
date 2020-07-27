@@ -1,8 +1,16 @@
 import {Link} from "react-router-dom";
 import {RoutePathes} from "../../constants/constants";
 import * as React from "react";
+import {TFilm} from "../../constants/types";
 
-const FilmCard = (props) => {
+interface IFilmCard {
+  filmInfo: TFilm,
+  renderPlayer: (previewVideo: string, previewImage: string) => React.ReactNode,
+  handleMouseEnter: () => void,
+  handleMouseLeave: () => void
+}
+
+const FilmCard = (props: IFilmCard) => {
   const {renderPlayer, handleMouseEnter, handleMouseLeave} = props;
   const {name, previewImage, previewVideoLink} = props.filmInfo;
   return (

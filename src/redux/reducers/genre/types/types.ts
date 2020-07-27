@@ -2,4 +2,4 @@ interface IInitialState {
   genre: string
 }
 
-export default IInitialState
+export default IInitialState;

@@ -20,7 +20,6 @@ export default class Reviews extends React.Component<IReviews> {
   }
   renderReview(reviews) {
     return reviews.map((review) => {
-      const date = moment(review.date).format("MMMM D, YYYY");
       return (
         <div className="review" key={review.id}>
           <blockquote className="review__quote">
@@ -29,8 +28,8 @@ export default class Reviews extends React.Component<IReviews> {
               <cite className="review__author">{review.user.name}</cite>
               <time
                 className="review__date"
-                dateTime={moment(review.date).format("YYYY-M-D")}>
-                {moment(review.date).format("MMMM D, YYYY")}
+                dateTime={moment(review.date).format(`YYYY-M-D`)}>
+                {moment(review.date).format(`MMMM D, YYYY`)}
               </time>
             </footer>
           </blockquote>

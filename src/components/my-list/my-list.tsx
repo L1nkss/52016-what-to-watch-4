@@ -26,7 +26,7 @@ export default class MyList extends React.Component<IMyList> {
                 Список фильмов пуст :(
               </div>
             }
-            {this.props.favoriteFilms.map((film, index) => {
+            {this.props.favoriteFilms.map((film) => {
               return <FilmCardItem key={film.id} data={film} />;
             })}
           </div>

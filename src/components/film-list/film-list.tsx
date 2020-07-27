@@ -17,7 +17,7 @@ export default class FilmList extends React.PureComponent<IFilmList> {
     return (
       <>
         <div className="catalog__movies-list">
-          {filmList.map((film, index) => {
+          {filmList.map((film) => {
             return <FilmCardItem key={film.id} data={film} />;
           })}
         </div>

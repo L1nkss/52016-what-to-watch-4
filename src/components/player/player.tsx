@@ -5,11 +5,11 @@ import {Loading} from "@components/loading/loading";
 
 const getDuration = (time: number) => {
   if (time === 0) {
-    return `00:00:00`
+    return `00:00:00`;
   }
   const minutes = Math.floor(time / 60);
   const seconds = Number(time - minutes * 60).toFixed(0);
-  return `${minutes}:${seconds}`
+  return `${minutes}:${seconds}`;
 };
 
 
@@ -26,7 +26,7 @@ interface IPlayer {
 export default class Player extends React.Component<IPlayer> {
   render() {
     if (!this.props.film) {
-      return <Loading/>
+      return <Loading/>;
     }
     const playerIcon = this.props.isActivePlayer ?
       <svg viewBox="0 0 14 21" width="14" height="21">
@@ -66,6 +66,6 @@ export default class Player extends React.Component<IPlayer> {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

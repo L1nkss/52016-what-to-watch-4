@@ -1,3 +1,5 @@
+import * as React from "react";
+
 type TFilm = {
   backgroundColor: string,
   backgroundImage:string,
@@ -18,7 +20,14 @@ type TFilm = {
   videoLink: string
 }
 
-type TUserAuthStatus = 'AUTH' | 'NO_AUTH';
+type TUserAuthStatus = `AUTH` | `NO_AUTH`;
+
+interface RouteProps {
+  exact?: boolean,
+  path?: string,
+  render?: ((props: any) => React.ReactNode),
+  component?: React.ComponentType<any>
+}
 
 type TUserInfo = {
   id: number,
@@ -27,4 +36,4 @@ type TUserInfo = {
   avatarUrl: string
 }
 
-export {TFilm, TUserAuthStatus, TUserInfo}
+export {TFilm, TUserAuthStatus, TUserInfo, RouteProps};

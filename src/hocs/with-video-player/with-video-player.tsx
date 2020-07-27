@@ -55,30 +55,30 @@ const withVideoPlayer = (Component) => {
 
     changePlayerStatus() {
       if (this.state.isActivePlayer) {
-        this.video.play()
+        this.video.play();
       } else if (!this.state.isActivePlayer && !this.video.paused) {
-        this.video.pause()
+        this.video.pause();
       } else {
-        this.video.load()
+        this.video.load();
       }
     }
 
     handleClick() {
-      this.setState((state) => ({isActivePlayer: !state.isActivePlayer}), this.changePlayerStatus)
+      this.setState((state) => ({isActivePlayer: !state.isActivePlayer}), this.changePlayerStatus);
     }
 
     handleFullScreenClick() {
       if (!document.fullscreenElement) {
-        this.video.requestFullscreen()
+        this.video.requestFullscreen();
       } else {
-        document.exitFullscreen()
+        document.exitFullscreen();
       }
     }
 
     handleProgress() {
       const percent = Number(((this.video.currentTime / this.video.duration) * 100).toFixed(2));
       const timeLeft = Number((this.video.duration - this.video.currentTime).toFixed(2));
-      this.setState(() => ({progress: percent, timeLeft}))
+      this.setState(() => ({progress: percent, timeLeft}));
     }
 
     handleMouseLeave() {
@@ -86,7 +86,7 @@ const withVideoPlayer = (Component) => {
         clearTimeout(this._debounce);
         this._debounce = null;
       }
-      this.video.load()
+      this.video.load();
     }
 
     componentWillUnmount() {
