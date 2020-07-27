@@ -6,4 +6,4 @@ interface IInitialState {
   error: boolean
 }
 
-export default IInitialState
+export default IInitialState;
