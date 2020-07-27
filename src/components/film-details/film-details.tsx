@@ -60,9 +60,7 @@ export default class FilmDetails extends React.PureComponent<IFilmDetails> {
             </div>
 
             <h1 className="visually-hidden">WTW</h1>
-
             <Header />
-
             <div className="movie-card__wrap">
               <div className="movie-card__desc">
                 <h2 className="movie-card__title">{details.name}</h2>
