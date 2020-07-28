@@ -1,6 +1,8 @@
+import * as React from "react";
 import MoreLikeFilms from "./more-like-films";
 import {Router} from "react-router";
 import {createMemoryHistory} from "history";
+import {mount} from "enzyme";
 
 // Моки
 const films = [
@@ -31,7 +33,7 @@ const films = [
 describe(`Testing More like films component`, () => {
   it(`Component should successfully rendered`, () => {
     const history = createMemoryHistory(`/sign-in`);
-    const tree = renderer.create(<Router history={history}><MoreLikeFilms films={films} /></Router>).toJSON();
+    const tree = mount(<Router history={history}><MoreLikeFilms films={films} /></Router>);
     expect(tree).toMatchSnapshot();
   });
 });

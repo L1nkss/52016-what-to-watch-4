@@ -1,3 +1,5 @@
+import * as React from "react";
+import * as renderer from "react-test-renderer";
 import FilmCard from "@components/film-card/film-card";
 import {Router} from "react-router";
 import {createMemoryHistory} from "history";
@@ -17,11 +19,9 @@ describe(`Testing FilmCard component`, () => {
         <Router history={history}>
           <FilmCard
             filmInfo={film}
-            renderPlayer={() => {}}
-            onHoverCardHandler = {() => {}}
+            renderPlayer={() => <video />}
             handleMouseEnter = {() => {}}
             handleMouseLeave = {() => {}}
-            onClickCardHandler = {() => {}}
           />
         </Router>
     );

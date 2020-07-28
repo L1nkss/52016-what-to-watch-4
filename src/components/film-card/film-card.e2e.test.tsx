@@ -1,4 +1,6 @@
+import * as React from "react";
 import FilmCard from './film-card';
+import {shallow} from "enzyme";
 
 // Моки
 const film = {
@@ -14,8 +16,7 @@ describe(`Testing e2e FilmCard component`, () => {
     const Component = shallow(
         <FilmCard
           filmInfo={film}
-          renderPlayer={() => {}}
-          onClickCardHandler={() => {}}
+          renderPlayer={() => <video />}
           handleMouseEnter={onCardMouseEnter}
           handleMouseLeave={() => {}}
         />
@@ -29,8 +30,7 @@ describe(`Testing e2e FilmCard component`, () => {
     const Component = shallow(
         <FilmCard
           filmInfo={film}
-          renderPlayer={() => {}}
-          onClickCardHandler={() => {}}
+          renderPlayer={() =>  <video />}
           handleMouseLeave={onCardMouseLeave}
           handleMouseEnter={() => {}}
         />

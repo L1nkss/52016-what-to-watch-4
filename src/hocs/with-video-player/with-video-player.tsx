@@ -1,7 +1,6 @@
 import VideoPlayer from '@components/video-player/video-player';
 import * as React from "react";
 import {TFilm} from "../../constants/types";
-import {ReactNode} from "react";
 
 interface IState {
   isActivePlayer: boolean,
@@ -39,6 +38,14 @@ const withVideoPlayer = (Component) => {
       this.handleFullScreenClick = this.handleFullScreenClick.bind(this);
       this.setupRef = this.setupRef.bind(this);
     }
+
+    componentWillUnmount() {
+      clearTimeout(this._debounce);
+      if (this.video) {
+        this.video.removeEventListener(`timeupdate`, this.handleProgress);
+      }
+    }
+
     setupRef(src): void {
       this.video = this.videoRef.current;
       this.video.src = src;
@@ -88,13 +95,6 @@ const withVideoPlayer = (Component) => {
         this._debounce = null;
       }
       this.video.load();
-    }
-
-    componentWillUnmount() {
-      clearTimeout(this._debounce);
-      if (this.video) {
-        this.video.removeEventListener(`timeupdate`, this.handleProgress);
-      }
     }
 
     render() {

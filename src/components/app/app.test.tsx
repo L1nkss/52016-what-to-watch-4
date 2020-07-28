@@ -1,10 +1,16 @@
-import FilmList from "./film-list";
-import {Provider} from "react-redux";
+import * as React from "react";
+import * as renderer from "react-test-renderer";
+import App from './app';
 import configureStore from "redux-mock-store";
-import {Router} from "react-router";
-import {createMemoryHistory} from "history";
+import {Provider} from "react-redux";
+import thunk from 'redux-thunk';
+import Api from "../../api";
+import {mount} from "enzyme";
 
-const mockStore = configureStore([]);
+const api = new Api(() => {}, () => {});
+const middlewares = [thunk.withExtraArgument(api)];
+const mockStore = configureStore(middlewares);
+
 // Моки
 const films = [
   {
@@ -31,24 +37,38 @@ const films = [
   },
 ];
 
-describe(`Testing FilmList component`, () => {
+
+describe(`Testing App component`, () => {
   it(`Component should successfully rendered`, () => {
-    const history = createMemoryHistory(`/sign-in`);
     const store = mockStore({
       GENRE: {
         genre: `All genres`
       },
       DATA: {
         films,
-        loading: false
+        loading: false,
+        error: false
       },
       PROMO: {
         film: films[0],
-        loading: false
+        loading: false,
+        error: false
+      },
+      USER: {
+        authorizationStatus: `NO_AUTH`
       }
     });
-    const component = renderer.create(<Router history={history}><Provider store={store}><FilmList visible={8} changeVisible={() => {}} films={[]} /></Provider></Router>);
-    const tree = component.toJSON();
+    const tree = mount(<Provider store={store}><App
+        films={films}
+        isDataLoading={false}
+        isError={false}
+        promoFilm={films[0]}
+        loadFilms={() => {}}
+        loadPromoFilm={() => {}}
+        loadFavoritesFilms={() => {}}
+        checkAuthStatus={() => {}}
+      /></Provider>);
+
     expect(tree).toMatchSnapshot();
   });
 });

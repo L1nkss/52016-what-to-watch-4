@@ -1,25 +1,28 @@
-import App from './app';
-import configureStore from "redux-mock-store";
+import * as React from "react";
+import * as renderer from "react-test-renderer";
+import Main from './main';
 import {Provider} from "react-redux";
+import configureStore from "redux-mock-store";
+import {Router} from "react-router";
+import {createMemoryHistory} from "history";
 import thunk from 'redux-thunk';
-import {Api} from "../../api.";
+import {mount} from "enzyme";
 
-const api = new Api(() => {}, () => {});
-const middlewares = [thunk.withExtraArgument(api)];
+const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
-
 // Моки
 const films = [
   {
-    name: `Fantastic Beasts: The Crimes of Grindelwald`,
-    backgroundImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    name: `Bohemian Rhapsody`,
+    backgroundImage: `img/bohemian-rhapsody.jpg`,
     previewVideoLink: `img/bohemian-rhapsody.jpg`,
     src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-    genre: `Drama`,
+    genre: `Comedy`,
     previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     released: 2015,
-    id: 1
+    id: 1,
+    isFavorite: false
   },
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -30,13 +33,15 @@ const films = [
     previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     released: 2015,
-    id: 2
+    id: 2,
+    isFavorite: false
   },
 ];
 
-
-describe(`Testing App component`, () => {
+describe(`Testing Main component`, () => {
   it(`Component should successfully rendered`, () => {
+    const history = createMemoryHistory(`/sign-in`);
+    const cb = () => {};
     const store = mockStore({
       GENRE: {
         genre: `All genres`
@@ -55,19 +60,14 @@ describe(`Testing App component`, () => {
         authorizationStatus: `NO_AUTH`
       }
     });
-    const tree = renderer
-      .create(<Provider store={store}><App
-        films={films}
-        isDataLoading={false}
-        isError={false}
-        promoFilm={films[0]}
-        loadFilms={() => {}}
-        loadPromoFilm={() => {}}
-        loadFavoritesFilms={() => {}}
-        checkAuthStatus={() => {}}
-        isUserStatusChecked={true}
-      /></Provider>)
-      .toJSON();
+    const tree = mount(<Provider store={store}>
+        <Router history={history}>
+          <Main
+            promoFilm={films[0]}
+            films={films}
+          />
+        </Router>
+      </Provider>);
 
     expect(tree).toMatchSnapshot();
   });

@@ -1,26 +1,24 @@
-import React from 'react';
-import Main from './main';
+import * as React from "react";
+import * as renderer from "react-test-renderer";
+import FilmList from "./film-list";
 import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
 import {Router} from "react-router";
 import {createMemoryHistory} from "history";
-import thunk from 'redux-thunk';
 
-const middlewares = [thunk];
-const mockStore = configureStore(middlewares);
+const mockStore = configureStore([]);
 // Моки
 const films = [
   {
-    name: `Bohemian Rhapsody`,
-    backgroundImage: `img/bohemian-rhapsody.jpg`,
+    name: `Fantastic Beasts: The Crimes of Grindelwald`,
+    backgroundImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     previewVideoLink: `img/bohemian-rhapsody.jpg`,
     src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-    genre: `Comedy`,
+    genre: `Drama`,
     previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     released: 2015,
-    id: 1,
-    isFavorite: false
+    id: 1
   },
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -31,49 +29,28 @@ const films = [
     previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     released: 2015,
-    id: 2,
-    isFavorite: false
+    id: 2
   },
 ];
 
-describe(`Testing Main component`, () => {
+describe(`Testing FilmList component`, () => {
   it(`Component should successfully rendered`, () => {
     const history = createMemoryHistory(`/sign-in`);
-    const cb = () => {};
     const store = mockStore({
       GENRE: {
         genre: `All genres`
       },
       DATA: {
         films,
-        loading: false,
-        error: false
+        loading: false
       },
       PROMO: {
         film: films[0],
-        loading: false,
-        error: false
-      },
-      USER: {
-        authorizationStatus: `NO_AUTH`
+        loading: false
       }
     });
-    const tree = renderer
-      .create(<Provider store={store}>
-        <Router history={history}>
-          <Main
-            loadFilms={cb}
-            isError={false}
-            isDataLoading={false}
-            loadPromoFilm={cb}
-            checkAuthStatus={cb}
-            promoFilm={films[0]}
-            films={films}
-          />
-        </Router>
-      </Provider>)
-      .toJSON();
-
+    const component = renderer.create(<Router history={history}><Provider store={store}><FilmList visible={8} changeVisible={() => {}} films={[]} /></Provider></Router>);
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

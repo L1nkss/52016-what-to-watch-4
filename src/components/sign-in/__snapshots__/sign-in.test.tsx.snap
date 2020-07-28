@@ -12,7 +12,8 @@ exports[`Testing SignIn component Component should successfully rendered 1`] = `
     >
       <a
         className="logo__link"
-        href="main.html"
+        href="/"
+        onClick={[Function]}
       >
         <span
           className="logo__letter logo__letter--1"
@@ -31,6 +32,14 @@ exports[`Testing SignIn component Component should successfully rendered 1`] = `
         </span>
       </a>
     </div>
+    <h1
+      className="page-title user-page__title"
+    >
+      Sign in
+    </h1>
+    <div
+      className="user-block"
+    />
   </header>
   <div
     className="sign-in user-page__content"
@@ -51,6 +60,7 @@ exports[`Testing SignIn component Component should successfully rendered 1`] = `
             id="user-email"
             name="user-email"
             placeholder="Email address"
+            required={true}
             type="email"
           />
           <label
@@ -69,6 +79,7 @@ exports[`Testing SignIn component Component should successfully rendered 1`] = `
             id="user-password"
             name="user-password"
             placeholder="Password"
+            required={true}
             type="password"
           />
           <label

@@ -1,3 +1,5 @@
+import * as React from "react";
+import * as renderer from "react-test-renderer";
 import {Footer} from "./footer";
 import {createMemoryHistory} from "history";
 import {Router} from "react-router";

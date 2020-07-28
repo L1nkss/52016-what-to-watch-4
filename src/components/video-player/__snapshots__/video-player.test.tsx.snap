@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing VideoPlayer component Component should successfully rendered 1`] = `
+<video
+  className="player__video"
+  muted={true}
+  poster="img/bohemian-rhapsody.jpg"
+/>
+`;

@@ -98,9 +98,10 @@ exports[`Testing PromoFilm component Component should successfully rendered 1`] 
         <div
           className="movie-card__buttons"
         >
-          <button
+          <a
             className="btn btn--play movie-card__button"
-            type="button"
+            href="/player/2"
+            onClick={[Function]}
           >
             <svg
               height="19"
@@ -114,7 +115,7 @@ exports[`Testing PromoFilm component Component should successfully rendered 1`] 
             <span>
               Play
             </span>
-          </button>
+          </a>
           <button
             className="btn btn--list movie-card__button"
             onClick={[Function]}

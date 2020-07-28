@@ -1,3 +1,5 @@
+import * as React from "react";
+import * as renderer from "react-test-renderer";
 import PromoFilm from "@components/promo-film/promo-film";
 import configureStore from "redux-mock-store";
 import {Provider} from "react-redux";
@@ -6,10 +8,10 @@ import {Router} from "react-router";
 
 const mockStore = configureStore([]);
 const film = {
+  backgroundImage: `https://image.com`,
   name: `Fantastic Beasts: The Crimes of Grindelwald`,
   posterImage: `fantastic-beasts-the-crimes-of-grindelwald`,
   id: 2,
-  backgroundImage: `https://image.com`,
   genre: `Crime`,
   released: 2015,
   isFavorite: true
@@ -35,7 +37,9 @@ describe(`Testing PromoFilm component`, () => {
       }
     });
     const component = renderer.create(<Provider store={store}>
-      <Router history={history}><PromoFilm changeStatusFilm={() => {}} film={film} loading={false} /></Router>
+      <Router history={history}>
+        <PromoFilm userAuthStatus={"AUTH"} changeStatusFilm={() => {}} film={film} />
+      </Router>
     </Provider>).toJSON();
     expect(component).toMatchSnapshot();
   });

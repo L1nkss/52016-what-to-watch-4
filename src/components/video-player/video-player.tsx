@@ -3,7 +3,7 @@ import * as React from "react";
 interface IVideoPlayer {
   src: string,
   poster: string,
-  videoRef: React.RefObject<HTMLVideoElement>,
+  videoRef: React.RefObject<HTMLVideoElement> | React.RefObject<any>,
   setupRef: (src: string) => void
 }
 
