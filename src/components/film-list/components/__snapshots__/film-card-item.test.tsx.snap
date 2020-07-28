@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing film card item component Component should successfully rendered 1`] = `
+<WithVideoPlayer
+  filmInfo={
+    Object {
+      "id": 2,
+      "name": "Fantastic Beasts: The Crimes of Grindelwald",
+      "previewImage": "fantastic-beasts-the-crimes-of-grindelwald",
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+    }
+  }
+/>
+`;

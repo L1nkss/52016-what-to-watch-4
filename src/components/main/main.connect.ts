@@ -9,4 +9,5 @@ const mapStateToProps = (state) => ({
   promoFilm: state.PROMO.film
 });
 
+export {Main};
 export default connect(mapStateToProps, null)(Main);

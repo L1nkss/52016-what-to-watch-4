@@ -6,4 +6,5 @@ const mapStateToProps = (state) => ({
   loading: state.REVIEWS.loading
 });
 
+export {Reviews};
 export default connect(mapStateToProps, null)(Reviews);

@@ -6,6 +6,7 @@ import {Router} from "react-router";
 import configureStore from "redux-mock-store";
 import {Provider} from "react-redux";
 import {mount} from "enzyme";
+import * as ShallowRenderer from 'react-test-renderer/shallow';
 
 const mockStore = configureStore([]);
 // Полная информация о фильме
@@ -45,21 +46,32 @@ const tabs = {
 
 describe(`Testing FilmDetails component`, () => {
   it(`Component should successfully rendered`, () => {
-    const history = createMemoryHistory(`/sign-in`);
-    const component = mount(
-      <Provider store={store}>
-      <Router history={history}>
-        <FilmDetails
-          activeTab={tabs.activeTab}
-          handleTabClick={() => {}}
-          details={filmInformation}
-          tabs={tabs.names}
-          changeStatusFilm={() => {}}
-          getReviews={() => {}}
-          userAuthStatus="AUTH" />
-      </Router>
-      </Provider>
-    );
-    expect(component).toMatchSnapshot();
+    const myShallowRenderer = ShallowRenderer.createRenderer();
+    myShallowRenderer.render(<FilmDetails
+      details={filmInformation}
+      getReviews={() => {}}
+      userAuthStatus={"AUTH"}
+      activeTab={tabs.activeTab}
+      changeStatusFilm={() => {}}
+      handleTabClick={() => {}}
+      tabs={tabs.names} />);
+    const result = myShallowRenderer.getRenderOutput();
+    expect(result).toMatchSnapshot();
+    // const history = createMemoryHistory(`/sign-in`);
+    // const component = mount(
+    //   <Provider store={store}>
+    //   <Router history={history}>
+    //     <FilmDetails
+    //       activeTab={tabs.activeTab}
+    //       handleTabClick={() => {}}
+    //       details={filmInformation}
+    //       tabs={tabs.names}
+    //       changeStatusFilm={() => {}}
+    //       getReviews={() => {}}
+    //       userAuthStatus="AUTH" />
+    //   </Router>
+    //   </Provider>
+    // );
+    // expect(component).toMatchSnapshot();
   });
 });

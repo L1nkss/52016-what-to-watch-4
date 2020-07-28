@@ -6,4 +6,5 @@ const mapStateToProps = (state) => ({
   favoriteFilms: getFavoriteFilms(state)
 });
 
+export {MyList};
 export default connect(mapStateToProps, null)(MyList);

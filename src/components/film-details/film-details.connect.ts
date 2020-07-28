@@ -18,4 +18,5 @@ const mapDispatchToProps = (dispatch) => ({
   changeStatusFilm: (id, status) => dispatch(OperationFavorite.postFavoriteFilm(id, status))
 });
 
+export {FilmDetails};
 export default connect(mapStateToProps, mapDispatchToProps)(FilmDetails);

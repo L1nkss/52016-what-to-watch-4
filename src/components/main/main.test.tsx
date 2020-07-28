@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as renderer from "react-test-renderer";
+import * as ShallowRenderer from 'react-test-renderer/shallow';
 import Main from './main';
 import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
@@ -8,8 +9,8 @@ import {createMemoryHistory} from "history";
 import thunk from 'redux-thunk';
 import {mount} from "enzyme";
 
-const middlewares = [thunk];
-const mockStore = configureStore(middlewares);
+// const middlewares = [thunk];
+// const mockStore = configureStore(middlewares);
 // Моки
 const films = [
   {
@@ -40,35 +41,39 @@ const films = [
 
 describe(`Testing Main component`, () => {
   it(`Component should successfully rendered`, () => {
-    const history = createMemoryHistory(`/sign-in`);
-    const cb = () => {};
-    const store = mockStore({
-      GENRE: {
-        genre: `All genres`
-      },
-      DATA: {
-        films,
-        loading: false,
-        error: false
-      },
-      PROMO: {
-        film: films[0],
-        loading: false,
-        error: false
-      },
-      USER: {
-        authorizationStatus: `NO_AUTH`
-      }
-    });
-    const tree = mount(<Provider store={store}>
-        <Router history={history}>
-          <Main
-            promoFilm={films[0]}
-            films={films}
-          />
-        </Router>
-      </Provider>);
-
-    expect(tree).toMatchSnapshot();
+    // const history = createMemoryHistory(`/sign-in`);
+    // const cb = () => {};
+    // const store = mockStore({
+    //   GENRE: {
+    //     genre: `All genres`
+    //   },
+    //   DATA: {
+    //     films,
+    //     loading: false,
+    //     error: false
+    //   },
+    //   PROMO: {
+    //     film: films[0],
+    //     loading: false,
+    //     error: false
+    //   },
+    //   USER: {
+    //     authorizationStatus: `NO_AUTH`
+    //   }
+    // });
+    const myShallowRenderer = ShallowRenderer.createRenderer();
+    myShallowRenderer.render(<Main promoFilm={films[0]} films={films}/>);
+    const result = myShallowRenderer.getRenderOutput();
+    expect(result).toMatchSnapshot();
+    // const tree = mount(<Provider store={store}>
+    //     <Router history={history}>
+    //       <Main
+    //         promoFilm={films[0]}
+    //         films={films}
+    //       />
+    //     </Router>
+    //   </Provider>);
+    //
+    // expect(tree).toMatchSnapshot();
   });
 });

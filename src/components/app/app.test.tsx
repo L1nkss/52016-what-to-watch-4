@@ -6,6 +6,7 @@ import {Provider} from "react-redux";
 import thunk from 'redux-thunk';
 import Api from "../../api";
 import {mount} from "enzyme";
+import * as ShallowRenderer from 'react-test-renderer/shallow';
 
 const api = new Api(() => {}, () => {});
 const middlewares = [thunk.withExtraArgument(api)];
@@ -40,35 +41,48 @@ const films = [
 
 describe(`Testing App component`, () => {
   it(`Component should successfully rendered`, () => {
-    const store = mockStore({
-      GENRE: {
-        genre: `All genres`
-      },
-      DATA: {
-        films,
-        loading: false,
-        error: false
-      },
-      PROMO: {
-        film: films[0],
-        loading: false,
-        error: false
-      },
-      USER: {
-        authorizationStatus: `NO_AUTH`
-      }
-    });
-    const tree = mount(<Provider store={store}><App
-        films={films}
-        isDataLoading={false}
-        isError={false}
-        promoFilm={films[0]}
-        loadFilms={() => {}}
-        loadPromoFilm={() => {}}
-        loadFavoritesFilms={() => {}}
-        checkAuthStatus={() => {}}
-      /></Provider>);
-
-    expect(tree).toMatchSnapshot();
+    const myShallowRenderer = ShallowRenderer.createRenderer();
+    myShallowRenderer.render(<App
+      films={films}
+      isDataLoading={false}
+      isError={false}
+      promoFilm={films[0]}
+      loadFilms={() => {}}
+      loadPromoFilm={() => {}}
+      loadFavoritesFilms={() => {}}
+      checkAuthStatus={() => {}}
+    />);
+    const result = myShallowRenderer.getRenderOutput();
+    expect(result).toMatchSnapshot();
+    // const store = mockStore({
+    //   GENRE: {
+    //     genre: `All genres`
+    //   },
+    //   DATA: {
+    //     films,
+    //     loading: false,
+    //     error: false
+    //   },
+    //   PROMO: {
+    //     film: films[0],
+    //     loading: false,
+    //     error: false
+    //   },
+    //   USER: {
+    //     authorizationStatus: `NO_AUTH`
+    //   }
+    // });
+    // const tree = mount(<Provider store={store}><App
+    //     films={films}
+    //     isDataLoading={false}
+    //     isError={false}
+    //     promoFilm={films[0]}
+    //     loadFilms={() => {}}
+    //     loadPromoFilm={() => {}}
+    //     loadFavoritesFilms={() => {}}
+    //     checkAuthStatus={() => {}}
+    //   /></Provider>);
+    //
+    // expect(tree).toMatchSnapshot();
   });
 });

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing my list component Component should successfully rendered 1`] = `
+<div
+  className="user-page"
+>
+  <Memo(Connect(Component))
+    isUserPage={true}
+  >
+    <h1
+      className="page-title user-page__title"
+    >
+      My list
+    </h1>
+  </Memo(Connect(Component))>
+  <section
+    className="catalog"
+  >
+    <h2
+      className="catalog__title visually-hidden"
+    >
+      CatalogNav
+    </h2>
+    <div
+      className="catalog__movies-list"
+    >
+      <FilmCardItem
+        data={
+          Object {
+            "id": 2,
+            "name": "Fantastic Beasts: The Crimes of Grindelwald",
+            "previewImage": "fantastic-beasts-the-crimes-of-grindelwald",
+            "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+          }
+        }
+      />
+    </div>
+  </section>
+  <Unknown />
+</div>
+`;

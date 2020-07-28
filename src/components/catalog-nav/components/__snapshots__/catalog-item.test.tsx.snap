@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing catalog-item component Component should successfully rendered 1`] = `
+<li
+  className="class"
+  onClick={[Function]}
+>
+  <a
+    className="catalog__genres-link"
+    href="#"
+  >
+    Crime
+  </a>
+</li>
+`;

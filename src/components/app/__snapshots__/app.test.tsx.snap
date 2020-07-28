@@ -1,3 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing App component Component should successfully rendered 1`] = `ReactWrapper {}`;
+exports[`Testing App component Component should successfully rendered 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <Switch>
+    <Route
+      exact={true}
+      path="/"
+    >
+      <Memo(Connect(Main)) />
+    </Route>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/film-detail/:id?"
+    />
+    <Memo(Connect(PrivateRoute))
+      exact={true}
+      path="/add-review/:id?"
+      render={[Function]}
+    />
+    <Memo(Connect(PrivateRoute))
+      exact={true}
+      path="/my-list"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/sign-in"
+    >
+      <Memo(Connect(SignIn)) />
+    </Route>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/player/:id?"
+    />
+    <Route
+      exact={true}
+      path="/error"
+    >
+      <Unknown />
+    </Route>
+    <Route>
+      <Unknown />
+    </Route>
+  </Switch>
+</Router>
+`;
