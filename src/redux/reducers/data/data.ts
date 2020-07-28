@@ -14,7 +14,7 @@ const Operation = {
     dispatch(ActionCreator.loadFilmsRequest());
     return api.getFilms()
       .then((response) => {
-        dispatch(ActionCreator.loadFilms(Adapter.convertData(response.data)));
+        dispatch(ActionCreator.loadFilmsSuccess(Adapter.convertData(response.data)));
       })
       .catch(() => dispatch(ActionCreator.loadFilmError()));
   }

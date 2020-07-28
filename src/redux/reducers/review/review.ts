@@ -5,8 +5,7 @@ import {RoutePathes} from "../../../constants/constants";
 
 const initialState = {
   loading: false,
-  error: false,
-  reviews: null
+  error: false
 };
 const Operation = {
   postReview: (id, data) => (dispatch, getState, api) => {

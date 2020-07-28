@@ -54,35 +54,5 @@ describe(`Testing App component`, () => {
     />);
     const result = myShallowRenderer.getRenderOutput();
     expect(result).toMatchSnapshot();
-    // const store = mockStore({
-    //   GENRE: {
-    //     genre: `All genres`
-    //   },
-    //   DATA: {
-    //     films,
-    //     loading: false,
-    //     error: false
-    //   },
-    //   PROMO: {
-    //     film: films[0],
-    //     loading: false,
-    //     error: false
-    //   },
-    //   USER: {
-    //     authorizationStatus: `NO_AUTH`
-    //   }
-    // });
-    // const tree = mount(<Provider store={store}><App
-    //     films={films}
-    //     isDataLoading={false}
-    //     isError={false}
-    //     promoFilm={films[0]}
-    //     loadFilms={() => {}}
-    //     loadPromoFilm={() => {}}
-    //     loadFavoritesFilms={() => {}}
-    //     checkAuthStatus={() => {}}
-    //   /></Provider>);
-    //
-    // expect(tree).toMatchSnapshot();
   });
 });

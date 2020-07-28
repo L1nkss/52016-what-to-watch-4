@@ -6,7 +6,7 @@ const ActionCreator = {
       type: ActionType.LOAD_FILMS_REQUEST
     };
   },
-  loadFilms: (films) => {
+  loadFilmsSuccess: (films) => {
     return {
       type: ActionType.LOAD_FILMS_SUCCESS,
       payload: films
