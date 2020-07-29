@@ -1,16 +1,6 @@
 import * as React from "react";
-import * as renderer from "react-test-renderer";
 import App from './app';
-import configureStore from "redux-mock-store";
-import {Provider} from "react-redux";
-import thunk from 'redux-thunk';
-import Api from "../../api";
-import {mount} from "enzyme";
 import * as ShallowRenderer from 'react-test-renderer/shallow';
-
-const api = new Api(() => {}, () => {});
-const middlewares = [thunk.withExtraArgument(api)];
-const mockStore = configureStore(middlewares);
 
 // Моки
 const films = [

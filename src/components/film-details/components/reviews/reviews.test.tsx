@@ -25,5 +25,5 @@ describe(`Testing reviews component`, () => {
   it(`Component should successfully rendered`, () => {
     const tree = renderer.create(<Reviews loading={false} reviews={reviews} getReviews={() => {}} />).toJSON();
     expect(tree).toMatchSnapshot();
-  })
+  });
 });

@@ -1,5 +1,5 @@
 // Базовый урл для запросов
-const baseUrl = `https://4.react.pages.academy`;
+const BASE_URL = `https://4.react.pages.academy`;
 
 // Информация по правилам формированию оценки
 const textRatingInformation = {
@@ -49,11 +49,11 @@ const ErrorCodes = {
 
 // Табы
 const TabList = {
-  activeTab: `Overview`,
-  items: [`Overview`, `Details`, `Reviews`]
+  ACTIVE_TAB: `Overview`,
+  ITEMS: [`Overview`, `Details`, `Reviews`]
 };
 
 // Максимальное количество фильмов, которое можно вывести за 1 раз
-const filmLimit = 8;
+const FILM_LIMIT = 8;
 
-export {TabList, filmLimit, RoutePathes, baseUrl, ErrorCodes, textRatingInformation};
+export {TabList, FILM_LIMIT, RoutePathes, BASE_URL, ErrorCodes, textRatingInformation};

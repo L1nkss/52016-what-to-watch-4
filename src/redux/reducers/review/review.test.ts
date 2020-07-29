@@ -29,6 +29,6 @@ describe(`Review post reducer test`, () => {
     })).toEqual({
       loading: false,
       error: true
-    })
+    });
   });
 });

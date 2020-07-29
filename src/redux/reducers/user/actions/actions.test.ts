@@ -14,5 +14,5 @@ describe(`User action creators work correctly`, () => {
       type: ActionType.SAVE_USER_INFORMATION,
       payload: {email: `test@mail.ru`, password: `1234`}
     });
-  })
+  });
 });

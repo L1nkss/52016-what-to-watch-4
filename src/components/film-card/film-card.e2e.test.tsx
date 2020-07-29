@@ -27,13 +27,12 @@ describe(`Testing e2e FilmCard component`, () => {
   });
   it(`Should return false when mouseLeave`, () => {
     const onCardMouseLeave = jest.fn(() => false);
-    const Component = shallow(
-        <FilmCard
-          filmInfo={film}
-          renderPlayer={() =>  <video />}
-          handleMouseLeave={onCardMouseLeave}
-          handleMouseEnter={() => {}}
-        />
+    const Component = shallow(<FilmCard
+      filmInfo={film}
+      renderPlayer={() => <video />}
+      handleMouseLeave={onCardMouseLeave}
+      handleMouseEnter={() => {}}
+    />
     );
     Component.simulate(`mouseleave`);
     expect(onCardMouseLeave.mock.calls.length).toBe(1);

@@ -6,9 +6,9 @@ import {Router} from "react-router";
 
 const userInfo = {
   id: 1,
-  email: "qwe@mail.ru",
-  name: "Morgan",
-  avatarUrl: "https://test.ru"
+  email: `qwe@mail.ru`,
+  name: `Morgan`,
+  avatarUrl: `https://test.ru`
 };
 
 describe(`Testing Header component`, () => {

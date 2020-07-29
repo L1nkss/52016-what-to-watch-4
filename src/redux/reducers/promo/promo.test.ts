@@ -32,7 +32,7 @@ describe(`Promo reducer test`, () => {
       type: ActionType.LOAD_PROMO_FILM_ERROR
     })).toEqual({
       film: {},
-      loading:false,
+      loading: false,
       error: true
     });
     // Изменить поле в фильме

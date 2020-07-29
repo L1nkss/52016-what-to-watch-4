@@ -14,7 +14,7 @@ describe(`Data action creators testing`, () => {
       type: ActionType.LOAD_FILMS_ERROR
     });
     expect(ActionCreator.changeFilms([{name: `Legend`, genre: `Crime`, id: 5}])).toEqual({
-      type:ActionType.CHANGE_FILMS,
+      type: ActionType.CHANGE_FILMS,
       payload: [{name: `Legend`, genre: `Crime`, id: 5}]
     });
   });

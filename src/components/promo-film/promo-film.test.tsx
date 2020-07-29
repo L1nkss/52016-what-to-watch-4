@@ -38,7 +38,7 @@ describe(`Testing PromoFilm component`, () => {
     });
     const component = renderer.create(<Provider store={store}>
       <Router history={history}>
-        <PromoFilm userAuthStatus={"AUTH"} changeStatusFilm={() => {}} film={film} />
+        <PromoFilm userAuthStatus={`AUTH`} changeStatusFilm={() => {}} film={film} />
       </Router>
     </Provider>).toJSON();
     expect(component).toMatchSnapshot();

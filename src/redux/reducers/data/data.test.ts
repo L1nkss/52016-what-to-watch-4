@@ -52,6 +52,6 @@ describe(`Data reducer test`, () => {
       films: [{name: `Legend`, genre: `Comedy`, id: 5}],
       loading: false,
       error: false
-    })
-  })
+    });
+  });
 });

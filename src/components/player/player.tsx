@@ -69,4 +69,4 @@ const Player = (props: IPlayer) => {
   );
 };
 
-export default Player
+export default Player;

@@ -7,7 +7,7 @@ describe(`User reducer test`, () => {
       authorizationStatus: AuthorizationStatus.NO_AUTH,
       authorizationUserInfo: null,
       loading: false
-    })
+    });
   });
   it(`Should change authorization status correctly`, () => {
     // Запрос на получение информации о статусе пользователя
@@ -60,6 +60,6 @@ describe(`User reducer test`, () => {
       authorizationStatus: AuthorizationStatus.NO_AUTH,
       authorizationUserInfo: {email: `test@mail.ru`, password: `1234`},
       loading: false
-    })
-  })
+    });
+  });
 });

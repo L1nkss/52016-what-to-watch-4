@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {baseUrl} from "./constants/constants";
+import {BASE_URL} from "./constants/constants";
 
 interface IApi {
   api: object
@@ -9,7 +9,7 @@ export default class Api implements IApi {
   public api;
   constructor(onSuccess, onFail) {
     this.api = axios.create({
-      baseURL: `${baseUrl}/wtw`,
+      baseURL: `${BASE_URL}/wtw`,
       timeout: 5000,
       withCredentials: true
     });

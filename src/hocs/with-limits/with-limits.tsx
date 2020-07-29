@@ -1,5 +1,5 @@
 import * as React from "react";
-import {filmLimit} from "../../constants/constants";
+import {FILM_LIMIT} from "../../constants/constants";
 import {TFilm} from "../../constants/types";
 
 interface IWithLimitsState {
@@ -15,7 +15,7 @@ const withLimits = (Component, limit) => {
     limit: number;
     constructor(props) {
       super(props);
-      this.limit = filmLimit;
+      this.limit = FILM_LIMIT;
       this.state = {
         visible: limit
       };

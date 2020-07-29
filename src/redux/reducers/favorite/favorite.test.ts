@@ -43,6 +43,6 @@ describe(`Favorite reducer test`, () => {
       films: [],
       loading: false,
       error: true
-    })
+    });
   });
 });

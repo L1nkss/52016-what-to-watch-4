@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as ShallowRenderer from 'react-test-renderer/shallow';
 import {MyList} from "./my-list.connect";
-// import {shallow} from "enzyme";
 
 const films = [{
   name: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -16,5 +15,5 @@ describe(`Testing my list component`, () => {
     myShallowRenderer.render(<MyList favoriteFilms={films}/>);
     const result = myShallowRenderer.getRenderOutput();
     expect(result).toMatchSnapshot();
-  })
+  });
 });

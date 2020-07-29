@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {RoutePathes} from "../../constants/constants";
-import {baseUrl} from "../../constants/constants";
+import {BASE_URL} from "../../constants/constants";
 import * as React from "react";
 import {TUserAuthStatus, TUserInfo} from "../../constants/types";
 import {ReactNode} from "react";
@@ -28,7 +28,7 @@ export const Header = (props: IHeader) => {
       <div className="user-block">
         {userAuthStatus === `AUTH` &&
           <div className="user-block__avatar">
-            <Link to={RoutePathes.MY_LIST}><img src={`${baseUrl}${userInformation.avatarUrl}`} alt="User avatar" width="63" height="63"/></Link>
+            <Link to={RoutePathes.MY_LIST}><img src={`${BASE_URL}${userInformation.avatarUrl}`} alt="User avatar" width="63" height="63"/></Link>
           </div>
         }
         {userAuthStatus === `NO_AUTH` && !hideAvatar &&

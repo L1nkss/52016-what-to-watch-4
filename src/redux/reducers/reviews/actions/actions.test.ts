@@ -13,5 +13,5 @@ describe(`Reviews action creators work correctly`, () => {
     expect(ActionCreator.loadFilmReviewsError()).toEqual({
       type: ActionType.LOAD_REVIEWS_ERROR
     });
-  })
+  });
 });

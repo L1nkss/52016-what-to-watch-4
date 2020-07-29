@@ -11,9 +11,9 @@ const history = createMemoryHistory(`/sign-in`);
 
 const film = {
   id: 1,
-  backgroundImage: 'https://test.ru',
-  name: 'Film',
-  posterImage: 'https://image.com'
+  backgroundImage: `https://test.ru`,
+  name: `Film`,
+  posterImage: `https://image.com`
 };
 
 describe(`Testing AddReview component`, () => {
@@ -35,12 +35,11 @@ describe(`Testing AddReview component`, () => {
       }
     });
     const component = renderer.create(
-      <Router history={history}>
-      <Provider store={store}>
-      <AddReview details={film} isError={false} isLoading={false} onSubmit={() => {}} />
-    </Provider>
-      </Router>
-        ).toJSON();
+        <Router history={history}>
+          <Provider store={store}>
+            <AddReview details={film} isError={false} isLoading={false} onSubmit={() => {}} />
+          </Provider>
+        </Router>).toJSON();
     expect(component).toMatchSnapshot();
   });
 });

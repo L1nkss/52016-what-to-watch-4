@@ -5,13 +5,13 @@ interface IWithTabsState {
   tabs: Array<string>
 }
 
-const withTabs = (Component, Tabs) => {
+const withTabs = (Component, tabs) => {
   class WithTabs extends React.Component<{}, IWithTabsState> {
     constructor(props) {
       super(props);
       this.state = {
-        activeTab: Tabs.activeTab,
-        tabs: Tabs.items
+        activeTab: tabs.ACTIVE_TAB,
+        tabs: tabs.ITEMS
       };
       this.handleTabClick = this.handleTabClick.bind(this);
     }

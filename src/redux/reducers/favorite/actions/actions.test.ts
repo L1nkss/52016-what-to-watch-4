@@ -7,15 +7,13 @@ describe(`Favorite actions creators work correctly`, () => {
       type: ActionType.LOAD_FAVORITE_FILMS_REQUEST
     });
     // Загрузили 1 фильм
-    expect(ActionCreator.loadFavoriteFilmsSuccess(
-      [{name: `Legend`, genre: `Crime`, id: 10}]
+    expect(ActionCreator.loadFavoriteFilmsSuccess([{name: `Legend`, genre: `Crime`, id: 10}]
     )).toEqual({
       type: ActionType.LOAD_FAVORITE_FILMS_SUCCESS,
       payload: [{name: `Legend`, genre: `Crime`, id: 10}]
-    })
+    });
     // Загрузили 2 фильма
-    expect(ActionCreator.loadFavoriteFilmsSuccess(
-      [{name: `Legend`, genre: `Crime`, id: 10}, {name: `Legend`, genre: `Crime`, id: 16}]
+    expect(ActionCreator.loadFavoriteFilmsSuccess([{name: `Legend`, genre: `Crime`, id: 10}, {name: `Legend`, genre: `Crime`, id: 16}]
     )).toEqual({
       type: ActionType.LOAD_FAVORITE_FILMS_SUCCESS,
       payload: [{name: `Legend`, genre: `Crime`, id: 10}, {name: `Legend`, genre: `Crime`, id: 16}]

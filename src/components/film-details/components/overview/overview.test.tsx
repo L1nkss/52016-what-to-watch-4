@@ -26,5 +26,5 @@ describe(`Testing overview component`, () => {
   it(`Component should successfully rendered`, () => {
     const tree = renderer.create(<Overview data={film}/>).toJSON();
     expect(tree).toMatchSnapshot();
-  })
+  });
 });

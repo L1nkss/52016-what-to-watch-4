@@ -13,6 +13,6 @@ describe(`Genre reducer test`, () => {
       payload: `Crime`
     })).toEqual({
       genre: `Crime`
-    })
-  })
+    });
+  });
 });
