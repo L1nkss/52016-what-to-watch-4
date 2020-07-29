@@ -4,7 +4,6 @@ interface IWithActiveItem {
   active: string,
   name: string
   cb?: (evt: React.MouseEvent, name: string) => void,
-  // key?: string
 }
 
 

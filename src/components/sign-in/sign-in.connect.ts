@@ -1,6 +1,5 @@
 import {connect} from "react-redux";
 import {SignIn} from "./sign-in";
-// import {Operation} from "../../reducer/user/user";
 import {Operation} from "@redux/reducers/user/user";
 
 const mapStateToProps = (state) => ({
