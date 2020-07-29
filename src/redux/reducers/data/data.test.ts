@@ -1,5 +1,31 @@
-import {reducer} from "@redux/reducers/data/data";
+import {reducer, Operation} from "@redux/reducers/data/data";
 import ActionType from "@redux/reducers/data/constants/constants";
+import MockAdapter from "axios-mock-adapter";
+import Api from "../../../api";
+
+const testingApi = new Api(() => {}, () => {});
+
+describe(`Data async operation test`, () => {
+  it(`Should make a correct API call to /films`, () => {
+    const apiMock = new MockAdapter(testingApi.api);
+    const dispatch = jest.fn();
+    const dataOperation = Operation.loadFilms();
+
+    apiMock.onGet(`/films`).reply(200, [{fake: true}]);
+
+    dataOperation(dispatch, () => {}, testingApi)
+      .then(() => {
+        expect(dispatch).toHaveBeenCalledTimes(2);
+        expect(dispatch).toHaveBeenCalledWith(1, {
+          type: ActionType.LOAD_FILMS_REQUEST
+        },
+        {
+          type: ActionType.LOAD_FILMS_SUCCESS,
+          payload: [{fake: true}]
+        });
+      });
+  });
+});
 
 describe(`Data reducer test`, () => {
   it(`Should return initial state`, () => {

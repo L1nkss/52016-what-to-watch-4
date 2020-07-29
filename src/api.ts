@@ -1,12 +1,12 @@
-import axios from 'axios';
+import axios, {AxiosInstance} from 'axios';
 import {BASE_URL} from "./constants/constants";
 
 interface IApi {
-  api: object
+  api: AxiosInstance
 }
 
 export default class Api implements IApi {
-  public api;
+  public api: AxiosInstance;
   constructor(onSuccess, onFail) {
     this.api = axios.create({
       baseURL: `${BASE_URL}/wtw`,
