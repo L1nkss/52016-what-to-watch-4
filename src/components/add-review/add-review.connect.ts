@@ -11,7 +11,7 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onSubmit(id, data) {
+  onSubmit(id: number, data) {
     dispatch(Operation.postReview(id, data));
   }
 });

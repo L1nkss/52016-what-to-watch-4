@@ -6,7 +6,7 @@ interface IWithTabsState {
 }
 
 const withTabs = (Component, tabs) => {
-  class WithTabs extends React.Component<{}, IWithTabsState> {
+  class WithTabs extends React.PureComponent<{}, IWithTabsState> {
     constructor(props) {
       super(props);
       this.state = {

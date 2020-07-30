@@ -18,7 +18,7 @@ import {TFilm} from "../../constants/types";
 import withVideoPlayer from "@hocs/with-video-player/with-video-player";
 
 
-type TApp = {
+interface TApp {
   loadFilms: () => void,
   loadPromoFilm: () => void,
   checkAuthStatus: () => void,
@@ -29,16 +29,8 @@ type TApp = {
   isError: boolean
 }
 
-export {TApp};
-
 export default class App extends React.PureComponent<TApp> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: null
-    };
-  }
-  componentDidMount() {
+  componentDidMount(): void {
     // Загружаем все фильмы
     this.props.loadFilms();
     // Загружаем промо фильм

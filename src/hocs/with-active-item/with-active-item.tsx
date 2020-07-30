@@ -8,7 +8,7 @@ interface IWithActiveItem {
 
 
 const withActiveItem = (Compoment, className) => {
-  class WithActiveItem extends React.Component<IWithActiveItem> {
+  class WithActiveItem extends React.PureComponent<IWithActiveItem> {
     getClass() {
       const {active, name} = this.props;
       let itemClass = className;

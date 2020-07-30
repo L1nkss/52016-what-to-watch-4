@@ -11,7 +11,7 @@ interface IWithLimitsProps {
 }
 
 const withLimits = (Component, limit) => {
-  class WithLimits extends React.Component<IWithLimitsProps, IWithLimitsState> {
+  class WithLimits extends React.PureComponent<IWithLimitsProps, IWithLimitsState> {
     limit: number;
     constructor(props) {
       super(props);
