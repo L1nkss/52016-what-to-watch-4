@@ -1,6 +1,7 @@
 import VideoPlayer from '@components/video-player/video-player';
 import * as React from "react";
 import {TFilm} from "../../constants/types";
+import {runVideoFullScreen} from "@utils/utils";
 
 interface IState {
   isActivePlayer: boolean,
@@ -77,7 +78,7 @@ const withVideoPlayer = (Component) => {
 
     handleFullScreenClick() {
       if (!document.fullscreenElement) {
-        this.video.requestFullscreen();
+        runVideoFullScreen(this.video);
       } else {
         document.exitFullscreen();
       }
