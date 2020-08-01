@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Tabs component Component should successfully rendered 1`] = `
+<nav
+  className="movie-nav movie-card__nav"
+>
+  <ul
+    className="movie-nav__list"
+  >
+    <WithActiveItem
+      active="Overview"
+      cb={[Function]}
+      name="Overview"
+    />
+    <WithActiveItem
+      active="Overview"
+      cb={[Function]}
+      name="Details"
+    />
+    <WithActiveItem
+      active="Overview"
+      cb={[Function]}
+      name="Reviews"
+    />
+  </ul>
+</nav>
+`;

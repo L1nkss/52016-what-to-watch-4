@@ -28,9 +28,9 @@ exports[`Testing reviews component Component should successfully rendered 1`] = 
           </cite>
           <time
             className="review__date"
-            dateTime="2020-7-31"
+            dateTime="1970-1-1"
           >
-            July 31, 2020
+            January 1, 1970
           </time>
         </footer>
       </blockquote>
@@ -65,9 +65,9 @@ exports[`Testing reviews component Component should successfully rendered 1`] = 
           </cite>
           <time
             className="review__date"
-            dateTime="2020-7-31"
+            dateTime="1970-1-1"
           >
-            July 31, 2020
+            January 1, 1970
           </time>
         </footer>
       </blockquote>

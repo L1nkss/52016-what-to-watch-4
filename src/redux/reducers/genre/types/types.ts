@@ -1,5 +1,5 @@
-interface IInitialState {
+interface IGenreState {
   genre: string
 }
 
-export default IInitialState;
+export default IGenreState;

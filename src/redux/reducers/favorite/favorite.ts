@@ -2,9 +2,9 @@ import ActionType from "./constants/constants";
 import ActionCreator from "./actions/actions";
 import {ActionCreator as ActionCreatorData} from "../data/actions/actions";
 import {ActionCreator as ActionCreatorPromo} from "../promo/actions/actions";
-import IInitialState from "./types/types";
+import IFavoriteState from "./types/types";
 
-const initialState:IInitialState = {
+const initialState:IFavoriteState = {
   films: null,
   loading: false,
   error: false

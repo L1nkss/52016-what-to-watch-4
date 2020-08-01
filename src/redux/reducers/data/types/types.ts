@@ -1,9 +1,15 @@
 import {TFilm} from "../../../../constants/types";
+import ActionType from "@redux/reducers/data/constants/constants";
 
-interface IInitialState {
+interface IDataState {
   loading: boolean,
   error: boolean,
   films: Array<TFilm>
 }
 
-export default IInitialState;
+interface IDataActions {
+  type: typeof ActionType[keyof typeof ActionType],
+  payload?: Array<TFilm>,
+}
+
+export {IDataState, IDataActions};

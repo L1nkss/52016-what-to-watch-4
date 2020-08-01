@@ -9,7 +9,7 @@ import {RoutePathes} from "../constants/constants";
 import {ErrorCodes} from "../constants/constants";
 import reducer from "./reducers/reducer";
 
-const onUnauthorized = () => {
+const onUnauthorized = (): void => {
   store.dispatch(ActionCreator.authorizationSuccess(AuthorizationStatus.NO_AUTH));
 };
 

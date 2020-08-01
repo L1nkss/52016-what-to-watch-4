@@ -3,9 +3,9 @@ import {RoutePathes} from "../../../constants/constants";
 import history from "@utils/history";
 import ActionCreator from "./actions/actions";
 import Adapter from "./utils/adapter";
-import IInitialState from "./types/types";
+import IUserState from "./types/types";
 
-const initialState: IInitialState = {
+const initialState: IUserState = {
   authorizationStatus: AuthorizationStatus.NO_AUTH,
   authorizationUserInfo: null,
   loading: false

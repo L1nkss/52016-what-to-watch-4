@@ -1,7 +1,7 @@
 import ActionType from "./constants/constants";
-import IInitialState from "./types/types";
+import IGenreState from "./types/types";
 
-const initialState: IInitialState = {
+const initialState: IGenreState = {
   genre: `All genres`
 };
 

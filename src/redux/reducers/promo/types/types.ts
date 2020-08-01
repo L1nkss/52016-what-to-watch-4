@@ -1,9 +1,9 @@
 import {TFilm} from "../../../../constants/types";
 
-interface IInitialState {
+interface IPromoState {
   film: TFilm | {},
   loading: boolean,
   error: boolean
 }
 
-export default IInitialState;
+export default IPromoState;

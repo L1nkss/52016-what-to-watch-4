@@ -1,9 +1,9 @@
 import ActionType from "./constants/constants";
 import {ActionCreator} from "./actions/actions";
 import Adapter from "../../utils/adapter";
-import IInitialState from "./types/types";
+import {IDataState} from "./types/types";
 
-const initialState: IInitialState = {
+const initialState: IDataState = {
   films: [],
   loading: false,
   error: false

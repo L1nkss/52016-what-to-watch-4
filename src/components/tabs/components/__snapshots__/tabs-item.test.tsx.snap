@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Tabs item component Component should successfully rendered 1`] = `
+<li
+  className="active"
+  onClick={[Function]}
+>
+  <a
+    className="movie-nav__link"
+    href="#"
+  >
+    item
+  </a>
+</li>
+`;
