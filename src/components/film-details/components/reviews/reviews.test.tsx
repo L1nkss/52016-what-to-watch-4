@@ -9,7 +9,8 @@ const reviews = [
     comment: `Text`,
     user: {
       name: `Maxim`
-    }
+    },
+    date: 2020
   },
   {
     id: 10,
@@ -17,7 +18,8 @@ const reviews = [
     comment: `Text new`,
     user: {
       name: `Maxim`
-    }
+    },
+    date: 2020
   }
 ];
 

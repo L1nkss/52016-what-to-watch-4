@@ -8,7 +8,7 @@
     "eslint.js": "eslint --ext .jsx --ext .js",
     "eslint.ts": "eslint --config .tslint.yml --ext .tsx --ext .ts src/",
     "test": "npm run eslint && npm run test.jest",
-    "test.jest": "jest --config ./jets.config.js",
+    "test.jest": "jest --config ./jest.config.js",
     "build": "webpack --mode production",
     "start": "webpack-dev-server"
   },
