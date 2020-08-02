@@ -1,4 +1,4 @@
-import {mount} from "Enzyme";
+import {mount} from "enzyme";
 import TabsItem from "@components/tabs/components/tabs-item";
 import withActiveItem from "@hocs/with-active-item/with-active-item";
 
