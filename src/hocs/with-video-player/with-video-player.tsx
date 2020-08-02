@@ -15,7 +15,7 @@ interface IProps {
 
 
 const withVideoPlayer = (Component) => {
-  class WithVideoPlayer extends React.PureComponent<IProps, IState> {
+  return class WithVideoPlayer extends React.PureComponent<IProps, IState> {
     _debounce: NodeJS.Timeout;
     public videoRef: React.RefObject<HTMLVideoElement>;
     public video: HTMLVideoElement | null;
@@ -120,8 +120,7 @@ const withVideoPlayer = (Component) => {
         />
       );
     }
-  }
-  return WithVideoPlayer;
+  };
 };
 
 export default withVideoPlayer;

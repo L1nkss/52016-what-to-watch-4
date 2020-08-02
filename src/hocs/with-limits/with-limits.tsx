@@ -10,7 +10,7 @@ interface IWithLimitsProps {
 }
 
 const withLimits = (Component, limit) => {
-  class WithLimits extends React.Component<IWithLimitsProps, IWithLimitsState> {
+  return class WithLimits extends React.Component<IWithLimitsProps, IWithLimitsState> {
     limit: number;
     constructor(props) {
       super(props);
@@ -40,8 +40,7 @@ const withLimits = (Component, limit) => {
         <Component {...this.props} changeVisible={this.changeVisible} visible={this.state.visible} />
       );
     }
-  }
-  return WithLimits;
+  };
 };
 
 export default withLimits;

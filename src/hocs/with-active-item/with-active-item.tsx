@@ -6,7 +6,7 @@ interface IWithActiveItem {
 
 
 const withActiveItem = (Compoment, className) => {
-  class WithActiveItem extends React.Component<IWithActiveItem> {
+  return class WithActiveItem extends React.Component<IWithActiveItem> {
     getClass() {
       const {active, name} = this.props;
       let itemClass = className;
@@ -21,9 +21,8 @@ const withActiveItem = (Compoment, className) => {
         <Compoment {...this.props} className={itemClass}/>
       );
     }
-  }
+  };
 
-  return WithActiveItem;
 };
 
 export default withActiveItem;

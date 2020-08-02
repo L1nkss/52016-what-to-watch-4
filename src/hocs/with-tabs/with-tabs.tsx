@@ -4,7 +4,7 @@ interface IWithTabsState {
 }
 
 const withTabs = (Component, tabs) => {
-  class WithTabs extends React.Component<{}, IWithTabsState> {
+  return class WithTabs extends React.Component<{}, IWithTabsState> {
     constructor(props) {
       super(props);
       this.state = {
@@ -32,8 +32,7 @@ const withTabs = (Component, tabs) => {
         />
       );
     }
-  }
-  return WithTabs;
+  };
 };
 
 export default withTabs;
