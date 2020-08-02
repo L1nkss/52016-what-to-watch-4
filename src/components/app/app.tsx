@@ -13,7 +13,6 @@ import AddReview from "@components/add-review/add-review.connect";
 import PrivateRoute from "@components/private-route/private-route.connect";
 import {Loading} from "@components/loading/loading";
 import Player from "@components/player/player.connect";
-import * as React from "react";
 import {TFilm} from "../../constants/types";
 import withVideoPlayer from "@hocs/with-video-player/with-video-player";
 

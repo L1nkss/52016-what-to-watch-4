@@ -1,6 +1,5 @@
 import {Link} from "react-router-dom";
 import {RoutePathes} from "../../constants/constants";
-import * as React from "react";
 import {TFilm} from "../../constants/types";
 
 interface IFilmCard {

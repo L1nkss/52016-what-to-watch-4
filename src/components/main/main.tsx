@@ -4,7 +4,6 @@ import CatalogNav from "@components/catalog-nav/catalog-nav.connect";
 import {FILM_LIMIT} from "../../constants/constants";
 import PromoFilm from "@components/promo-film/promo-film.connect";
 import {Footer} from "@components/footer/footer";
-import * as React from "react";
 import {TFilm} from "../../constants/types";
 
 interface IMain {

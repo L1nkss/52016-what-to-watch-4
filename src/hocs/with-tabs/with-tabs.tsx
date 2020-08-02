@@ -1,5 +1,3 @@
-import * as React from "react";
-
 interface IWithTabsState {
   activeTab: string,
   tabs: Array<string>

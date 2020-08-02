@@ -1,5 +1,4 @@
 import Header from "@components/header/header.connect";
-import * as React from "react";
 import {TFilm, TUserAuthStatus} from "../../constants/types";
 import {Link} from "react-router-dom";
 import {RoutePathes} from "../../constants/constants";

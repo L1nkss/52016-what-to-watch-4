@@ -1,5 +1,3 @@
-import * as React from "react";
-
 interface IVideoPlayer {
   src: string,
   poster: string,

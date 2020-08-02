@@ -1,4 +1,3 @@
-import * as React from "react";
 import * as ShallowRenderer from 'react-test-renderer/shallow';
 import {MyList} from "./my-list.connect";
 

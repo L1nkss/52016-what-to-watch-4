@@ -10,7 +10,6 @@ import {RoutePathes} from "../../constants/constants";
 import {Footer} from "@components/footer/footer";
 import {TFilm, TUserAuthStatus} from "../../constants/types";
 
-import * as React from "react";
 
 interface IFilmDetails {
   details: TFilm,

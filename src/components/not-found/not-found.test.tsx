@@ -1,4 +1,3 @@
-import * as React from "react";
 import * as renderer from "react-test-renderer";
 import {NotFound} from "./not-found";
 import {createMemoryHistory} from "history";

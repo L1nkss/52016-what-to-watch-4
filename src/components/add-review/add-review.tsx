@@ -3,8 +3,8 @@ import {Loading} from "@components/loading/loading";
 import {Link} from "react-router-dom";
 import {RoutePathes} from "../../constants/constants";
 import {starsCount} from "@components/add-review/constants/constants";
-import * as React from "react";
-const Fragment = React.Fragment;
+// Импорт нужен, так как React.Fragment ругается при тесте, что React не определен
+import React from "react";
 
 type TAddReview = {
   id: number,
@@ -37,7 +37,7 @@ export default class AddReview extends React.Component<IAddReview> {
     const ratingStarts = [];
     for (let i = 1; i <= starsCount; i++) {
       const input = (
-        <Fragment key={`star-${i}`}>
+        <React.Fragment key={`star-${i}`}>
           <input
             className="rating__input"
             id={`star-${i}`}
@@ -48,7 +48,7 @@ export default class AddReview extends React.Component<IAddReview> {
             disabled={this.props.isLoading}
           />
           <label className="rating__label" htmlFor={`star-${i}`}>{`Rating ${i}`}</label>
-        </Fragment>
+        </React.Fragment>
       );
       ratingStarts.push(input);
     }

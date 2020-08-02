@@ -1,4 +1,3 @@
-import * as React from "react";
 import * as renderer from "react-test-renderer";
 import AddReview from "@components/add-review/add-review";
 import configureStore from "redux-mock-store";

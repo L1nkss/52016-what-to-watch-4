@@ -1,6 +1,5 @@
 import TabsItem from "./components/tabs-item";
 import withActiveItem from "@hocs/with-active-item/with-active-item";
-import * as React from "react";
 
 interface ITabs {
   activeTab: string,

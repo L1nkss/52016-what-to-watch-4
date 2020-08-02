@@ -1,7 +1,6 @@
 import {Link} from "react-router-dom";
 import {RoutePathes} from "../../constants/constants";
 import {BASE_URL} from "../../constants/constants";
-import * as React from "react";
 import {TUserAuthStatus, TUserInfo} from "../../constants/types";
 import {ReactNode} from "react";
 

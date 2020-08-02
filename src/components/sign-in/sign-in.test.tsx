@@ -1,4 +1,3 @@
-import * as React from "react";
 import * as renderer from "react-test-renderer";
 import SignIn from "@components/sign-in/sign-in.connect";
 import {Provider} from "react-redux";

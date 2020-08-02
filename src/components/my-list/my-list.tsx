@@ -2,7 +2,6 @@ import Header from "@components/header/header.connect";
 import FilmCardItem from "@components/film-list/components/film-card-item";
 import {Footer} from "@components/footer/footer";
 import {TFilm} from "../../constants/types";
-import * as React from "react";
 
 interface IMyList {
   favoriteFilms: Array<TFilm>

@@ -1,4 +1,3 @@
-import * as React from "react";
 import * as renderer from "react-test-renderer";
 import CatalogNav from "@components/catalog-nav/catalog-nav.connect";
 import configureStore from "redux-mock-store";

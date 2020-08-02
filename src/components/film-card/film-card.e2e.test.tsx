@@ -1,4 +1,3 @@
-import * as React from "react";
 import FilmCard from './film-card';
 import {shallow} from "enzyme";
 

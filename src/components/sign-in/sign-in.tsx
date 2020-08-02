@@ -3,7 +3,6 @@ import {Redirect} from "react-router";
 import Header from "@components/header/header.connect";
 import {AuthorizationStatus} from "@redux/reducers/user/constants/constants";
 import {RoutePathes} from "../../constants/constants";
-import * as React from "react";
 import {TUserAuthStatus} from "../../constants/types";
 
 interface ISignIn {

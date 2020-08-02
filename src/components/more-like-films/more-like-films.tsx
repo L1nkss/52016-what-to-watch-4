@@ -1,5 +1,4 @@
 import FilmCardItem from "@components/film-list/components/film-card-item";
-import * as React from "react";
 import {TFilm} from "../../constants/types";
 
 interface IMoreLikeFilms {

@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import * as ShallowRenderer from 'react-test-renderer/shallow';
 import Main from './main';
 

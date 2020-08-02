@@ -1,4 +1,3 @@
-import * as React from "react";
 import {FILM_LIMIT} from "../../constants/constants";
 import {TFilm} from "../../constants/types";
 

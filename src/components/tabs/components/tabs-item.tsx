@@ -1,5 +1,3 @@
-import * as React from "react";
-
 interface ITabsItem {
   className: string,
   name: string,

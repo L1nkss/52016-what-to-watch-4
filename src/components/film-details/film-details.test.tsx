@@ -1,4 +1,3 @@
-import * as React from "react";
 import FilmDetails from "./film-details";
 import * as ShallowRenderer from 'react-test-renderer/shallow';
 

@@ -1,8 +1,6 @@
 import CatalogItem from "./components/catalog-item";
 import withActiveItem from "@hocs/with-active-item/with-active-item";
 
-import * as React from "react";
-
 interface ICatalogNav {
   allGenres: Array<string>,
   onGenreClick: (evt: React.MouseEvent, name: string) => void,

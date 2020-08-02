@@ -1,5 +1,3 @@
-import * as React from "react";
-
 type TFilm = {
   backgroundColor?: string,
   backgroundImage?:string,

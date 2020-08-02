@@ -1,4 +1,3 @@
-import * as React from "react";
 import * as ShallowRenderer from 'react-test-renderer/shallow';
 import FilmCardItem from "@components/film-list/components/film-card-item";
 

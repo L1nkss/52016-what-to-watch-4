@@ -1,4 +1,3 @@
-import * as React from "react";
 import * as renderer from "react-test-renderer";
 import PromoFilm from "@components/promo-film/promo-film";
 import configureStore from "redux-mock-store";

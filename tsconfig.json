@@ -14,7 +14,8 @@
       "@reducer/*": ["src/reducer/*"],
       "@redux/*": ["src/redux/*"]
     },
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules",

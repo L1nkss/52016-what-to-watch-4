@@ -1,4 +1,3 @@
-import * as React from "react";
 import history from "@utils/history";
 import {TFilm} from "../../constants/types";
 import {Loading} from "@components/loading/loading";

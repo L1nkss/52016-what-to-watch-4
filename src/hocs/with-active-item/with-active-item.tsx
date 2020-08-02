@@ -1,5 +1,3 @@
-import * as React from "react";
-
 interface IWithActiveItem {
   active: string,
   name: string

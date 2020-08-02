@@ -1,5 +1,3 @@
-import * as React from "react";
-
 interface ICatalogItem {
  className: string,
  cb: (evt: React.MouseEvent, name: string) => void,
