@@ -17,8 +17,9 @@ interface IProps {
 const withVideoPlayer = (Component) => {
   return class WithVideoPlayer extends React.PureComponent<IProps, IState> {
     _debounce: NodeJS.Timeout;
-    public videoRef: React.RefObject<HTMLVideoElement>;
-    public video: HTMLVideoElement | null;
+    videoRef: React.RefObject<HTMLVideoElement>;
+    video: HTMLVideoElement | null;
+
     constructor(props) {
       super(props);
       this.state = {

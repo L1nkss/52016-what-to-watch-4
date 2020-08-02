@@ -21,7 +21,7 @@ interface IAddReview {
 }
 
 
-export default class AddReview extends React.Component<IAddReview> {
+export default class AddReview extends React.PureComponent<IAddReview> {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);

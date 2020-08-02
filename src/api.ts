@@ -6,7 +6,7 @@ interface IApi {
 }
 
 export default class Api implements IApi {
-  public api: AxiosInstance;
+  api: AxiosInstance;
   constructor(onSuccess, onFail) {
     this.api = axios.create({
       baseURL: `${BASE_URL}/wtw`,
@@ -36,10 +36,10 @@ export default class Api implements IApi {
       password: data.password
     });
   }
-  postFavoriteFilm(id, status) {
+  postFavoriteFilm(id: number, status: number) {
     return this.api.post(`/favorite/${id}/${status}`);
   }
-  postReview(id, data) {
+  postReview(id: number, data) {
     return this.api.post(`/comments/${id}`, {
       rating: data.get(`rating`),
       comment: data.get(`review-text`)

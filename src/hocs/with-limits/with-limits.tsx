@@ -1,3 +1,4 @@
+import * as React from "react";
 import {FILM_LIMIT} from "../../constants/constants";
 import {TFilm} from "../../constants/types";
 
@@ -10,7 +11,7 @@ interface IWithLimitsProps {
 }
 
 const withLimits = (Component, limit) => {
-  return class WithLimits extends React.Component<IWithLimitsProps, IWithLimitsState> {
+  return class WithLimits extends React.PureComponent<IWithLimitsProps, IWithLimitsState> {
     limit: number;
     constructor(props) {
       super(props);
