@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing More like films component Component should successfully rendered 1`] = `
+<div
+  className="catalog__movies-list"
+>
+  <FilmCardItem
+    data={
+      Object {
+        "backgroundImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+        "genre": "Drama",
+        "id": 1,
+        "name": "Fantastic Beasts: The Crimes of Grindelwald",
+        "posterImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+        "previewImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+        "previewVideoLink": "img/bohemian-rhapsody.jpg",
+        "released": 2015,
+        "src": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      }
+    }
+  />
+  <FilmCardItem
+    data={
+      Object {
+        "backgroundImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+        "genre": "Drama",
+        "id": 2,
+        "name": "Fantastic Beasts: The Crimes of Grindelwald",
+        "posterImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+        "previewImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+        "previewVideoLink": "img/bohemian-rhapsody.jpg",
+        "released": 2015,
+        "src": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      }
+    }
+  />
+</div>
+`;

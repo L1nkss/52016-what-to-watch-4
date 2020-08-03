@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing FilmCard component Component should successfully rendered 1`] = `
+<article
+  className="small-movie-card catalog__movies-card"
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+>
+  <Link
+    className="c-inherit"
+    to="/film-detail/2"
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <video />
+    </div>
+    <h3
+      className="small-movie-card__title"
+    >
+      Fantastic Beasts: The Crimes of Grindelwald
+    </h3>
+  </Link>
+</article>
+`;

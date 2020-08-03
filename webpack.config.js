@@ -2,7 +2,7 @@ const path = require(`path`);
 const webpack = require(`webpack`);
 
 module.exports = {
-  entry: `./src/index.jsx`,
+  entry: `./src/index.tsx`,
   output: {
     filename: `bundle.js`,
     path: path.join(__dirname, `public`)
@@ -12,9 +12,10 @@ module.exports = {
       "@components": path.resolve(__dirname, `src/components`),
       "@hocs": path.resolve(__dirname, `src/hocs`),
       "@utils": path.resolve(__dirname, `src/utils`),
-      "@reducer": path.resolve(__dirname, `src/reducer`)
+      "@reducer": path.resolve(__dirname, `src/reducer`),
+      "@redux": path.resolve(__dirname, `src/redux`)
     },
-    extensions: [`.js`, `.jsx`, `ts`, `tsx`],
+    extensions: [`.ts`, `.tsx`, `.js`, `.jsx`, `json`],
   },
   devServer: {
     contentBase: path.join(__dirname, `public`),
@@ -24,8 +25,7 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      React: `react`,
-      propTypes: `prop-types`
+      React: `react`
     })
   ],
   module: {
@@ -36,8 +36,12 @@ module.exports = {
         use: {
           loader: `babel-loader`,
         }
+      },
+      {
+        test: /\.(tsx|ts)?$/,
+        loader: `ts-loader`
       }
     ],
   },
   devtool: `source-map`
-}
+};

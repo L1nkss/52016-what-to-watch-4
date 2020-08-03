@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing FilmDetails component Component should successfully rendered 1`] = `
+<React.Fragment>
+  <section
+    className="movie-card movie-card--full"
+  >
+    <div
+      className="movie-card__hero"
+    >
+      <div
+        className="movie-card__bg"
+      >
+        <img
+          alt="Fantastic Beasts: The Crimes of Grindelwald"
+          src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+        />
+      </div>
+      <h1
+        className="visually-hidden"
+      >
+        WTW
+      </h1>
+      <Memo(Connect(Component)) />
+      <div
+        className="movie-card__wrap"
+      >
+        <div
+          className="movie-card__desc"
+        >
+          <h2
+            className="movie-card__title"
+          >
+            Fantastic Beasts: The Crimes of Grindelwald
+          </h2>
+          <p
+            className="movie-card__meta"
+          >
+            <span
+              className="movie-card__genre"
+            >
+              Drama
+            </span>
+            <span
+              className="movie-card__year"
+            >
+              2015
+            </span>
+          </p>
+          <div
+            className="movie-card__buttons"
+          >
+            <Link
+              className="btn btn--play movie-card__button"
+              to="/player/1"
+            >
+              <svg
+                height="19"
+                viewBox="0 0 19 19"
+                width="19"
+              >
+                <use
+                  xlinkHref="#play-s"
+                />
+              </svg>
+              <span>
+                Play
+              </span>
+            </Link>
+            <button
+              className="btn btn--list movie-card__button"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                height="20"
+                viewBox="0 0 19 20"
+                width="19"
+              >
+                <use
+                  xlinkHref="#add"
+                />
+              </svg>
+              <span>
+                My list
+              </span>
+            </button>
+            <Link
+              className="btn movie-card__button"
+              to="/add-review/1"
+            >
+              Add review
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="movie-card__wrap movie-card__translate-top"
+    >
+      <div
+        className="movie-card__info"
+      >
+        <div
+          className="movie-card__poster movie-card__poster--big"
+        >
+          <img
+            alt="Fantastic Beasts: The Crimes of Grindelwald poster"
+            height="327"
+            src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+            width="218"
+          />
+        </div>
+        <div
+          className="movie-card__desc"
+        >
+          <Tabs
+            activeTab="Overview"
+            handleTabClick={[Function]}
+            tabs={
+              Array [
+                "Overview",
+                "Details",
+                "Reviews",
+              ]
+            }
+          />
+          <Overview
+            data={
+              Object {
+                "description": undefined,
+                "director": undefined,
+                "rating": undefined,
+                "scoresCount": undefined,
+                "starring": Array [
+                  "Name One",
+                  "Name Two",
+                ],
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <div
+    className="page-content"
+  >
+    <section
+      className="catalog catalog--like-this"
+    >
+      <h2
+        className="catalog__title"
+      >
+        More like this
+      </h2>
+      <Memo(Connect(MoreLikeFilms))
+        genre="Drama"
+      />
+    </section>
+    <Unknown />
+  </div>
+</React.Fragment>
+`;
