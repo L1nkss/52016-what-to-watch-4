@@ -12,11 +12,10 @@ interface IReviews {
 }
 
 export default class Reviews extends React.Component<IReviews> {
-  constructor(props) {
-    super(props);
-    // Перенести из констуктора
+  componentDidMount(): void {
     this.props.getReviews();
   }
+
   renderReview(reviews) {
     return reviews.map((review) => {
       return (
