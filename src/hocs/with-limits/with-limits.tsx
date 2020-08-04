@@ -1,4 +1,3 @@
-import * as React from "react";
 import {TFilm} from "../../constants/types";
 
 interface IWithLimitsState {

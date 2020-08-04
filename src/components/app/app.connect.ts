@@ -8,7 +8,6 @@ import {Operation as OperationFavorite} from "@redux/reducers/favorite/favorite"
 
 const mapStateToProps = (state) => ({
   isDataLoading: state.DATA.loading || state.PROMO.loading,
-  isError: state.DATA.error || state.PROMO.error,
   films: selectFilmsByGenre(state),
   promoFilm: state.PROMO.film
 });

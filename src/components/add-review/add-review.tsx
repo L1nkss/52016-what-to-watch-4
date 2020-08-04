@@ -15,16 +15,24 @@ type TAddReview = {
 
 interface IAddReview {
   isError: boolean,
+  isValid?: boolean,
   isLoading: boolean,
   onSubmit: (id: number, data: FormData) => void,
-  details: TAddReview
+  details: TAddReview,
+  handleFormChange: (value: number) => void
 }
 
 
 export default class AddReview extends React.PureComponent<IAddReview> {
+  private textRef: React.RefObject<HTMLTextAreaElement>;
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.textRef = React.createRef();
+  }
+
+  componentDidMount(): void {
+    this.props.handleFormChange(this.textRef.current.value.length);
   }
 
   handleSubmit(evt) {
@@ -106,14 +114,16 @@ export default class AddReview extends React.PureComponent<IAddReview> {
                 className="add-review__textarea"
                 name="review-text"
                 id="review-text"
+                ref={this.textRef}
                 placeholder="Review text"
                 disabled={isLoading}
+                onChange={(evt) => this.props.handleFormChange(evt.target.value.length)}
               />
               <div className="add-review__submit">
                 <button
                   className="add-review__btn"
                   type="submit"
-                  disabled={isLoading}>{isLoading ? `Отправляем данные` : `Post`}
+                  disabled={isLoading || this.props.isValid}>{isLoading ? `Отправляем данные` : `Post`}
                 </button>
               </div>
             </div>
