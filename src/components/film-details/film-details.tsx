@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 import {RoutePathes} from "../../constants/constants";
 import {Footer} from "@components/footer/footer";
 import {TFilm, TUserAuthStatus} from "../../constants/types";
+import history from "@utils/history";
 
 
 interface IFilmDetails {
@@ -75,21 +76,23 @@ export default class FilmDetails extends React.PureComponent<IFilmDetails> {
                     </svg>
                     <span>Play</span>
                   </Link>
-                  {userAuthStatus === `AUTH` &&
-                    <button
-                      className="btn btn--list movie-card__button"
-                      type="button"
-                      onClick={() => this.props.changeStatusFilm(id, Number(!isFavorite))}
-                    >
-                      <svg viewBox="0 0 19 20" width="19" height="20">
-                        <use xlinkHref={isFavorite ? `#in-list` : `#add`}/>
-                      </svg>
-                      <span>My list</span>
-                    </button>
-                  }
-                  {userAuthStatus === `AUTH` &&
+                  <button
+                    className="btn btn--list movie-card__button"
+                    type="button"
+                    onClick={() => {
+                      if (userAuthStatus === `AUTH`) {
+                        this.props.changeStatusFilm(id, Number(!isFavorite));
+                        return;
+                      }
+                      history.push(RoutePathes.SIGN_IN);
+                    }}
+                  >
+                    <svg viewBox="0 0 19 20" width="19" height="20">
+                      <use xlinkHref={isFavorite ? `#in-list` : `#add`}/>
+                    </svg>
+                    <span>My list</span>
+                  </button>
                   <Link to={`${RoutePathes.ADD_REVIEW}/${id}`} className="btn movie-card__button">Add review</Link>
-                  }
                 </div>
               </div>
             </div>

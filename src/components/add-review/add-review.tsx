@@ -3,7 +3,7 @@ import {Loading} from "@components/loading/loading";
 import {Link} from "react-router-dom";
 import {RoutePathes} from "../../constants/constants";
 import {starsCount} from "@components/add-review/constants/constants";
-// Импорт нужен, так как React.Fragment ругается при тесте, что React не определен
+// Импорт нужен, так как React.Fragment при тесте ругается
 import React from "react";
 
 type TAddReview = {
