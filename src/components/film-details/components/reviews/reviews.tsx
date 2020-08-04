@@ -11,7 +11,7 @@ interface IReviews {
   getReviews: () => void
 }
 
-export default class Reviews extends React.Component<IReviews> {
+export default class Reviews extends React.PureComponent<IReviews> {
   componentDidMount(): void {
     this.props.getReviews();
   }
