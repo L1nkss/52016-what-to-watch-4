@@ -45,9 +45,6 @@ export default class App extends React.PureComponent<TApp> {
     if (this.props.isDataLoading || !this.props.films || !this.props.promoFilm) {
       return <Loading />;
     }
-    if (this.props.isError) {
-      return <ServerError/>;
-    }
     return (
       <Router history={history}>
         <Switch>
