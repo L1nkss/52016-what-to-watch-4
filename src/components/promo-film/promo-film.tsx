@@ -2,6 +2,7 @@ import Header from "@components/header/header.connect";
 import {TFilm, TUserAuthStatus} from "../../constants/types";
 import {Link} from "react-router-dom";
 import {RoutePathes} from "../../constants/constants";
+import history from "@utils/history";
 
 interface IPromoFilm {
   film: TFilm,
@@ -39,18 +40,23 @@ const PromoFilm = (props: IPromoFilm) => {
                 </svg>
                 <span>Play</span>
               </Link>
-              {props.userAuthStatus === `AUTH` &&
               <button
                 className="btn btn--list movie-card__button"
                 type="button"
-                onClick={() => props.changeStatusFilm(id, Number(!isFavorite))}
+                onClick={() => {
+                  if (props.userAuthStatus === `AUTH`) {
+                    props.changeStatusFilm(id, Number(!isFavorite));
+                    return;
+                  }
+
+                  history.push(RoutePathes.SIGN_IN);
+                }}
               >
                 <svg viewBox="0 0 19 20" width="19" height="20">
                   <use xlinkHref={isFavorite ? `#in-list` : `#add`}/>
                 </svg>
                 <span>My list</span>
               </button>
-              }
             </div>
           </div>
         </div>

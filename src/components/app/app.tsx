@@ -15,6 +15,7 @@ import {Loading} from "@components/loading/loading";
 import Player from "@components/player/player.connect";
 import {TFilm} from "../../constants/types";
 import withVideoPlayer from "@hocs/with-video-player/with-video-player";
+import withFormValidation from "@hocs/with-form-validation/with-form-validation";
 
 
 interface TApp {
@@ -41,12 +42,10 @@ export default class App extends React.PureComponent<TApp> {
   }
   render() {
     const FilmDetailsWrapper = withTabs(FilmDetails, TabList);
+    const AddReviewWrapper = withFormValidation(AddReview);
     const PlayerWrapper = withVideoPlayer(Player);
     if (this.props.isDataLoading || !this.props.films || !this.props.promoFilm) {
       return <Loading />;
-    }
-    if (this.props.isError) {
-      return <ServerError/>;
     }
     return (
       <Router history={history}>
@@ -56,7 +55,7 @@ export default class App extends React.PureComponent<TApp> {
           </Route>
           <Route exact path={`${RoutePathes.FILM_DETAIL}/:id?`} component={FilmDetailsWrapper} />
           <PrivateRoute exact path={`${RoutePathes.ADD_REVIEW}/:id?`} render={(props) => {
-            return <AddReview {...props} />;
+            return <AddReviewWrapper {...props} />;
           }}/>
           <PrivateRoute exact path={`${RoutePathes.MY_LIST}`} render={(props) => {
             return <MyList {...props} />;

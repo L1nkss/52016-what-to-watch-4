@@ -32,7 +32,7 @@ const films = [
 describe(`Testing Main component`, () => {
   it(`Component should successfully rendered`, () => {
     const myShallowRenderer = ShallowRenderer.createRenderer();
-    myShallowRenderer.render(<Main promoFilm={films[0]} films={films}/>);
+    myShallowRenderer.render(<Main promoFilm={films[0]} films={films} isError={false}/>);
     const result = myShallowRenderer.getRenderOutput();
     expect(result).toMatchSnapshot();
   });
